@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>StudyPlanPro - Home</title>
+
+        <link href="style.css" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
+        <script src="index.js"></script>
+    </head>
+
+    <body>
+        <div class="header">
+            <img id="logo" src="images/logo.png">
+            <h1 style="padding-left: 5px;">StudyPlanPro</h1>
+            
+            <div id="tabs-container">
+                <button class="highlighted_tabs"><h1>Home</h1></button>
+                <button class="tabs"><h1>Demand</h1></button>
+                <button class="tabs"><h1>Flowchart</h1></button>
+                <button class="tabs" onclick="loginPopup()"><h1>Login</h1></button>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <img id="home_pic" src="images/home_pic.png">
+
+            <h2 style="padding-top: 100px; padding-left: 80px;">Need help managing your courses?</h2>
+            <p style="padding-left: 80px;">Find your sem courses through personalized planning</p>
+            <button class="gray_button" style="left: 80px; position: relative;" onclick="loginPopup()">LOGIN</button>
+
+            <h2 style="padding-left: 80px;">Or take a tour around our website</h2>
+            <p style="padding-left: 80px;">Check out our available courses, course descriptions and the demand for the courses.</p>
+
+            <div style="display: flex;">
+                <button class="gray_button" style="left: 80px; position: relative;">COURSE FLOWCHART</button>
+                <button class="gray_button" style="left: 100px; position: relative;">DEMAND TABLE</button>
+            </div>
+        </div>
+
+        <div id="popup">
+            <img id="x_button" src="images/x_button.png" onclick="exitPopup()">
+            <br>
+
+            <div style="display: flex">
+                <img id="logo" src="images/logo_black.png">
+                <h1 style="padding-left: 5px; color: #000000; font-weight: 500;">StudyPlanPro</h1>
+            </div>
+
+            <input class="loginInput" type="text" placeholder="Nickname">
+            <input class="loginInput" type="text" placeholder="UP Email Address">
+
+            <div style="display: flex">
+                <button id="email_button">Send Email</button>
+                <button id="google_button"><img src="images/google_logo.png"></button>
+            </div>
+        </div>
+
+    </body>
+</html>
