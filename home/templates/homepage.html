@@ -5,15 +5,16 @@
     <head>
         <title>StudyPlanPro - Home</title>
 
-        <link href="style.css" rel="stylesheet"/>
+        {% load static %}
+        <link href="{% static 'style.css' %}" rel="stylesheet"/>
         <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
 
-        <script src="index.js"></script>
+        <script src="{% static 'index.js' %}"></script>
     </head>
 
     <body>
         <div class="header">
-            <img id="logo" src="images/logo.png">
+            <img id="logo" src="{% static 'images/logo.png' %}">
             <h1 style="padding-left: 5px;">StudyPlanPro</h1>
             
             <div id="tabs-container">
@@ -25,7 +26,7 @@
         </div>
 
         <div class="main-content">
-            <img id="home_pic" src="images/home_pic.png">
+            <img id="home_pic" src="{% static 'images/home_pic.png' %}">
 
             <h2 style="padding-top: 100px; padding-left: 80px;">Need help managing your courses?</h2>
             <p style="padding-left: 80px;">Find your sem courses through personalized planning</p>
@@ -41,11 +42,11 @@
         </div>
 
         <div id="popup">
-            <img id="x_button" src="images/x_button.png" onclick="exitPopup()">
+            <img id="x_button" src="{% static 'images/x_button.png' %}" onclick="exitPopup()">
             <br>
 
             <div style="display: flex">
-                <img id="logo" src="images/logo_black.png">
+                <img id="logo" src="{% static 'images/logo_black.png' %}">
                 <h1 style="padding-left: 5px; color: #000000; font-weight: 500;">StudyPlanPro</h1>
             </div>
 
@@ -54,7 +55,7 @@
 
             <div style="display: flex">
                 <button id="email_button">Send Email</button>
-                <button id="google_button"><img src="images/google_logo.png"></button>
+                <button id="google_button"><img src="{% static 'images/google_logo.png' %}"></button>
             </div>
         </div>
 

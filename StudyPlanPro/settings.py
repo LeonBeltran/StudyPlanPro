@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     
     ###--- Add own apps here ---###
     # Don't forget to use python manage.py startapp <appname>
+
+    'home',
     ###--- Add own apps here ---###
 ]
 
