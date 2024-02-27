@@ -5,8 +5,8 @@ from django.db import models
 class Student(models.Model):
     name = models.CharField(max_length=100)
     email = models.CharField(max_length=100)
-    passedCourses = ArrayField(models.CharField(max_length=50), max_size=53, blank=True)
-    failedCourses = ArrayField(models.CharField(max_length=50), max_size=53, blank=True)
+    passedCourses = ArrayField(models.CharField(max_length=50), blank=True)
+    failedCourses = ArrayField(models.CharField(max_length=50), blank=True)
     systemReview = models.CharField(max_length=500)
 
 class Course(models.Model):
