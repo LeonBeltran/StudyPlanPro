@@ -7,7 +7,7 @@ class Student(models.Model):
     email = models.CharField(max_length=100)
     passedCourses = ArrayField(models.CharField(max_length=50), blank=True)
     failedCourses = ArrayField(models.CharField(max_length=50), blank=True)
-    systemReview = models.CharField(max_length=500)
+    systemReview = models.CharField(max_length=500, blank=True)
 
 class Course(models.Model):
     courseTitle = models.CharField(max_length=100)
@@ -16,5 +16,5 @@ class Course(models.Model):
     coursePolicies = models.CharField(max_length=300, blank=True)
     nominalCourseDifficultyReview = models.IntegerField()
     courseReview = ArrayField(models.CharField(max_length=500), blank=True)
-    courseDemand = models.IntegerField()
-    passingRate = models.FloatField()
+    courseDemand = models.IntegerField(blank=True)
+    passingRate = models.FloatField(blank=True)
