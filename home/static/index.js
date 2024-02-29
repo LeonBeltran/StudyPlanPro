@@ -28,7 +28,7 @@ function sendEmailPressed() {
     const nickname = textFields[0].value.replace(/\s/g, '');
     const email = textFields[1].value.replace(/\s/g, '');
 
-    textFields[0].setAttribute("style", "border-color: red; border-style: solid;");
+    //textFields[0].setAttribute("style", "border-color: red; border-style: solid;");
     textFields[1].setAttribute("style", "border-color: red; border-style: solid;");
 
     if (!nickname || !email) {
