@@ -104,14 +104,8 @@ WSGI_APPLICATION = 'StudyPlanPro.wsgi.application'
 
 DATABASES = {
     'default': {
-        # 'ENGINE': 'django.db.backends.sqlite3',
-        # 'NAME': BASE_DIR / 'db.sqlite3',
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'railway',
-        'USER': 'postgres',
-        'PASSWORD': 'f2E*fEf6a-GCGbag6bE*CEG4ga2FFf51',
-        'HOST': 'roundhouse.proxy.rlwy.net',
-        'PORT': '35550'
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
