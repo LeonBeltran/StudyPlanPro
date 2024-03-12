@@ -42,8 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     
     ###--- Add own apps here ---###
-    # Homepage
-    'home',
+    'home',     #homepage
+    'demand',   #demand table
     
     # Google OAuth
     'users',

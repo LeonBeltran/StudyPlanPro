@@ -25,6 +25,10 @@ body {
     background-color: #bdbdbd;
 }
 
+a {
+    text-decoration: none;
+}
+
 
 
 .header {
@@ -45,7 +49,7 @@ body {
     padding-top: 25px;
 }
 
-#tabs-container {
+#tabs_container {
     width: 1440px;
     display: flex;
     justify-content: flex-end;
@@ -60,6 +64,7 @@ body {
     padding-right: 12px;
     border: none;
     background-color: #434343;
+    cursor: pointer;
 }
 
 .tabs:active {
@@ -78,16 +83,6 @@ body {
 
 
 
-.main_content {
-    width: 100vw;
-    height: calc(100vh - 80px);
-    top: 80px;
-    position: absolute;
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
-}
-
 .gray_button {
     height: 40px;
     color: #ffffff;
@@ -98,6 +93,7 @@ body {
     background-color: #434343;
     border: none;
     box-shadow: #000000 1px 1px 2px;
+    cursor: pointer;
 }
 
 .gray_button:active {
@@ -105,18 +101,152 @@ body {
     transform: translateY(2px);
 }
 
-
-
-/* FOR HOMEPAGE */
-
-#home_pic {
-    width: 500px;
-    height: 500px;
-    top: 100px;
-    left: 800px;
-    position: absolute;
-    z-index: -1;
+.centered_div {
+    display: flex;
+    justify-content: center;
 }
+
+.gray_box {
+    background-color: #434343;
+    color: #ffffff;
+    font-size: 15px;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+#x_button {
+    width: 35px;
+    height: 35px;
+    top: 5px;
+    right: 5px;
+    position: absolute;
+    cursor: pointer;
+}
+
+#x_button:active {
+    background-color: #c0c0c0;
+    transform: translateY(2px);
+}
+
+
+
+/* FOR DEMAND PAGE */
+
+#demand_box {
+    background-color: #434343;
+    width: 1200px;
+    height: 500px;
+    display: flex;
+}
+
+#list_container {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+#list_header {
+    list-style-type: none;
+    display: flex;
+    width: 650px;
+    height: 50px;
+    overflow: hidden;
+}
+
+.header_kid {
+    color: #ffffff;
+    flex: 1;
+    width: 750px;
+    height: 50px;
+    padding-left: 10px;
+}
+
+#demtable_full {
+    list-style-type: none;
+    width: 650px;
+    height: 350px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    top: -32px;
+    position: relative;
+}
+
+.demtable {
+    display: flex;
+    width: 800px;
+    height: 50px;
+}
+
+.demtable:nth-child(odd) {
+    background-color: #bdbdbd;
+}
+
+.demtable:nth-child(even) {
+    background-color: #ffffff;
+}
+
+.course_item {
+    flex: 1;
+    padding-left: 10px;
+    width: 750px;
+    height: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.course_item:active {
+    color: red;
+}
+
+.demand_item {
+    flex: 1;
+    padding-left: 10px;
+    width: 750px;
+    height: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#search_input {
+    width: 350px;
+    height: 30px;
+    left: 40px;
+    bottom: 20px;
+    position: relative;
+    flex: 1;
+}
+
+
+
+#course_info {
+    visibility: hidden;
+    width: 1000px;
+    height: 600px;
+    top: 20px;
+    right: 20px;
+    padding-left: 50px;
+    position: absolute;
+    border-radius: 10px;
+    box-shadow: #000000 2px 2px 5px;
+    background: #dcdcdc;
+    display: flex;
+    flex-direction: column;
+}
+
+#review_input {
+    width: 950px;
+    height: 60px;
+    top: 10px;
+    position: relative;
+    padding: 0px;
+}
+
+
+
+/* FOR LOGIN POPUP */
 
 #popup {
     visibility: hidden;
@@ -140,6 +270,7 @@ body {
     top: 5px;
     right: 5px;
     position: absolute;
+    cursor: pointer;
 }
 
 .loginInput {
@@ -148,7 +279,6 @@ body {
     left: 28px;
     position: relative;
 }
-
 
 #email_button {
     height: 60px;
@@ -161,6 +291,7 @@ body {
     border-radius: 8px;
     background-color: #ffffff;
     border: none;
+    cursor: pointer;
 }
 
 #google_button {
@@ -174,6 +305,7 @@ body {
     border-radius: 8px;
     background-color: #ffffff;
     border: none;
+    cursor: pointer;
 }
 
 #x_button:active, #email_button:active, #google_button:active{

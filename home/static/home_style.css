@@ -1,0 +1,193 @@
+* {
+    max-width: 100vw;
+    font-family: "Outfit", sans-serif;
+}
+
+h1 {
+    color: #ffffff;
+    font-size: 38px;
+    font-weight: normal;
+}
+
+h2 {
+    color: #000000;
+    font-size: 50px;
+    font-weight: normal;
+}
+
+p {
+    color: #000000;
+    font-size: 20px;
+    font-weight: normal;
+}
+
+body {
+    background-color: #bdbdbd;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+
+.header {
+    width: 100vw;
+    height: 80px;
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    display: flex;
+    overflow: hidden;
+    background-color: #434343;
+}
+
+#logo {
+    width: 33.33px; 
+    height: 41.67px; 
+    padding-left: 35px; 
+    padding-top: 25px;
+}
+
+#tabs_container {
+    width: 1440px;
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+.tabs {
+    height: 80px;
+    position: inherit;
+    padding-left: 12px;
+    padding-right: 12px;
+    border: none;
+    background-color: #434343;
+    cursor: pointer;
+}
+
+.tabs:active {
+    background-color: #363636;
+}
+
+.highlighted_tabs {
+    height: 80px;
+    position: inherit;
+    padding-left: 12px;
+    padding-right: 12px;
+    border: none;
+    background-color: #363636;
+    box-shadow: #000000 0px 10px 10px -5px inset;
+}
+
+
+
+.gray_button {
+    height: 40px;
+    color: #ffffff;
+    font-size: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+    border-radius: 8px;
+    background-color: #434343;
+    border: none;
+    box-shadow: #000000 1px 1px 2px;
+    cursor: pointer;
+}
+
+.gray_button:active {
+    background-color: #363636;
+    transform: translateY(2px);
+}
+
+.centered_div {
+    display: flex;
+    justify-content: center;
+}
+
+.gray_box {
+    background-color: #434343;
+    color: #ffffff;
+    font-size: 15px;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+
+
+/* FOR HOMEPAGE */
+
+#home_pic {
+    width: 500px;
+    height: 500px;
+    top: 100px;
+    left: 800px;
+    position: absolute;
+    z-index: -1;
+}
+
+#popup {
+    visibility: hidden;
+    width: 330px;
+    height: 310px;
+    top: 10px;
+    right: 10px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 10px;
+    box-shadow: #000000 2px 2px 5px;
+    background: #474747;
+    background: linear-gradient(0deg, #474747 0%, #dcdcdc 100%);
+}
+
+#x_button {
+    width: 35px;
+    height: 35px;
+    top: 5px;
+    right: 5px;
+    position: absolute;
+    cursor: pointer;
+}
+
+.loginInput {
+    width: 270px;
+    height: 30px;
+    left: 28px;
+    position: relative;
+}
+
+#email_button {
+    height: 60px;
+    left: 38px;
+    position: relative;
+    color: #000000;
+    font-size: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    border: none;
+    cursor: pointer;
+}
+
+#google_button {
+    width: 60px;
+    height: 60px;
+    left: 50px;
+    position: relative;
+    padding-top: 4px;
+    color: #000000;
+    font-size: 30px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    border: none;
+    cursor: pointer;
+}
+
+#x_button:active, #email_button:active, #google_button:active{
+    background-color: #c0c0c0;
+    transform: translateY(2px);
+}

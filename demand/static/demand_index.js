@@ -1,5 +1,4 @@
-const { text } = require("stream/consumers");
-
+//log in stuff
 function loginPopup() {
     const popUp = document.getElementById("popup");
     popUp.style.visibility = "visible";
@@ -21,8 +20,7 @@ function exitPopup() {
 
 
 
-// TEMPORARY FUNCTION TO SHOW UI WHEN ERROR IN INPUTS IS ENCOUNTERED //
-
+//temporary function
 function sendEmailPressed() {
     const textFields = document.getElementsByClassName("loginInput");
     const nickname = textFields[0].value.replace(/\s/g, '');
@@ -38,4 +36,26 @@ function sendEmailPressed() {
     }
 }
 
-////////////////////////////////////////////////////////////////////////
+
+
+//DEMAND TABLE
+
+function showinfo() {
+    const courseInfo = document.getElementById("course_info");
+    courseInfo.style.visibility = "visible";
+}
+
+function exitinfo() {
+    const courseInfo = document.getElementById("course_info");
+    courseInfo.style.visibility = "hidden";
+
+    const reviewInput = document.getElementById("review_input");
+    reviewInput.value = "";
+}
+
+//temporary function
+function demtableSearch(text) {
+    if(event.key === 'Enter') {
+        alert(`${text.value} does not exist`);        
+    }
+}

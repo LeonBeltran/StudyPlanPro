@@ -6,10 +6,10 @@
         <title>StudyPlanPro - Home</title>
 
         {% load static %}
-        <link href="{% static 'style.css' %}" rel="stylesheet"/>
+        <link href="{% static 'home_style.css' %}" rel="stylesheet"/>
         <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
 
-        <script src="{% static 'index.js' %}"></script>
+        <script src="{% static 'home_index.js' %}"></script>
     </head>
 
     <body>
@@ -17,15 +17,15 @@
             <img id="logo" src="{% static 'images/logo.png' %}">
             <h1 style="padding-left: 5px;">StudyPlanPro</h1>
             
-            <div id="tabs-container">
+            <div id="tabs_container">
                 <button class="highlighted_tabs"><h1>Home</h1></button>
-                <button class="tabs"><h1>Demand</h1></button>
+                <a href="/demand/" class="tabs"><h1>Demand</h1></a>
                 <button class="tabs"><h1>Flowchart</h1></button>
                 <button class="tabs" onclick="loginPopup()"><h1>Login</h1></button>
             </div>
         </div>
 
-        <div class="main-content">
+        <div>
             <img id="home_pic" src="{% static 'images/home_pic.png' %}">
 
             <h2 style="padding-top: 100px; padding-left: 80px;">Need help managing your courses?</h2>
@@ -36,8 +36,8 @@
             <p style="padding-left: 80px;">Check out our available courses, course descriptions and the demand for the courses.</p>
 
             <div style="display: flex;">
-                <button class="gray_button" style="left: 80px; position: relative;">COURSE FLOWCHART</button>
-                <button class="gray_button" style="left: 100px; position: relative;">DEMAND TABLE</button>
+                <button class="gray_button" style="left: 80px; position: relative; height: 50px;">COURSE FLOWCHART</button>
+                <a href="/demand/" class="gray_button" style="left: 100px; position: relative; padding-top: 10px;">DEMAND TABLE</a>
             </div>
         </div>
 
