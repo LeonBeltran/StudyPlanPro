@@ -24,5 +24,5 @@ urlpatterns = [
 
     # Added for OAuth
     path('accounts/', include('allauth.urls')),
-    path('/', include('users.urls'))
+    path('users/', include('users.urls'))
 ]

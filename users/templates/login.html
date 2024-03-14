@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>StudyPlanPro - Home</title>
+
+        {% load static %}
+        {% load socialaccount %} <!-- Added for oauth -->
+
+        <link href="{% static 'home_style.css' %}" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
+        <script src="{% static 'home_index.js' %}"></script>
+    </head>
+
+    <body>
+        <div class="header">
+            <img id="logo" src="{% static 'images/logo.png' %}">
+            <h1 style="padding-left: 5px;">StudyPlanPro</h1>
+            
+            <div id="tabs_container">
+                <button class="tabs"><h1>Home</h1></button>
+                <a href="/demand/" class="tabs"><h1>Demand</h1></a>
+                <button class="tabs"><h1>Flowchart</h1></button>
+                <button class="highlighted_tabs" onclick="loginPopup()"><h1>Login</h1></button>
+            </div>
+        </div>
+
+        <div>
+            <img id="home_pic" src="{% static 'images/home_pic.png' %}">
+
+            <h2 style="padding-top: 100px; padding-left: 80px;">Need help managing your courses?</h2>
+            <p style="padding-left: 80px;">Find your sem courses through personalized planning</p>
+            <button class="gray_button" style="left: 80px; position: relative;" onclick="loginPopup()">LOGIN</button>
+
+            <h2 style="padding-left: 80px;">Or take a tour around our website</h2>
+            <p style="padding-left: 80px;">Check out our available courses, course descriptions and the demand for the courses.</p>
+
+            <div style="display: flex;">
+                <button class="gray_button" style="left: 80px; position: relative; height: 50px;">COURSE FLOWCHART</button>
+                <a href="/demand/" class="gray_button" style="left: 100px; position: relative; padding-top: 10px;">DEMAND TABLE</a>
+            </div>
+        </div>
+
+        <div id="popup">
+            <img id="x_button" src="{% static 'images/x_button.png' %}" onclick="exitPopup()">
+            <br>
+
+            <div style="display: flex">
+                <img id="logo" src="{% static 'images/logo_black.png' %}">
+                <h1 style="padding-left: 5px; color: #000000; font-weight: 500;">StudyPlanPro</h1>
+            </div>
+
+            <input class="loginInput" type="text" placeholder="Nickname">
+            <input class="loginInput" type="text" placeholder="UP Email Address">
+
+        <div style="display: flex">
+            <button id="email_button" onclick="sendEmailPressed()">Send Email</button>
+            <!--Added for login-->
+            <a href="{% provider_login_url 'google' %}?next=/">
+                <img id="google_button" src="{% static 'images/google_logo.png' %}">
+            </a>
+            <!--Added for login-->
+        </div>
+
+        </div>
+
+        {% if user.is_authenticated %}
+        <p> You are signed in as {{user.email}} </p>
+        <a href="logout"> Logout </a>
+        {% endif %}
+
+    </body>
+</html>
