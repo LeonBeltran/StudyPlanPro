@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>StudyPlanPro - Home</title>
+    {% load static %}
+    {% load socialaccount %} <!-- Added for oauth -->
+    <link href="{% static 'home_style.css' %}" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <script src="{% static 'home_index.js' %}"></script>
+</head>
+<body>
+    {% if user.is_authenticated %}
+    <p> You are signed in as {{user.email}} </p>
+    <a href="logout"> Logout </a>
+    {% endif %}
+</body>
+</html>

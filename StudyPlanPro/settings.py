@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 # Identifies what site to use for login
-SITE_ID = 1
+SITE_ID = 2
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -158,6 +158,8 @@ AUTHENTICATION_BACKENDS = (
     'allauth.account.auth_backends.AuthenticationBackend',
 )
 
-LOGIN_REDIRECT_URL = "/"
+LOGIN_REDIRECT_URL = "loggedin/" # Redirect to users view after log in 
+LOGIN_URL = "/users/login/" # Where user will be redirect in login
 
-LOGOUT_REDIRECT_URL = "/"
+
+LOGOUT_REDIRECT_URL = "loggedout/"
