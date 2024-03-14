@@ -6,6 +6,8 @@
         <title>StudyPlanPro - Home</title>
 
         {% load static %}
+        {% load socialaccount %} <!-- Added for oauth -->
+
         <link href="{% static 'home_style.css' %}" rel="stylesheet"/>
         <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
 
@@ -18,10 +20,15 @@
             <h1 style="padding-left: 5px;">StudyPlanPro</h1>
             
             <div id="tabs_container">
-                <button class="highlighted_tabs"><h1>Home</h1></button>
+                <a href="/home/" class="highlighted_tabs"><h1>Home</h1></a>
                 <a href="/demand/" class="tabs"><h1>Demand</h1></a>
                 <button class="tabs"><h1>Flowchart</h1></button>
+
+                {% if user.is_authenticated %}
+                <a href="logout/" class="tabs"><h1>Logout</h1></a>
+                {% else %}
                 <button class="tabs" onclick="loginPopup()"><h1>Login</h1></button>
+                {% endif %}
             </div>
         </div>
 
@@ -30,7 +37,12 @@
 
             <h2 style="padding-top: 100px; padding-left: 80px;">Need help managing your courses?</h2>
             <p style="padding-left: 80px;">Find your sem courses through personalized planning</p>
+
+            {% if user.is_authenticated %}
+            <a href="logout/"><button class="gray_button" style="left: 80px; position: relative;">LOGOUT</button></a>
+            {% else %}
             <button class="gray_button" style="left: 80px; position: relative;" onclick="loginPopup()">LOGIN</button>
+            {% endif %}
 
             <h2 style="padding-left: 80px;">Or take a tour around our website</h2>
             <p style="padding-left: 80px;">Check out our available courses, course descriptions and the demand for the courses.</p>
@@ -53,11 +65,24 @@
             <input class="loginInput" type="text" placeholder="Nickname">
             <input class="loginInput" type="text" placeholder="UP Email Address">
 
-            <div style="display: flex">
-                <button id="email_button" onclick="sendEmailPressed()">Send Email</button>
-                <button id="google_button"><img src="{% static 'images/google_logo.png' %}"></button>
-            </div>
+        <div style="display: flex">
+            <button id="email_button" onclick="sendEmailPressed()">Send Email</button>
+
+            <!--Added for login-->
+            <a href="{% provider_login_url 'google' %}?next=/home">
+                <img id="google_button" src="{% static 'images/google_logo.png' %}">
+            </a>
+            <!--Added for login-->
         </div>
+
+        </div>
+
+        {% comment %} Probably will be removed (Show login status via login/logout buttons)
+        {% if user.is_authenticated %}
+        <p> You are signed in as {{user.email}} </p>
+        <a href="logout"> Logout </a>
+        {% endif %} 
+        {% endcomment %}
 
     </body>
 </html>
