@@ -46,7 +46,6 @@ INSTALLED_APPS = [
     'demand',   #demand table
     
     # Google OAuth
-    'users',
     'django.contrib.sites',
     'allauth',
     'allauth.account',
@@ -158,8 +157,10 @@ AUTHENTICATION_BACKENDS = (
     'allauth.account.auth_backends.AuthenticationBackend',
 )
 
-LOGIN_REDIRECT_URL = "loggedin/" # Redirect to users view after log in 
-LOGIN_URL = "/users/login/" # Where user will be redirect in login
+# LOGIN_REDIRECT_URL = "loggedin/" # Redirect to users view after log in 
+# LOGIN_URL = "/users/login/" # Where user will be redirect in login
+# LOGOUT_REDIRECT_URL = "loggedout/"
 
-
-LOGOUT_REDIRECT_URL = "loggedout/"
+# Redirect URLs after Login/out
+LOGIN_REDIRECT_URL = "home/"
+LOGOUT_REDIRECT_URL = "home/"
