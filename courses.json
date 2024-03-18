@@ -1,0 +1,624 @@
+[
+{
+  "model": "home.course",
+  "pk": 1,
+  "fields": {
+    "courseCode": "CS 10",
+    "courseTitle": "Introduction to Computing",
+    "shortDescription": "History of computing, parts of a computer, data storage in a computer, trends and issues in computing.",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 2,
+  "fields": {
+    "courseCode": "CS 11",
+    "courseTitle": "Computer Programming I",
+    "shortDescription": "Basic Programming, Programming Constructs, Programming Logic.",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 3,
+  "fields": {
+    "courseCode": "CS 12",
+    "courseTitle": "Computer Programming II",
+    "shortDescription": "Abstract data types: Advanced programming techniques: Exception handling. Documentation. API programming.",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      2
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 4,
+  "fields": {
+    "courseCode": "CS 20",
+    "courseTitle": "Digital Electronics and Circuits",
+    "shortDescription": "Basic electronics, digital logic design, physical/embedded computing.",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      3
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 5,
+  "fields": {
+    "courseCode": "CS 21",
+    "courseTitle": "Computer Organization & Architecture",
+    "shortDescription": "Computer organization, computer architecture, assembly language programming.",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      4
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 6,
+  "fields": {
+    "courseCode": "CS 30",
+    "courseTitle": "Discrete Mathematics for Computer Science I",
+    "shortDescription": "Discrete Structures and their applications in Computer Science I.",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 7,
+  "fields": {
+    "courseCode": "CS 31",
+    "courseTitle": "Discrete Mathematics for Computer Science II",
+    "shortDescription": "Discrete structures and their applications to Computer Science II, Probability and Topics in Statistics.",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      6
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 8,
+  "fields": {
+    "courseCode": "CS 32",
+    "courseTitle": "Data Structures and Algorithms I.",
+    "shortDescription": "Introduction to algorithm design and analysis, Linear data structures such as Stacks, Queues, Lists and Tables, Applications of linear data structures in formulating algorithms and solving real-world problems, design and analysis of Sorting Algorithms and Randomized Algorithms, and algorithm analysis techniques such as amortized analysis and probabilistic analysis.",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      3,
+      7
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 9,
+  "fields": {
+    "courseCode": "CS 33",
+    "courseTitle": "Data Structures and Algorithms II",
+    "shortDescription": "Trees, graphs, algorithms on graphs, generalized lists, randomized algorithms, and probabilistic analysis.",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      8
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 10,
+  "fields": {
+    "courseCode": "CS 120",
+    "courseTitle": "Internet Technologies",
+    "shortDescription": "Programmer-oriented survey of contemporary authoring, distributing, browsing, client-server & other technologies; role, use & implementation of current Internet tools; security & privacy issues.",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      8
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 11,
+  "fields": {
+    "courseCode": "CS 130",
+    "courseTitle": "Mathematical Methods in Computer Science",
+    "shortDescription": "Vector spaces. Linear transformations. Matrices & determinants. Ordinary differential equations & systems of ordinary differential equations; Fourier series; Laplace transforms.",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      12
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 12,
+  "fields": {
+    "courseCode": "CS 131",
+    "courseTitle": "Numerical Methods",
+    "shortDescription": "Interpolations, numerical differentiation & integration. Numerical solutions of algebraic & transcendental equations, systems of equations, ordinary & partial differential equations.",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      3,
+      11
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 13,
+  "fields": {
+    "courseCode": "CS 132",
+    "courseTitle": "Introduction to Data Science",
+    "shortDescription": "Data Science Process, Data Preprocessing, Data Storage and Management, Statistical Inference, Exploratory Data Analysis, Machine Learning and Data Mining Techniques, Data Visualization, Ethical Issues in Data Science.",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      7
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 14,
+  "fields": {
+    "courseCode": "CS 133",
+    "courseTitle": "Automata Theory & Computability",
+    "shortDescription": "Alphabet, words, languages & algorithmic problems. Finite automata and hierarchy of languages. Turing machines. Tractable & intractable problems. Uncomputable functions. The halting problem.",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      6
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 15,
+  "fields": {
+    "courseCode": "CS 134",
+    "courseTitle": "Computational Complexity",
+    "shortDescription": "Time complexity; the classes P & NP; NP-completeness; the polynomial hierarchy; space complexity; intractability.",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      14
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 16,
+  "fields": {
+    "courseCode": "CS 135",
+    "courseTitle": "Algorithm Design & Analysis",
+    "shortDescription": "Algorithm analysis: asymptotic analysis, time & space tradeoffs, recurrence relations. Greedy, divide & conquer, heuristics & other algorithm design strategies. Fundamental computing algorithms for sorting, selection, trees & graphs. Intractability & approximation.",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      6,
+      8
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 17,
+  "fields": {
+    "courseCode": "CS 136",
+    "courseTitle": "Elementary Numerical Computing I",
+    "shortDescription": "Elementary differential equations, introduction to numerical analysis, root finding, collocation method.",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      7
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 18,
+  "fields": {
+    "courseCode": "CS 137",
+    "courseTitle": "Computer Algebra",
+    "shortDescription": "Arithmetic in basic algebraic domains; the Euclidean algorithm; polynomial greatest common divisors & resultants; polynomial factorization.",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      16
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 19,
+  "fields": {
+    "courseCode": "CS 138",
+    "courseTitle": "Elementary Numerical Computing II",
+    "shortDescription": "Numerical differentiation and integration, partial differential equations, numerical linear algebra.",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      17
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 20,
+  "fields": {
+    "courseCode": "CS 140",
+    "courseTitle": "Operating Systems",
+    "shortDescription": "Operating system concepts; design, implementation and analysis of operating systems; virtualization and multiprocessing, issues and considerations in designing and implementing common features of operating systems: processes, input/output, memory management, and file systems; virtual machines and hypervisors; introduction to real-time operating systems, and operating systems for embedded systems.",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      3,
+      8
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 21,
+  "fields": {
+    "courseCode": "CS 145",
+    "courseTitle": "Computer Networks",
+    "shortDescription": "Network models and layers, protocol stacks, networks performance analysis, packet analysis, computer networks security, overview of advanced networking technologies.",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      20
+    ],
+    "courseCoreq": [
+      23
+    ]
+  }
+},
+{
+  "model": "home.course",
+  "pk": 22,
+  "fields": {
+    "courseCode": "CS 150",
+    "courseTitle": "Programming Languages",
+    "shortDescription": "Survey of Programming Languages: History and overview of programming languages, Programming paradigms: imperative, functional, object-oriented, logic, Type systems, Declaration and modularity, Introduction to syntax and semantics.",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      9
+    ],
+    "courseCoreq": [
+      34
+    ]
+  }
+},
+{
+  "model": "home.course",
+  "pk": 23,
+  "fields": {
+    "courseCode": "CS 153",
+    "courseTitle": "Introduction to Computer Security",
+    "shortDescription": "Computer security models and protocols. Security issues. Cryptographic algorithms and digital signatures. Risk Assessment.",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      20
+    ],
+    "courseCoreq": [
+      21,
+      35
+    ]
+  }
+},
+{
+  "model": "home.course",
+  "pk": 24,
+  "fields": {
+    "courseCode": "CS 155",
+    "courseTitle": "Compiler Construction",
+    "shortDescription": "Compiler phases, scanners and parsers, semantic analysis and type checking, syntax directed translation, function and procedure calls and runtime organization, register allocation and instruction selection, code layout and code generation, garbage collection, introduction to code optimization, error detection and recovery, language security.",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      5,
+      14,
+      22
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 25,
+  "fields": {
+    "courseCode": "CS 160",
+    "courseTitle": "File Processing. Logical & physical file structures",
+    "shortDescription": "Secondary storage devices. Sequential, direct & indexed files. Singlekey & multiple-key retrieval. Data compaction. Implementation of file organizations.",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      8
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 26,
+  "fields": {
+    "courseCode": "CS 165",
+    "courseTitle": "Database Systems",
+    "shortDescription": "Relational database concepts: ER modeling, relational model, relational algebra, relational database design and normalization, structured query language, query optimization, File management, Storage and Indexing, Transaction Management., Data warehousing. Non-relational/modern database systems.",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      9
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 27,
+  "fields": {
+    "courseCode": "CS 171",
+    "courseTitle": "Topics in Theoretical Computer Science",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 28,
+  "fields": {
+    "courseCode": "CS 172",
+    "courseTitle": "Topics in Net-Centric Computing",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 29,
+  "fields": {
+    "courseCode": "CS 173",
+    "courseTitle": "Topics in Software Technology",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 30,
+  "fields": {
+    "courseCode": "CS 174",
+    "courseTitle": "Topics in Computer Systems",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 31,
+  "fields": {
+    "courseCode": "CS 175",
+    "courseTitle": "Topics in Computational Science",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 32,
+  "fields": {
+    "courseCode": "CS 176",
+    "courseTitle": "Topics in Intelligent Systems",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 33,
+  "fields": {
+    "courseCode": "CS 180",
+    "courseTitle": "Artificial Intelligence",
+    "shortDescription": "Fundamental principles of artificial intelligence. Search methods. Knowledge representation & reasoning. Agents. Machine learning & neural networks. Current research applications.",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      9
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 34,
+  "fields": {
+    "courseCode": "CS 191",
+    "courseTitle": "Software Engineering I",
+    "shortDescription": "Principles of Software Engineering, Software Project Management, Requirements Engineering, Software Analysis and Design Patterns, Software Quality Assurance, Software.",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      9
+    ],
+    "courseCoreq": [
+      22,
+      26
+    ]
+  }
+},
+{
+  "model": "home.course",
+  "pk": 35,
+  "fields": {
+    "courseCode": "CS 192",
+    "courseTitle": "Software Engineering II",
+    "shortDescription": "Software Implementation and Maintenance, Integration Strategies, and Security Issues.",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      34
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 36,
+  "fields": {
+    "courseCode": "CS 194",
+    "courseTitle": "Undergraduate Research Seminar",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 37,
+  "fields": {
+    "courseCode": "CS 195",
+    "courseTitle": "Practicum",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      35
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 38,
+  "fields": {
+    "courseCode": "CS 196",
+    "courseTitle": "Seminar on Ethical & Professional Issues in Computing",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 39,
+  "fields": {
+    "courseCode": "CS 197",
+    "courseTitle": "Special Topics",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 40,
+  "fields": {
+    "courseCode": "CS 198",
+    "courseTitle": "Special Problems I",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      36
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 41,
+  "fields": {
+    "courseCode": "CS 199",
+    "courseTitle": "Special Problems II",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      40
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 42,
+  "fields": {
+    "courseCode": "CS 200",
+    "courseTitle": "Undergraduate Thesis",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      40
+    ],
+    "courseCoreq": []
+  }
+}
+]
