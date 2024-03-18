@@ -6,8 +6,8 @@ class Course(models.Model):
     courseCode = models.CharField(max_length=30)
     courseTitle = models.CharField(max_length=100)
     shortDescription = models.CharField(max_length=500, blank=True)
-    coursePrereq = models.ManyToManyField('self', blank=True)
-    courseCoreq = models.ManyToManyField('self', blank=True)
+    coursePrereq = models.ManyToManyField('self', blank=True, symmetrical=False, related_name="CoursePrereq")
+    courseCoreq = models.ManyToManyField('self', blank=True, symmetrical=False, related_name="CourseCoreq")
     nominalCourseDifficultyReview = models.IntegerField(default=3, validators=[MinValueValidator(1), MaxValueValidator(5)])
     courseDemand = models.IntegerField(default=0)
 
