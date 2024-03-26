@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>StudyPlanPro - Demand Table</title>
+
+        {% load static %}
+        {% load socialaccount %} <!-- Added for oauth -->
+
+        <link href="{% static 'flowchart_style.css' %}" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
+        <script src="{% static 'flowchart_index.js' %}"></script>
+    </head>
+
+    <body>
+        <div class="header">
+            <img id="logo" src="{% static 'images/logo.png' %}">
+            <h1 style="padding-left: 5px;">StudyPlanPro</h1>
+            
+            <div id="tabs_container">
+                <a href="/home/" class="tabs"><h1>Home</h1></a>
+                <a href="/demand/" class="tabs"><h1>Demand</h1></a>
+                <button class="highlighted_tabs"><h1>Flowchart</h1></button>
+                
+                {% if user.is_authenticated %}
+                <a href="/home/logout/" class="tabs"><h1>Logout</h1></a>
+                {% else %}
+                <button class="tabs" onclick="loginPopup()"><h1>Login</h1></button>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="centered_div" style="padding-top: 100px; flex-direction: column; align-items: center;">
+            <div id="fc_outer_box">
+                <div style="display: flex; flex-direction: row; justify-content: space-between;"> <!--top part-->
+                    <div>
+                        <h1 style="padding-left: 10px;">UPD CS: Major Course Selection</h1>
+                        <p id="instruction_text">Click a course to see its description.</p>
+                    </div>
+
+                    <div style="padding-right: 15px;">
+                        <p style="color: #ffffff; position: relative; top: 10px;">Current Mode:</p>
+                        <button class="gray_button" style="background-color: #ffffff; color: #000000;">Details Mode</button>
+                    </div>
+                </div>
+
+                <div id="fc_inner_box">
+                    <div class="sem_column">
+                        <h1 style="margin-block: 0px;">Y1S1</h1>
+                        <button class="course_button">CS 11</button>
+                        <button class="course_button">CS 30</button>
+                        <button class="course_button">CS 10</button>
+                        <button class="course_button">MATH 21</button>
+                        <button class="invisible_button"></button>    
+                    </div>
+
+                    <div class="sem_column">
+                        <h1 style="margin-block: 0px;">Y1S2</h1>
+                        <button class="course_button">CS 12</button>
+                        <button class="course_button">CS 31</button>
+                        <button class="invisible_button"></button>
+                        <button class="course_button">MATH 22</button>
+                        <button class="course_button">PHY 71</button>  
+                    </div> 
+
+                    <div class="sem_column">
+                        <h1 style="margin-block: 0px;">Y2S1</h1>
+                        <button class="course_button">CS 20</button>
+                        <button class="course_button">CS 32</button>
+                        <button class="course_button">MATH 40</button>
+                        <button class="course_button">MATH 23</button>
+                        <button class="course_button">PHY 72</button>  
+                    </div> 
+
+                    <div class="sem_column">
+                        <h1 style="margin-block: 0px;">Y2S2</h1>
+                        <button class="course_button">CS 21</button>
+                        <button class="course_button">CS 33</button>
+                        <button class="course_button">CS 132</button>
+                        <button class="course_button">CS 136</button>
+                        <button class="invisible_button"></button>  
+                    </div> 
+
+                    <div class="sem_column">
+                        <h1 style="margin-block: 0px;">Y3S1</h1>
+                        <button class="course_button">CS 140</button>
+                        <button class="course_button">CS 165</button>
+                        <button class="course_button">CS 150</button>
+                        <button class="course_button">CS 138</button>
+                        <button class="course_button">CS 191</button>  
+                    </div> 
+
+                    <div class="sem_column">
+                        <h1 style="margin-block: 0px;">Y3S2</h1>
+                        <button class="course_button">CS 145</button>
+                        <button class="course_button">CS 153</button>
+                        <button class="course_button">CS 180</button>
+                        <button class="course_button">CS 194</button>
+                        <button class="course_button">CS 192</button>  
+                    </div> 
+
+                    <div class="sem_column">
+                        <h1 style="margin-block: 0px;">Y3M</h1>
+                        <button class="invisible_button"></button> 
+                        <button class="invisible_button"></button> 
+                        <button class="invisible_button"></button> 
+                        <button class="invisible_button"></button> 
+                        <button class="course_button">CS 195</button>  
+                    </div> 
+
+                    <div class="sem_column">
+                        <h1 style="margin-block: 0px;">Y4S1</h1>
+                        <button class="course_button">CS 133</button>
+                        <button class="invisible_button"></button> 
+                        <button class="invisible_button"></button> 
+                        <button class="invisible_button"></button> 
+                        <button class="course_button">CS 198</button>  
+                    </div> 
+
+                    <div class="sem_column">
+                        <h1 style="margin-block: 0px;">Y4S2</h1>
+                        <button class="course_button">CS 155</button>
+                        <button class="invisible_button"></button> 
+                        <button class="course_button">CS 196</button>
+                        <button class="invisible_button"></button> 
+                        <button class="course_button">CS 199</button>  
+                    </div> 
+                </div>
+            </div>
+
+            <div id="bottom_buttons">
+                <button class="invisible_button" style="background-color: #bdbdbd;"></button>
+                <button class="gray_button">Other Flowchart</button>
+                <button class="gray_button">Proceed</button>
+            </div>
+        </div>
+
+        <div id="popup">
+            <img id="x_button" src="{% static 'images/x_button.png' %}" onclick="exitPopup()">
+            <br>
+
+            <div style="display: flex">
+                <img id="logo" src="{% static 'images/logo_black.png' %}">
+                <h1 style="padding-left: 5px; color: #000000; font-weight: 500;">StudyPlanPro</h1>
+            </div>
+
+            <input class="loginInput" type="text" placeholder="Nickname">
+            <input class="loginInput" type="text" placeholder="UP Email Address">
+
+            <div style="display: flex">
+                <button id="email_button" onclick="sendEmailPressed()">Send Email</button>
+
+                <!--Added for login-->
+                <a href="{% provider_login_url 'google' %}?next=/flowchart">
+                    <img id="google_button" src="{% static 'images/google_logo.png' %}">
+                </a>
+                <!--Added for login-->
+            </div>
+
+        </div>
+    </body>
+</html>

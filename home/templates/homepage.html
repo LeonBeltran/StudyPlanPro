@@ -65,15 +65,15 @@
             <input class="loginInput" type="text" placeholder="Nickname">
             <input class="loginInput" type="text" placeholder="UP Email Address">
 
-        <div style="display: flex">
-            <button id="email_button" onclick="sendEmailPressed()">Send Email</button>
+            <div style="display: flex">
+                <button id="email_button" onclick="sendEmailPressed()">Send Email</button>
 
-            <!--Added for login-->
-            <a href="{% provider_login_url 'google' %}?next=/home">
-                <img id="google_button" src="{% static 'images/google_logo.png' %}">
-            </a>
-            <!--Added for login-->
-        </div>
+                <!--Added for login-->
+                <a href="{% provider_login_url 'google' %}?next=/home">
+                    <img id="google_button" src="{% static 'images/google_logo.png' %}">
+                </a>
+                <!--Added for login-->
+            </div>
 
         </div>
 
