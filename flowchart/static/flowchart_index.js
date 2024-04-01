@@ -20,6 +20,22 @@ function exitPopup() {
 
 
 
+//temporary function for course info
+function showinfo() {
+    const courseInfo = document.getElementById("course_info");
+    courseInfo.style.visibility = "visible";
+}
+
+function exitinfo() {
+    const courseInfo = document.getElementById("course_info");
+    courseInfo.style.visibility = "hidden";
+
+    const reviewInput = document.getElementById("review_input");
+    reviewInput.value = "";
+}
+
+
+
 //temporary function
 function sendEmailPressed() {
     const textFields = document.getElementsByClassName("loginInput");

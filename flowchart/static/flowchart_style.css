@@ -180,10 +180,10 @@ a {
     cursor: pointer;
 }
 
-/* .gray_button:active {
-    background-color: #363636;
+.course_button:active {
+    background-color: #bdbdbd;
     transform: translateY(2px);
-} */
+}
 
 .invisible_button {
     width: 100px;
@@ -197,6 +197,58 @@ a {
     display: flex; 
     flex-direction: row; 
     justify-content: space-between;
+}
+
+/* OTHER COURSES PAGE */
+
+.small_box {
+    width: 600px;
+    height: 450px;
+    position: relative;
+    top: 100px;
+    background-color: #434343;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+#instruction_text_2 {
+    color: #ffffff; 
+    font-size: 15px;
+    text-align: center;
+}
+
+.othersub_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+/* FOR COURSE INFO POPUP */
+
+#course_info {
+    visibility: hidden;
+    width: 1000px;
+    height: 600px;
+    top: 20px;
+    right: 20px;
+    padding-left: 50px;
+    position: absolute;
+    border-radius: 10px;
+    box-shadow: #000000 2px 2px 5px;
+    background: #dcdcdc;
+    display: flex;
+    flex-direction: column;
+}
+
+#review_input {
+    width: 950px;
+    height: 60px;
+    top: 10px;
+    position: relative;
+    padding: 0px;
 }
 
 
