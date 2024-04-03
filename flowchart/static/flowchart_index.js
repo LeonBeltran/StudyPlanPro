@@ -20,6 +20,20 @@ function exitPopup() {
 
 
 
+// dropdown function
+
+function dropdownClick() {
+    const dropdownItems = document.getElementById("dropdown_items");
+
+    if (dropdownItems.style.visibility === "visible") {
+        dropdownItems.style.visibility = "hidden";
+    } else {
+        dropdownItems.style.visibility = "visible";
+    }
+}
+
+
+
 //temporary function for course info
 function showinfo() {
     const courseInfo = document.getElementById("course_info");

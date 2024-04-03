@@ -224,6 +224,38 @@ a {
     align-items: center;
 }
 
+#dropdown {
+    width: 175px;
+    height: 30px;
+    margin-block-start: 5px;
+    border-bottom: solid;
+    border-width: thin;
+    border-color: #000000;
+    color: #000000;
+    border-radius: 3px;
+    text-align: right;
+}
+
+#dropdown_items {
+    visibility: hidden;
+    width: 150px;
+    height: 200px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+}
+
+.dropdown_button {
+    width: 150px;
+    height: 30px;
+    background-color: #ffffff;
+    border: solid;
+    border-width: thin;
+    border-top: none;
+    border-color: #000000;
+    font-weight: bold;
+    cursor: pointer;
+}
 
 
 /* FOR COURSE INFO POPUP */
