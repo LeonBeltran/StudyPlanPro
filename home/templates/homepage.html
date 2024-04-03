@@ -35,6 +35,12 @@
         <div>
             <img id="home_pic" src="{% static 'images/home_pic.png' %}">
 
+            {% if messages %}
+                {% for message in messages %}
+                    <p style="padding-top: 75px; padding-left: 80px;">{{ message }}</p>
+                {% endfor %}
+            {% endif %}
+
             <h2 style="padding-top: 100px; padding-left: 80px;">Need help managing your courses?</h2>
             <p style="padding-left: 80px;">Find your sem courses through personalized planning</p>
 
@@ -42,6 +48,7 @@
             <a href="logout/"><button class="gray_button" style="left: 80px; position: relative;">LOGOUT</button></a>
             {% else %}
             <button class="gray_button" style="left: 80px; position: relative;" onclick="loginPopup()">LOGIN</button>
+            <a href="join/"><button class="gray_button" style="left: 80px; position: relative;">SIGN UP</button></a>
             {% endif %}
 
             <h2 style="padding-left: 80px;">Or take a tour around our website</h2>
@@ -54,6 +61,7 @@
         </div>
 
         <div id="popup">
+
             <img id="x_button" src="{% static 'images/x_button.png' %}" onclick="exitPopup()">
             <br>
 
@@ -62,18 +70,19 @@
                 <h1 style="padding-left: 5px; color: #000000; font-weight: 500;">StudyPlanPro</h1>
             </div>
 
-            <input class="loginInput" type="text" placeholder="Nickname">
-            <input class="loginInput" type="text" placeholder="UP Email Address">
+            <input class="loginInput" type="text" name="name" placeholder="Nickname">
+            <input class="loginInput" type="email" name="email" placeholder="UP Email Address">
 
-        <div style="display: flex">
-            <button id="email_button" onclick="sendEmailPressed()">Send Email</button>
+            <div style="display: flex">
+                <button id="email_button" onclick="sendEmailPressed()">Login Here</button>
 
-            <!--Added for login-->
-            <a href="{% provider_login_url 'google' %}?next=/home">
-                <img id="google_button" src="{% static 'images/google_logo.png' %}">
-            </a>
-            <!--Added for login-->
-        </div>
+                <!--Added for login-->
+                <a href="{% provider_login_url 'google' %}?next=/home">
+                    <img id="google_button" src="{% static 'images/google_logo.png' %}">
+                </a>
+                <!--Added for login-->
+
+            </div>
 
         </div>
 

@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     ###--- Add own apps here ---###
     'home',     #homepage
     'demand',   #demand table
+    'flowchart',#flowchart
     
     # Google OAuth
     'django.contrib.sites',

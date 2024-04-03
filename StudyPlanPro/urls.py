@@ -21,8 +21,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     
     # Added for OAuth
-    path('home/', include('home.urls')),
     path('accounts/', include('allauth.urls')),
     
-    path('demand/', include('demand.urls')),   
+    path('', include('home.urls')),
+    path('home/', include('home.urls')),
+    path('demand/', include('demand.urls')),
+    path('flowchart/', include('flowchart.urls')),   
 ]

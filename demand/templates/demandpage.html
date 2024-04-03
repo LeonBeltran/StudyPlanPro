@@ -21,7 +21,7 @@
             
             <div id="tabs_container">
                 <a href="/home/" class="tabs"><h1>Home</h1></a>
-                <button class="highlighted_tabs"><h1>Demand</h1></button>
+                <a href="/demand/" class="highlighted_tabs"><h1>Demand</h1></a>
                 <button class="tabs"><h1>Flowchart</h1></button>
                 
                 {% if user.is_authenticated %}
@@ -131,14 +131,15 @@
             <input class="loginInput" type="text" placeholder="Nickname">
             <input class="loginInput" type="text" placeholder="UP Email Address">
 
-        <div style="display: flex">
-            <button id="email_button" onclick="sendEmailPressed()">Send Email</button>
+            <div style="display: flex">
+                <button id="email_button" onclick="sendEmailPressed()">Send Email</button>
 
-            <!--Added for login-->
-            <a href="{% provider_login_url 'google' %}?next=/demand">
-                <img id="google_button" src="{% static 'images/google_logo.png' %}">
-            </a>
-            <!--Added for login-->
+                <!--Added for login-->
+                <a href="{% provider_login_url 'google' %}?next=/demand">
+                    <img id="google_button" src="{% static 'images/google_logo.png' %}">
+                </a>
+                <!--Added for login-->
+            </div>
         </div>
     </body>
 </html>
