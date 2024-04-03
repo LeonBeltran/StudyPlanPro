@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 
 <html>
+    {% if messages %}
+        {% for message in messages %}
+            {{ message }}
+        {% endfor %}
+    {% endif %}
+    
     <h1>Join Now!</h1>
 
     <form method="POST" action="{% url 'join' %}">
@@ -9,6 +15,6 @@
         <br><br>
         <input class="loginInput" type="email" name="email" placeholder="UP Email Address">
         <br><br>
-        <button >Sign Up</button>
+        <button>Sign Up</button>
     </form>
 </html>

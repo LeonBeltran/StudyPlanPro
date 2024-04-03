@@ -35,6 +35,12 @@
         <div>
             <img id="home_pic" src="{% static 'images/home_pic.png' %}">
 
+            {% if messages %}
+                {% for message in messages %}
+                    <p style="padding-top: 75px; padding-left: 80px;">{{ message }}</p>
+                {% endfor %}
+            {% endif %}
+
             <h2 style="padding-top: 100px; padding-left: 80px;">Need help managing your courses?</h2>
             <p style="padding-left: 80px;">Find your sem courses through personalized planning</p>
 
@@ -42,6 +48,7 @@
             <a href="logout/"><button class="gray_button" style="left: 80px; position: relative;">LOGOUT</button></a>
             {% else %}
             <button class="gray_button" style="left: 80px; position: relative;" onclick="loginPopup()">LOGIN</button>
+            <a href="join/"><button class="gray_button" style="left: 80px; position: relative;">SIGN UP</button></a>
             {% endif %}
 
             <h2 style="padding-left: 80px;">Or take a tour around our website</h2>
