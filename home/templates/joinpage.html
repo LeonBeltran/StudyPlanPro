@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+
+<html>
+    <h1>Join Now!</h1>
+
+    <form method="POST" action="{% url 'join' %}">
+    {% csrf_token %}
+        <input class="loginInput" type="text" name="name" placeholder="Nickname">
+        <br><br>
+        <input class="loginInput" type="email" name="email" placeholder="UP Email Address">
+        <br><br>
+        <button >Sign Up</button>
+    </form>
+</html>
