@@ -3,5 +3,5 @@ from . import views
 
 urlpatterns = [
     path('', views.view_flowchart),
-    path('othercourses', views.view_othercourses)
+    path('othercourses/', views.view_othercourses)
 ]
