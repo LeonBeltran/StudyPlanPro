@@ -23,6 +23,7 @@ urlpatterns = [
     # Added for OAuth
     path('accounts/', include('allauth.urls')),
     
+    path('', include('home.urls')),
     path('home/', include('home.urls')),
     path('demand/', include('demand.urls')),
     path('flowchart/', include('flowchart.urls')),   
