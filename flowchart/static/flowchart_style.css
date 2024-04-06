@@ -185,6 +185,12 @@ a {
     transform: translateY(2px);
 }
 
+.course_button:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: default;
+}
+
 .invisible_button {
     width: 100px;
     height: 40px;
@@ -257,6 +263,34 @@ a {
     cursor: pointer;
 }
 
+/* temporary stuff */
+.passed_elective_button {
+    width: 100px;
+    height: 40px;
+    border-radius: 8px;
+    border: none;
+    box-shadow: #000000 1px 1px 2px;
+    background-color: #a2ff93;
+    color: #000000;
+    font-size: 20px;
+    font-weight: normal;
+    cursor: pointer;
+    
+}
+
+.passed_dropdown {
+    width: 150px;
+    height: 30px;
+    background-color: #a2ff93;
+    border: solid;
+    border-width: thin;
+    border-top: none;
+    border-color: #000000;
+    font-weight: bold;
+    cursor: pointer;
+}
+/* ///////////// */
+
 
 /* FOR COURSE INFO POPUP */
 
@@ -287,7 +321,7 @@ a {
 
 /* FOR RECOMMS PAGE */
 
-li {
+.recom_list {
     color: #ffffff;
     font-size: 20px;
     font-weight: normal;
