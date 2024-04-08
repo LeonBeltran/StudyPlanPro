@@ -135,7 +135,7 @@ a {
 #fc_outer_box {
     background-color: #434343;
     width: 1200px;
-    height: 475px;
+    height: 480px;
     position: relative;
     bottom: 10px;
     display: flex;
@@ -152,7 +152,7 @@ a {
 #fc_inner_box {
     background-color: #818181;
     width: 1150px;
-    height: 360px;
+    height: 340px;
     position: relative;
     left: 25px;
     bottom: 30px;
@@ -325,6 +325,26 @@ a {
     color: #ffffff;
     font-size: 20px;
     font-weight: normal;
+}
+
+#feedback_popup {
+    visibility: hidden;
+    position: absolute;
+    top: 100px;
+    width: 800px;
+    height: 350px;
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    box-shadow: #000000 2px 2px 5px;
+    background: #474747;
+    background: linear-gradient(0deg, #474747 0%, #dcdcdc 100%);
+}
+
+#feedback_input {
+    width: 600px;
+    height: 100px;
 }
 
 

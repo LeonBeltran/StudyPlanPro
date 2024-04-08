@@ -295,6 +295,28 @@ function electiveButtonPressed(electiveButton) {
 
 
 
+function showFeedbackPopup() {
+    const feedbackPopup = document.getElementById("feedback_popup");
+    feedbackPopup.style.visibility = "visible";
+
+    const flowchartButton = document.getElementById("flowchart_button");
+    const feedbackLink = document.getElementById("feedback_link");
+    flowchartButton.style.pointerEvents = "none";
+    feedbackLink.style.pointerEvents = "none";
+}
+
+function exitFeedbackPopup() {
+    const feedbackPopup = document.getElementById("feedback_popup");
+    feedbackPopup.style.visibility = "hidden";
+
+    const flowchartButton = document.getElementById("flowchart_button");
+    const feedbackLink = document.getElementById("feedback_link");
+    flowchartButton.style.pointerEvents = "auto";
+    feedbackLink.style.pointerEvents = "auto";
+}
+
+
+
 //temporary function for course info
 function showinfo(courseName) {
     if (!isChecker) {
@@ -306,7 +328,7 @@ function showinfo(courseName) {
         if (courses[courseName]["passed"]) {
             for (nextSub of courses[courseName]["needed for"]) {
                 if (courses[nextSub]["passed"]) {
-                    alert("one or more prerequisites of this subject is already passed");
+                    alert("one or more subjects it is prerequisite for is/are already passed");
                     return;
                 }
             } 

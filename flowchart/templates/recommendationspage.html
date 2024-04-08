@@ -33,7 +33,7 @@
         </div>
 
         <div class="centered_div" style="padding-top: 100px; flex-direction: column; align-items: center;">
-            <div id="fc_outer_box" style="padding-left: 15px;">
+            <div id="fc_outer_box" style="padding-left: 15px; height: 500px;">
                 <div style="display: flex; justify-content: space-between;">
                     <div>
                         <h1 style="margin-block-end: 0px;">Recommendations</h1>
@@ -67,7 +67,28 @@
                 <p style="color: #ffffff; margin-block-start: 0px;">You also need to complete <span style="font-weight: bold;">X PE(s)</span> and <span style="font-weight: bold;">Y NSTP(s)</span> as of now.</p>
                 <p style="color: #ffffff;">Note that these suggestions are not the only courses you should consider taking and that some of these courses may be highly seasonal and thus wouldn't be available this upcoming semester. Thank you for using StudyPlanPro!</p>
             
-                <div class="centered_div"><a href="/flowchart/" class="course_button" style="width: 250px; text-align: center; padding-top: 10px;">Return to Flowchart</a></div>
+                <div class="centered_div">
+                    <a id="flowchart_button" href="/flowchart/" class="course_button" style="width: 250px; text-align: center; padding-top: 10px;">Return to Flowchart</a>
+                </div>
+                <div class="centered_div">
+                    <p id="feedback_link" onclick="showFeedbackPopup()" style="margin-block-start: 10px; color: #ffffff; opacity: 0.75; cursor: pointer;">Submit feedback</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="centered_div">
+            <div id="feedback_popup">
+                <img id="x_button" src="{% static 'images/x_button.png' %}" onclick="exitFeedbackPopup()">
+
+                <div class="centered_div">
+                    <img id="logo" src="{% static 'images/logo_black.png' %}" style="padding-left: 0px;">
+                    <h1 style="padding-left: 5px; color: #000000; font-weight: 500;">StudyPlanPro</h1>
+                </div>
+
+                <div class="centered_div"><p>Your feedback can help us improve. Tell us what you think!</p></div>
+
+                <div class="centered_div"><textarea id="feedback_input" type="text" placeholder="Feedback"></textarea></div>
+                <div class="centered_div"><input type="submit" value="Submit" class="course_button" style="position: relative; top: 20px;"></div>
             </div>
         </div>
 
