@@ -40,22 +40,9 @@
                     <ul id="list_header"><li class="demtable" style="background-color: #000000;"><p class="header_kid">Course</p><p class="header_kid">Demand</p></li></ul>
                     
                     <ul id="demtable_full">
-                        <li class="demtable"><p class="course_item" onclick="showinfo()">COURSE</p><p class="demand_item">99</p></li>
-                        <li class="demtable"><p class="course_item" onclick="showinfo()">COURSE</p><p class="demand_item">86</p></li>
-                        <li class="demtable"><p class="course_item" onclick="showinfo()">COURSE</p><p class="demand_item">86</p></li>
-                        <li class="demtable"><p class="course_item" onclick="showinfo()">COURSE</p><p class="demand_item">41</p></li>
-                        <li class="demtable"><p class="course_item" onclick="showinfo()">COURSEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE</p><p class="demand_item">30</p></li>
-                        <li class="demtable"><p class="course_item" onclick="showinfo()">COURSE</p><p class="demand_item">29</p></li>
-                        <li class="demtable"><p class="course_item" onclick="showinfo()">COURSE</p><p class="demand_item">20</p></li>
-                        <li class="demtable"><p class="course_item" onclick="showinfo()">COURSE</p><p class="demand_item">12</p></li>
-                        <li class="demtable"><p class="course_item" onclick="showinfo()">COURSE</p><p class="demand_item">12</p></li>
-                        <li class="demtable"><p class="course_item" onclick="showinfo()">COURSE</p><p class="demand_item">12</p></li>
-                        <li class="demtable"><p class="course_item" onclick="showinfo()">COURSE</p><p class="demand_item">2</p></li>
-                        <li class="demtable"><p class="course_item" onclick="showinfo()">COURSE</p><p class="demand_item">1</p></li>
-                        <li class="demtable"><p class="course_item" onclick="showinfo()">COURSE</p><p class="demand_item">1</p></li>
-                        <li class="demtable"><p class="course_item" onclick="showinfo()">COURSE</p><p class="demand_item">0</p></li>
-                        <li class="demtable"><p class="course_item" onclick="showinfo()">COURSE</p><p class="demand_item">0</p></li>
-                        <li class="demtable"><p class="course_item" onclick="showinfo()">COURSE</p><p class="demand_item">0</p></li>
+                    {% for course in all_courses %}
+                        <li class="demtable"><p class="course_item" onclick="showinfo()">{{ course.courseCode }}</p><p class="demand_item">{{ course.courseDemand }}</p></li>
+                    {% endfor %}
                     </ul>
 
                     <input id="search_input" type="text" placeholder="Search Course" onkeydown="demtableSearch(this)">
@@ -64,12 +51,12 @@
         </div>
 
         <div id="course_info">
-            <h1 style="color: #000000;">Course Name</h1>
+            <h1 style="color: #000000;">{{ course.courseCode }}</h1>
             <img id="x_button" src="{% static 'images/x_button.png' %}" onclick="exitinfo()">
             
             <div style="display: flex; justify-content: space-between; width: 950px;">
                 <div class="gray_box" style="width: 400px; height: 100px;">
-                    Random course description. Random course description. Random course description. Random course description. Random course description. Random course description. Random course description. Random course description. Random course description. Random course description.
+                    {{ course.courseDescription }}
                 </div>
                 <div class="gray_box" style="width: 200px; height: 100px;">
                     Corequisites:
