@@ -9,36 +9,39 @@
 
         {% if messages %}
             {% for message in messages %}
-                {{ message }}
+                <div>
+                    {{ message }}
+                </div>
             {% endfor %}
         {% endif %}
-
+        
         <link href="{% static 'home_style.css' %}" rel="stylesheet"/>
         <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
     </head>
     
     <body>
+        {% if form.errors %}
+        <div>
+            There was an Error, Please Try Again!
+        </div>
+        {% endif %}
         
         <div class="centered_div">
-            <img id="logo" src="{% static 'images/logo_black.png' %}" style="padding-left: 0px;">
+            <img class="img-fluid" id="logo" src="{% static 'images/logo_black.png' %}" style="padding-left: 0px;">
             <h1 style="padding-left: 5px; color: #000000; font-weight: 500;">StudyPlanPro</h1>
         </div>
 
         <div class="centered_div">
-                <form method="POST" action="{% url 'join' %}">
-                    {% csrf_token %}
-                    
-                    <div class="centered_div"><h1 style="color: #000000;">Join Now!</h1></div>
+            <form method="POST" action="{% url 'join' %}">
+                {% csrf_token %}
 
-                    <input class="loginInput" type="text" name="name" placeholder="Nickname" style="left: 0px;">
-                    <br><br>
-                    <input class="loginInput" type="email" name="email" placeholder="UP Email Address" style="left: 0px;">
-                    <br><br>
-                    <input class="loginInput" type="password" name="password" placeholder="Password" style="left: 0px;">
-                    <br><br>
+                <div class="centered_div"><h1 style="color: #000000;">Join Now!</h1></div>
 
-                    <div class="centered_div"><button class="gray_button">Sign Up</button></div>
-                </form>
+                {{ form.as_p }}
+
+                <br>
+                <div class="centered_div"><button class="gray_button">Sign Up</button></div>
+            </form>
         </div>
     </body>
 </html>
