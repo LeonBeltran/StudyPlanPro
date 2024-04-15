@@ -27,7 +27,7 @@
                 {% if user.is_authenticated %}
                 <a href="logout/" class="tabs"><h1>Logout</h1></a>
                 {% else %}
-                <button class="tabs" onclick="loginPopup()"><h1>Login</h1></button>
+                <a href="login/" class="tabs"><h1>Login</h1></a>
                 {% endif %}
             </div>
         </div>
@@ -47,7 +47,7 @@
             {% if user.is_authenticated %}
             <a href="logout/"><button class="gray_button" style="left: 80px; position: relative;">LOGOUT</button></a>
             {% else %}
-            <button class="gray_button" style="left: 80px; position: relative;" onclick="loginPopup()">LOGIN</button>
+            <a href="login/"><button class="gray_button" style="left: 80px; position: relative;">LOGIN</button></a>
             <a href="join/"><button class="gray_button" style="left: 90px; position: relative;">SIGN UP</button></a>
             {% endif %}
 
@@ -60,7 +60,8 @@
             </div>
         </div>
 
-        <div id="popup">
+        {% comment %} Testing out separate login page {% endcomment %}
+        {% comment %} <div id="popup">
 
             <img id="x_button" src="{% static 'images/x_button.png' %}" onclick="exitPopup()">
             <br>
@@ -84,14 +85,7 @@
 
             </div>
 
-        </div>
-
-        {% comment %} Probably will be removed (Show login status via login/logout buttons)
-        {% if user.is_authenticated %}
-        <p> You are signed in as {{user.email}} </p>
-        <a href="logout"> Logout </a>
-        {% endif %} 
-        {% endcomment %}
+        </div> {% endcomment %}
 
     </body>
 </html>
