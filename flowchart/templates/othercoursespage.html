@@ -40,14 +40,27 @@
                 <div style="width: 600px; display: flex; justify-content: space-around;">
                     <div class="othersub_container">
                         <h1 style="margin-block: 0px;">GEs</h1>
+
+                        <button class="course_button" id="dropdown" onclick="dropdownClick()">▼</button>
+                        <div id="dropdown_items">
+                            <button class="dropdown_button" onclick="electiveButtonPressed(this)">Arts 1</button>
+                            <button class="dropdown_button" onclick="electiveButtonPressed(this)">Eng 13</button>
+                            <button class="dropdown_button" onclick="electiveButtonPressed(this)">Eng 30</button>
+                            <button class="dropdown_button" onclick="electiveButtonPressed(this)">Fil 40</button>
+                            <button class="dropdown_button" onclick="electiveButtonPressed(this)">KAS 1</button>
+                            <button class="dropdown_button" onclick="electiveButtonPressed(this)">Philo 1</button>
+                            <button class="dropdown_button" onclick="electiveButtonPressed(this)">Soc Sci 1/2</button>
+                            <button class="dropdown_button" onclick="electiveButtonPressed(this)">Speech 30</button>
+                            <button class="dropdown_button" onclick="electiveButtonPressed(this)">STS 1/DRMAPS</button>
+                        </div>
                     </div>
 
                     <div class="othersub_container">
                         <h1 style="margin-block: 0px;">Electives</h1>
-                        <button class="course_button" style="width: 140px; height: 50px; margin-block: 5px;">CS Elective</button>
-                        <button class="course_button" style="width: 140px; height: 50px; margin-block: 5px;">Free Elective</button>
-                        <button class="course_button" style="width: 140px; height: 50px; margin-block: 5px;">GE Elective</button>
-                        <button class="course_button" style="width: 140px; height: 50px; margin-block: 5px;">ENGG 150</button>
+                        <button class="course_button" style="width: 140px; height: 50px; margin-block: 5px;" onclick="electiveButtonPressed(this)">CS Elective</button>
+                        <button class="course_button" style="width: 140px; height: 50px; margin-block: 5px;" onclick="electiveButtonPressed(this)">Free Elective</button>
+                        <button class="course_button" style="width: 140px; height: 50px; margin-block: 5px;" onclick="electiveButtonPressed(this)">GE Elective</button>
+                        <button class="course_button" style="width: 140px; height: 50px; margin-block: 5px;" onclick="electiveButtonPressed(this)">ENGG 150</button>
                     </div>
                 </div>
             </div>
@@ -59,24 +72,24 @@
                 <div style="width: 600px; display: flex; justify-content: space-around;">
                     <div class="othersub_container">
                         <h1 style="margin-block: 0px;">PEs</h1>
-                        <button class="course_button" style="width: 140px; height: 50px; margin-block: 5px;">PE 1</button>
-                        <button class="course_button" style="width: 140px; height: 50px; margin-block: 5px;">PE 2</button>
-                        <button class="course_button" style="width: 140px; height: 50px; margin-block: 5px;">PE 3</button>
-                        <button class="course_button" style="width: 140px; height: 50px; margin-block: 5px;">PE 4</button>
+                        <button class="course_button" style="width: 140px; height: 50px; margin-block: 5px;" onclick="electiveButtonPressed(this)">PE 1</button>
+                        <button class="course_button" style="width: 140px; height: 50px; margin-block: 5px;" onclick="electiveButtonPressed(this)">PE 2</button>
+                        <button class="course_button" style="width: 140px; height: 50px; margin-block: 5px;" onclick="electiveButtonPressed(this)">PE 3</button>
+                        <button class="course_button" style="width: 140px; height: 50px; margin-block: 5px;" onclick="electiveButtonPressed(this)">PE 4</button>
                     </div>
 
                     <div class="othersub_container">
                         <h1 style="margin-block: 0px;">NSTP</h1>
-                        <button class="course_button" style="width: 140px; height: 50px; margin-block: 5px;">NSTP 1</button>
-                        <button class="course_button" style="width: 140px; height: 50px; margin-block: 5px;">NSTP 2</button>
+                        <button class="course_button" style="width: 140px; height: 50px; margin-block: 5px;" onclick="electiveButtonPressed(this)">NSTP 1</button>
+                        <button class="course_button" style="width: 140px; height: 50px; margin-block: 5px;" onclick="electiveButtonPressed(this)">NSTP 2</button>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="centered_div" style="width: 1250px; position: relative; top: 120px; left: 50px; justify-content:space-between;">
-            <button class="gray_button">Back</button>
-            <button class="gray_button">Proceed</button>
+            <button class="gray_button" onclick="history.back()" style="height: 50px;">Back</button>
+            <a href="/flowchart/recommendations/" class="gray_button" style="padding-top: 10px;">Proceed</a>
         </div>
 
         <div id="popup">

@@ -6,3 +6,6 @@ def view_flowchart(request):
 
 def view_othercourses(request):
      return render(request, 'othercoursespage.html')
+
+def view_recommendations(request):
+     return render(request, 'recommendationspage.html')

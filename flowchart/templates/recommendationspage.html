@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>StudyPlanPro - Recommendations</title>
+
+        {% load static %}
+        {% load socialaccount %} <!-- Added for oauth -->
+
+        <link href="{% static 'flowchart_style.css' %}" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
+        <script src="{% static 'flowchart_index.js' %}"></script>
+    </head>
+
+    <body>
+        <div class="header">
+            <img id="logo" src="{% static 'images/logo.png' %}">
+            <h1 style="padding-left: 5px;">StudyPlanPro</h1>
+            
+            <div id="tabs_container">
+                <a href="/home/" class="tabs"><h1>Home</h1></a>
+                <a href="/demand/" class="tabs"><h1>Demand</h1></a>
+                <button class="highlighted_tabs"><h1>Flowchart</h1></button>
+                
+                {% if user.is_authenticated %}
+                <a href="/home/logout/" class="tabs"><h1>Logout</h1></a>
+                {% else %}
+                <button class="tabs" onclick="loginPopup()"><h1>Login</h1></button>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="centered_div" style="padding-top: 100px; flex-direction: column; align-items: center;">
+            <div id="fc_outer_box" style="padding-left: 15px; height: 500px;">
+                <div style="display: flex; justify-content: space-between;">
+                    <div>
+                        <h1 style="margin-block-end: 0px;">Recommendations</h1>
+                        
+                        <p style="color: #ffffff; margin-block-end: 0px;">Here are some courses we recommend you take based on the courses you have completed:</p>
+                        <div style="display: flex;">
+                            <ul>
+                                <li class="recom_list">Course 1</li>
+                                <li class="recom_list">Course 2</li>
+                                <li class="recom_list">Course 3</li>
+                                <li class="recom_list">Course 4</li>
+                                <li class="recom_list">Course 5</li>
+                            </ul>
+                            <ul>
+                                <li class="recom_list">Course 6</li>
+                                <li class="recom_list">Course 7</li>
+                                <li class="recom_list">Course 8</li>
+                                <li class="recom_list">Course 9</li>
+                                <li class="recom_list">Course 10</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div style="padding-left: 15px; padding-right: 15px; position: relative; top: 15px;">
+                        <p style="color: #ffffff; font-weight: bold; font-size: 18px;">[Nickname]</p>
+                        <p style="color: #ffffff; font-size: 18px;">Standing: standing</p>
+                        <p style="color: #ffffff; font-size: 18px;">Units completed: XYZ of ABC</p>
+                    </div>
+                </div>
+
+                <p style="color: #ffffff; margin-block-start: 0px;">You also need to complete <span style="font-weight: bold;">X PE(s)</span> and <span style="font-weight: bold;">Y NSTP(s)</span> as of now.</p>
+                <p style="color: #ffffff;">Note that these suggestions are not the only courses you should consider taking and that some of these courses may be highly seasonal and thus wouldn't be available this upcoming semester. Thank you for using StudyPlanPro!</p>
+            
+                <div class="centered_div">
+                    <a id="flowchart_button" href="/flowchart/" class="course_button" style="width: 250px; text-align: center; padding-top: 10px;">Return to Flowchart</a>
+                </div>
+                <div class="centered_div">
+                    <p id="feedback_link" onclick="showFeedbackPopup()" style="margin-block-start: 10px; color: #ffffff; opacity: 0.75; cursor: pointer;">Submit feedback</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="centered_div">
+            <div id="feedback_popup">
+                <img id="x_button" src="{% static 'images/x_button.png' %}" onclick="exitFeedbackPopup()">
+
+                <div class="centered_div">
+                    <img id="logo" src="{% static 'images/logo_black.png' %}" style="padding-left: 0px;">
+                    <h1 style="padding-left: 5px; color: #000000; font-weight: 500;">StudyPlanPro</h1>
+                </div>
+
+                <div class="centered_div"><p>Your feedback can help us improve. Tell us what you think!</p></div>
+
+                <div class="centered_div"><textarea id="feedback_input" type="text" placeholder="Feedback"></textarea></div>
+                <div class="centered_div"><input type="submit" value="Submit" class="course_button" style="position: relative; top: 20px;"></div>
+            </div>
+        </div>
+
+        <div id="popup">
+            <img id="x_button" src="{% static 'images/x_button.png' %}" onclick="exitPopup()">
+            <br>
+
+            <div style="display: flex">
+                <img id="logo" src="{% static 'images/logo_black.png' %}">
+                <h1 style="padding-left: 5px; color: #000000; font-weight: 500;">StudyPlanPro</h1>
+            </div>
+
+            <input class="loginInput" type="text" placeholder="Nickname">
+            <input class="loginInput" type="text" placeholder="UP Email Address">
+
+            <div style="display: flex">
+                <button id="email_button" onclick="sendEmailPressed()">Send Email</button>
+
+                <!--Added for login-->
+                <a href="{% provider_login_url 'google' %}?next=/flowchart">
+                    <img id="google_button" src="{% static 'images/google_logo.png' %}">
+                </a>
+                <!--Added for login-->
+            </div>
+
+        </div>
+    </body>
+</html>
