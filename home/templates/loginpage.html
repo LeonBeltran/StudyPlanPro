@@ -10,7 +10,9 @@
 
         {% if messages %}
             {% for message in messages %}
-                {{ message }}
+                <div>
+                    {{ message }}
+                </div>
             {% endfor %}
         {% endif %}
 
@@ -21,15 +23,18 @@
     <body>
         
         <div class="centered_div">
-            <img id="logo" src="{% static 'images/logo_black.png' %}" style="padding-left: 0px;">
+            <img class="img-gluid" id="logo" src="{% static 'images/logo_black.png' %}" style="padding-left: 0px;">
             <h1 style="padding-left: 5px; color: #000000; font-weight: 500;">StudyPlanPro</h1>
         </div>
+        <br>
+
+        <div class="centered_div"><h1 style="color: #000000;">Login</h1></div>
+        <br>
 
         <div class="centered_div">
             <form method="POST" action="{% url 'login' %}">
                 {% csrf_token %}
 
-                <div class="centered_div"><h1 style="color: #000000;">Login</h1></div>
 
                 <input class="loginInput" type="text" name="username" placeholder="Username" style="left: 0px;">
                 <br><br>

@@ -59,33 +59,5 @@
                 <a href="/demand/" class="gray_button" style="left: 90px; position: relative; padding-top: 10px;">DEMAND TABLE</a>
             </div>
         </div>
-
-        {% comment %} Testing out separate login page {% endcomment %}
-        {% comment %} <div id="popup">
-
-            <img id="x_button" src="{% static 'images/x_button.png' %}" onclick="exitPopup()">
-            <br>
-
-            <div style="display: flex">
-                <img id="logo" src="{% static 'images/logo_black.png' %}">
-                <h1 style="padding-left: 5px; color: #000000; font-weight: 500;">StudyPlanPro</h1>
-            </div>
-
-            <input class="loginInput" type="text" name="name" placeholder="Nickname">
-            <input class="loginInput" type="email" name="email" placeholder="UP Email Address">
-
-            <div style="display: flex">
-                <button id="email_button" onclick="sendEmailPressed()">Login Here</button>
-
-                <!--Added for login-->
-                <a href="{% provider_login_url 'google' %}?next=/home">
-                    <img id="google_button" src="{% static 'images/google_logo.png' %}">
-                </a>
-                <!--Added for login-->
-
-            </div>
-
-        </div> {% endcomment %}
-
     </body>
 </html>
