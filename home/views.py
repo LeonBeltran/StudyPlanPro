@@ -27,7 +27,7 @@ def view_login(request):
                messages.success(request, 'Logged in as ' + username)
                return redirect('/home/')
           else:
-               messages.success(request, ('There was an Error, Please Try Again!'))
+               messages.success(request, ('Invalid Credentials, Please Try Again!'))
                return redirect('/home/login')
      else:
           return render(request, 'loginpage.html')
