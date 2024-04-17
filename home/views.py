@@ -53,24 +53,12 @@ def view_join(request):
                     return redirect('/home/')
                else:
                     messages.success(request, "Please use an email address from UP.")
-                    return redirect('/home/join')
+                    return render(request, 'joinpage.html', {
+                         'form': form,
+                    })
      else:
           form = JoinForm()
 
      return render(request, 'joinpage.html', {
           'form': form,
      })
-     
-# Old registration view
-# def view_join(request):
-#      if request.method == "POST":
-#           form = StudentForm(request.POST or None)
-#           if form.is_valid():
-#                form.save()
-#                messages.success(request, ('Successfully made account!'))
-#                return redirect('/home/')
-#           else:
-#                messages.success(request, ('Error found, please try again'))
-#                return redirect('/home/join')
-#      else:
-#           return render(request, 'joinpage.html')
