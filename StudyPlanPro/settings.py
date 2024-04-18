@@ -60,11 +60,11 @@ INSTALLED_APPS = [
 # Can add more social accounts as needed e.g. FB, Insta etc.
 SOCIALACCOUNT_PROVIDERS = {
     "google": {
-        "APP": {
-            "client_id": "67634356670-8npqgd8u6qp4da6444fj9ng3bo6rq0ks.apps.googleusercontent.com",
-            "secret": "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",
-            "key": ""
-        },
+        # "APP": {
+        #     "client_id": "67634356670-8npqgd8u6qp4da6444fj9ng3bo6rq0ks.apps.googleusercontent.com",
+        #     "secret": "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",
+        #     "key": ""
+        # },
         "SCOPE" : [
             "profile",
             "email"
