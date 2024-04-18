@@ -41,6 +41,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     
+    # For search tool
+    'django_filters',
+
     ###--- Add own apps here ---###
     'home',     #homepage
     'demand',   #demand table
@@ -52,7 +55,6 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google'
-    ###--- Add own apps here ---###
 ]
 
 # Can add more social accounts as needed e.g. FB, Insta etc.

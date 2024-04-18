@@ -40,27 +40,40 @@
                     <ul id="list_header"><li class="demtable" style="background-color: #000000;"><p class="header_kid">Course</p><p class="header_kid">Demand</p></li></ul>
                     
                     <ul id="demtable_full">
-                    {% for course in all_courses %}
-                        <li class="demtable"><p class="course_item" onclick="showinfo()">{{ course.courseCode }}</p><p class="demand_item">{{ course.courseDemand }}</p></li>
+                    {% for course in course_list %}
+                        <li class="demtable"><p id ="courses" class="course_item" onclick="showinfo('{{ course.courseCode }}', 
+                                                                                      '{{ course.courseTitle}}',
+                                                                                      '{{ course.shortDescription }}',
+                                                                                      '{{ course.coursePrereq }}',
+                                                                                      '{{ course.courseCoreq }}',
+                                                                                      '{{ course.nominalCourseDifficultyReview }}',
+                                                                                      '{{ course.courseDemand }}')">
+                            {{ course.courseCode }}
+                        </p><p class="demand_item">
+                            {{ course.courseDemand }}
+                        </p></li>
                     {% endfor %}
                     </ul>
 
-                    <input id="search_input" type="text" placeholder="Search Course" onkeydown="demtableSearch(this)">
+                    <form method="get">
+                        {{ searched_course.form }}
+                        <button class="btn btn-primary" type="submit">Search</button>
+                    </form> 
                 </div>
             </div>
         </div>
 
         <div id="course_info">
-            <h1 style="color: #000000;">course code</h1>
+            <h1 style="color: #000000;" id="course_info_code">{{ currCourse.courseCode }}</h1>
             <img id="x_button" src="{% static 'images/x_button.png' %}" onclick="exitinfo()">
             
             <div style="display: flex; justify-content: space-between; width: 950px;">
-                <div class="gray_box" style="width: 400px; height: 100px;">
-                    course desc
+                <div class="gray_box" style="width: 400px; height: 100px;" id="course_info_description">
+                    {{ currCourse.shortDescription }}
                 </div>
                 <div class="gray_box" style="width: 200px; height: 100px;">
                     Corequisites:
-                    <ul>
+                    <ul id="course_info_coreq">
                         <li>Course 1</li>
                         <li>Course 2</li>
                         <li>Course 3</li>
