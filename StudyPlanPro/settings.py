@@ -58,6 +58,11 @@ INSTALLED_APPS = [
 # Can add more social accounts as needed e.g. FB, Insta etc.
 SOCIALACCOUNT_PROVIDERS = {
     "google": {
+        "APP": {
+            "client_id": "67634356670-8npqgd8u6qp4da6444fj9ng3bo6rq0ks.apps.googleusercontent.com",
+            "secret": "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",
+            "key": ""
+        },
         "SCOPE" : [
             "profile",
             "email"
@@ -157,10 +162,6 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
     'allauth.account.auth_backends.AuthenticationBackend',
 )
-
-# LOGIN_REDIRECT_URL = "loggedin/" # Redirect to users view after log in 
-# LOGIN_URL = "/users/login/" # Where user will be redirect in login
-# LOGOUT_REDIRECT_URL = "loggedout/"
 
 # Redirect URLs after Login/out
 LOGIN_REDIRECT_URL = "home/"

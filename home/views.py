@@ -12,15 +12,22 @@ def view_home(request):
 
 def view_login(request):
      if request.method == "POST":
+          email = request.POST["email"]
           username = request.POST["username"]
           password = request.POST["password"]
-          user = authenticate(request, username=username, password=password)
+          
+          if "@up.edu.ph" in email:
+               user = authenticate(request, username=username, email=email, password=password)
+          else:
+               messages.success(request, 'Please use an email address from UP.')
+               return redirect('/home/login')
+               
           if user is not None:
                login(request, user)
                messages.success(request, 'Logged in as ' + username)
                return redirect('/home/')
           else:
-               messages.success(request, ('There was an Error, Please Try Again!'))
+               messages.success(request, ('Invalid Credentials, Please Try Again!'))
                return redirect('/home/login')
      else:
           return render(request, 'loginpage.html')
@@ -34,30 +41,24 @@ def view_join(request):
      if request.method == "POST":
           form = JoinForm(request.POST)
           if form.is_valid():
-               form.save()
                username = form.cleaned_data['username']
                password = form.cleaned_data['password1']
-               user = authenticate(request, username=username, password=password)
-               login(request, user)
-               messages.success(request, "Welcome " + username + "!")
-               return redirect('/home/')
+               email = form.cleaned_data['email']
+               
+               if "@up.edu.ph" in email:
+                    form.save()
+                    user = authenticate(request, username=username, password=password)
+                    login(request, user)
+                    messages.success(request, "Welcome " + username + "!")
+                    return redirect('/home/')
+               else:
+                    messages.success(request, "Please use an email address from UP.")
+                    return render(request, 'joinpage.html', {
+                         'form': form,
+                    })
      else:
           form = JoinForm()
 
      return render(request, 'joinpage.html', {
           'form': form,
      })
-     
-# Old registration view
-# def view_join(request):
-#      if request.method == "POST":
-#           form = StudentForm(request.POST or None)
-#           if form.is_valid():
-#                form.save()
-#                messages.success(request, ('Successfully made account!'))
-#                return redirect('/home/')
-#           else:
-#                messages.success(request, ('Error found, please try again'))
-#                return redirect('/home/join')
-#      else:
-#           return render(request, 'joinpage.html')

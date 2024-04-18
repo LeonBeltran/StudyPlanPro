@@ -37,7 +37,10 @@
 
             {% if messages %}
                 {% for message in messages %}
-                    <p style="padding-top: 75px; padding-left: 80px;">{{ message }}</p>
+                    <div class="alert" style="padding-top: 75px; padding-left: 80px;">
+                        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                        {{ message }}
+                    </div>
                 {% endfor %}
             {% endif %}
 
