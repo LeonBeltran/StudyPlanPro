@@ -38,10 +38,24 @@ class TestViewsLogin(TestCase):
     #     self.assertEqual(response.status_code, 200)
     #     self.assertTemplateUsed(response, 'loginpage.html')
     
-    def test_login_POST(self):
+    def test_login_POST_fail_email(self):
         response = self.client.post(reverse('login'), data={'email':'xxx@xxx.xxx', 
                                                        'username':'xxx', 
                                                        'password':'xxx'})
+        print('login_email ' + str(response.status_code))
+        self.assertEqual(response.status_code, 302)
+        
+    def test_login_POST_fail_credentials(self):
+        response = self.client.post(reverse('login'), data={'email':'xxx@up.edu.ph', 
+                                                       'username':'xxx', 
+                                                       'password':'xxx'})
+        print('login_POST ' + str(response.status_code))
+        self.assertEqual(response.status_code, 302)
+    
+    def test_login_POST_success(self):
+        response = self.client.post(reverse('login'), data={'email':'bob@up.edu.ph', 
+                                                       'username':'Bob', 
+                                                       'password':'djangopassword'})
         print('login_POST ' + str(response.status_code))
         self.assertEqual(response.status_code, 302)
 
