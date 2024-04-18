@@ -6,19 +6,19 @@ class TestUrls(SimpleTestCase):
     def test_home(self):
         url = reverse('home')
         print(resolve(url))
-        self.assertEquals(resolve(url).func, view_home)
+        self.assertEqual(resolve(url).func, view_home)
         
     def test_join(self):
         url = reverse('join')
         print(resolve(url))
-        self.assertEquals(resolve(url).func, view_join)
+        self.assertEqual(resolve(url).func, view_join)
         
     def test_login(self):
         url = reverse('login')
         print(resolve(url))
-        self.assertEquals(resolve(url).func, view_login)
+        self.assertEqual(resolve(url).func, view_login)
     
     def test_logout(self):
         url = reverse('logout')
         print(resolve(url))
-        self.assertEquals(resolve(url).func, view_logout)
+        self.assertEqual(resolve(url).func, view_logout)

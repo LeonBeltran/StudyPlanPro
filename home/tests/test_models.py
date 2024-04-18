@@ -10,16 +10,16 @@ class TestCourse(TestCase):
         )
     
     def test_reference(self):
-        self.assertEquals(str(self.course), 'Test 101')
+        self.assertEqual(str(self.course), 'Test 101')
         
     def test_setup(self):
-        self.assertEquals(self.course.courseCode, 'Test 101')
-        self.assertEquals(self.course.courseTitle, 'Test Title')
-        self.assertEquals(self.course.shortDescription, 'Test Description')
+        self.assertEqual(self.course.courseCode, 'Test 101')
+        self.assertEqual(self.course.courseTitle, 'Test Title')
+        self.assertEqual(self.course.shortDescription, 'Test Description')
     
     def test_defaults(self):
-        self.assertEquals(self.course.nominalCourseDifficultyReview, 3)
-        self.assertEquals(self.course.courseDemand, 0)
+        self.assertEqual(self.course.nominalCourseDifficultyReview, 3)
+        self.assertEqual(self.course.courseDemand, 0)
         
 class TestStudent(TestCase):
     def setUp(self):
@@ -29,11 +29,11 @@ class TestStudent(TestCase):
         )
     
     def test_reference(self):
-        self.assertEquals(str(self.student), 'bob@up.edu.ph')
+        self.assertEqual(str(self.student), 'bob@up.edu.ph')
         
     def test_setup(self):
-        self.assertEquals(self.student.name, 'Bob')
-        self.assertEquals(self.student.email, 'bob@up.edu.ph')
+        self.assertEqual(self.student.name, 'Bob')
+        self.assertEqual(self.student.email, 'bob@up.edu.ph')
         
 class TestCourseReview(TestCase):  
     def setUp(self):
@@ -48,5 +48,5 @@ class TestCourseReview(TestCase):
         )
     
     def test_setup(self):
-        self.assertEquals(self.courseReview.course, self.course)
-        self.assertEquals(self.courseReview.courseReview, 'Test Review')
+        self.assertEqual(self.courseReview.course, self.course)
+        self.assertEqual(self.courseReview.courseReview, 'Test Review')

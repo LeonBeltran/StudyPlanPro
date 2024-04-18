@@ -6,14 +6,14 @@ class TestUrls(SimpleTestCase):
     def test_flowchart(self):
         url = reverse('flowchart')
         print(resolve(url))
-        self.assertEquals(resolve(url).func, view_flowchart)
+        self.assertEqual(resolve(url).func, view_flowchart)
         
     def test_othercourses(self):
         url = reverse('othercourses')
         print(resolve(url))
-        self.assertEquals(resolve(url).func, view_othercourses)
+        self.assertEqual(resolve(url).func, view_othercourses)
         
     def test_recommendations(self):
         url = reverse('recommendations')
         print(resolve(url))
-        self.assertEquals(resolve(url).func, view_recommendations)
+        self.assertEqual(resolve(url).func, view_recommendations)
