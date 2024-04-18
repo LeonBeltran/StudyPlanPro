@@ -10,7 +10,8 @@
 
         {% if messages %}
             {% for message in messages %}
-                <div>
+                <div class="alert">
+                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
                     {{ message }}
                 </div>
             {% endfor %}
@@ -37,6 +38,8 @@
 
 
                 <input class="loginInput" type="text" name="username" placeholder="Username" style="left: 0px;">
+                <br><br>
+                <input class="loginInput" type="email" name="email" placeholder="Email Address" style="left: 0px;">
                 <br><br>
                 <input class="loginInput" type="password" name="password" placeholder="Password" style="left: 0px;">
                 <br><br>
