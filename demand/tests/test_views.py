@@ -6,9 +6,9 @@ class TestViewsDemand(TestCase):
     def setUp(self):
         self.client = Client()
     
-    def test_home_GET(self):
+    def test_demand_GET(self):
         response = self.client.get(reverse('demand'))
-        print('demande_GET ' + str(response.status_code))
+        print('demand_GET ' + str(response.status_code))
         
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'demandpage.html')
