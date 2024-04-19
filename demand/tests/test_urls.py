@@ -3,7 +3,7 @@ from django.urls import reverse, resolve
 from demand.views import view_demand
 
 class TestUrls(SimpleTestCase):
-    def test_flowchart(self):
+    def test_demand(self):
         url = reverse('demand')
         print(resolve(url))
-        self.assertEquals(resolve(url).func, view_demand)
+        self.assertEqual(resolve(url).func, view_demand)

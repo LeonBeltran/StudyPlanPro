@@ -40,8 +40,11 @@ function sendEmailPressed() {
 
 //DEMAND TABLE
 
-function showinfo() {
+function showinfo(courseCode, courseTitle, shortDescription, coursePreqreq, courseCoreq, nominalCourseDifficultyReview, courseDemand) {
     const courseInfo = document.getElementById("course_info");
+    document.getElementById("course_info_code").textContent = `${courseCode} ${courseTitle}`;
+    document.getElementById("course_info_description").textContent = shortDescription;
+    document.getElementById("course_info_coreq").textContent = courseCoreq;
     courseInfo.style.visibility = "visible";
 }
 
