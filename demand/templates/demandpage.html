@@ -24,11 +24,11 @@
                 <a href="/demand/" class="highlighted_tabs"><h1>Demand</h1></a>
                 <a href="/flowchart/" class="tabs"><h1>Flowchart</h1></a>
                 
-                {% if user.is_authenticated %}
-                <a href="/home/logout/" class="tabs"><h1>Logout</h1></a>
+                <!-- {% if user.is_authenticated %}
+                <a href="logout/" class="tabs"><h1>Logout</h1></a>
                 {% else %}
-                <button class="tabs" onclick="loginPopup()"><h1>Login</h1></button>
-                {% endif %}
+                <a href="login/" class="tabs"><h1>Login</h1></a>
+                {% endif %} -->
             </div>
         </div>
 
@@ -119,6 +119,7 @@
             </div>
         </div>
 
+        <!--
         <div id="popup">
             <img id="x_button" src="{% static 'images/x_button.png' %}" onclick="exitPopup()">
             <br>
@@ -134,12 +135,11 @@
             <div style="display: flex">
                 <button id="email_button" onclick="sendEmailPressed()">Send Email</button>
 
-                <!--Added for login-->
                 <a href="{% provider_login_url 'google' %}?next=/demand">
                     <img id="google_button" src="{% static 'images/google_logo.png' %}">
                 </a>
-                <!--Added for login-->
             </div>
         </div>
+    -->
     </body>
 </html>
