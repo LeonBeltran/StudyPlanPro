@@ -45,9 +45,10 @@ INSTALLED_APPS = [
     'django_filters',
 
     ###--- Add own apps here ---###
-    'home',     #homepage
-    'demand',   #demand table
-    'flowchart',#flowchart
+    'home',         #homepage
+    'demand',       #demand table
+    'flowchart',    #flowchart of cs
+    'flowchart2',   #flowchart of comeng
     
     # Google OAuth
     'django.contrib.sites',

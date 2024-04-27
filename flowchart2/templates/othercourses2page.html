@@ -3,15 +3,15 @@
 <html>
 
     <head>
-        <title>StudyPlanPro - BS Computer Science Flowchart (other courses)</title>
+        <title>StudyPlanPro - BS Computer Engineering Flowchart (other courses)</title>
 
         {% load static %}
         {% load socialaccount %} <!-- Added for oauth -->
 
-        <link href="{% static 'flowchart_style.css' %}" rel="stylesheet"/>
+        <link href="{% static 'flowchart2_style.css' %}" rel="stylesheet"/>
         <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
 
-        <script src="{% static 'flowchart_index.js' %}"></script>
+        <script src="{% static 'flowchart2_index.js' %}"></script>
     </head>
 
     <body>
@@ -44,8 +44,6 @@
                         <button class="course_button" id="dropdown" onclick="dropdownClick()">▼</button>
                         <div id="dropdown_items">
                             <button class="dropdown_button" onclick="electiveButtonPressed(this)">Arts 1</button>
-                            <button class="dropdown_button" onclick="electiveButtonPressed(this)">Eng 13</button>
-                            <button class="dropdown_button" onclick="electiveButtonPressed(this)">Eng 30</button>
                             <button class="dropdown_button" onclick="electiveButtonPressed(this)">Fil 40</button>
                             <button class="dropdown_button" onclick="electiveButtonPressed(this)">KAS 1</button>
                             <button class="dropdown_button" onclick="electiveButtonPressed(this)">Philo 1</button>
@@ -57,10 +55,11 @@
 
                     <div class="othersub_container">
                         <h1 style="margin-block: 0px;">Electives</h1>
-                        <button class="course_button" style="width: 140px; height: 50px; margin-block: 5px;" onclick="electiveButtonPressed(this)">CS Elective</button>
-                        <button class="course_button" style="width: 140px; height: 50px; margin-block: 5px;" onclick="electiveButtonPressed(this)">Free Elective</button>
-                        <button class="course_button" style="width: 140px; height: 50px; margin-block: 5px;" onclick="electiveButtonPressed(this)">GE Elective</button>
-                        <button class="course_button" style="width: 140px; height: 50px; margin-block: 5px;" onclick="electiveButtonPressed(this)">ENGG 150</button>
+                        <button class="course_button" style="width: 140px; height: 40px; margin-block: 5px;" onclick="electiveButtonPressed(this)">EEE Elective</button>
+                        <button class="course_button" style="width: 140px; height: 40px; margin-block: 5px;" onclick="electiveButtonPressed(this)">Engg Elective</button>
+                        <button class="course_button" style="width: 140px; height: 40px; margin-block: 5px;" onclick="electiveButtonPressed(this)">GE Elective 1</button>
+                        <button class="course_button" style="width: 140px; height: 40px; margin-block: 5px;" onclick="electiveButtonPressed(this)">GE Elective 2</button>
+                        <button class="course_button" style="width: 140px; height: 40px; margin-block: 5px;" onclick="electiveButtonPressed(this)">Free Elective</button>
                     </div>
                 </div>
             </div>
@@ -89,7 +88,7 @@
 
         <div class="centered_div" style="width: 1250px; position: relative; top: 120px; left: 50px; justify-content:space-between;">
             <button class="gray_button" onclick="history.back()" style="height: 50px;">Back</button>
-            <a href="/flowchart/cs/recommendations/" class="gray_button" style="padding-top: 10px;">Proceed</a>
+            <a href="/flowchart/comeng/recommendations/" class="gray_button" style="padding-top: 10px;">Proceed</a>
         </div>
 
         <div id="popup">

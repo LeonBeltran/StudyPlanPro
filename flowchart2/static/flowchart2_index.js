@@ -36,16 +36,184 @@ function dropdownClick() {
 // course flowchart
 var isChecker = false;
 var courses = {
-    "cs 11": {
+    "eee 111": {
         "prereqs": 0,
-        "needed for": ["cs 12"],
-        "button": document.getElementById("cs 11"),
+        "needed for": ["eee 121", "coe 161"],
+        "button": document.getElementById("eee 111"),
         "passed": false
     },
-    "cs 30": {
+    "eee 113": {
         "prereqs": 0,
-        "needed for": ["cs 31", "cs 133"],
-        "button": document.getElementById("cs 30"),
+        "needed for": [],
+        "button": document.getElementById("eee 113"),
+        "passed": false
+    },
+    "eee 118": {
+        "prereqs": 0,
+        "needed for": ["eee 128"],
+        "button": document.getElementById("eee 118"),
+        "passed": false
+    },
+    "eee 121": {
+        "prereqs": 1,
+        "needed for": ["coe 163", "coe 167"],
+        "button": document.getElementById("eee 121"),
+        "passed": false
+    },
+    "eee 123": {
+        "prereqs": 0,
+        "needed for": ["eee 131", "eee 133", "eee 155"],
+        "button": document.getElementById("eee 123"),
+        "passed": false
+    },
+    "eee 128": {
+        "prereqs": 1,
+        "needed for": ["eee 138", "eee 148", "eee 158"],
+        "button": document.getElementById("eee 128"),
+        "passed": false
+    },
+    "eee 131": {
+        "prereqs": 2,
+        "needed for": ["eee 141"],
+        "button": document.getElementById("eee 131"),
+        "passed": false
+    },
+    "eee 133": {
+        "prereqs": 1,
+        "needed for": [],
+        "button": document.getElementById("eee 133"),
+        "passed": false
+    },
+    "eee 135": {
+        "prereqs": 1,
+        "needed for": [],
+        "button": document.getElementById("eee 135"),
+        "passed": false
+    },
+    "eee 137": {
+        "prereqs": 1,
+        "needed for": ["coe 161"],
+        "button": document.getElementById("eee 137"),
+        "passed": false
+    },
+    "eee 138": {
+        "prereqs": 1,
+        "needed for": [],
+        "button": document.getElementById("eee 138"),
+        "passed": false
+    },
+    "eee 141": {
+        "prereqs": 1,
+        "needed for": [],
+        "button": document.getElementById("eee 141"),
+        "passed": false
+    },
+    "eee 143": {
+        "prereqs": 0,
+        "needed for": ["eee 153"],
+        "button": document.getElementById("eee 143"),
+        "passed": false
+    },
+    "eee 145": {
+        "prereqs": 1,
+        "needed for": [],
+        "button": document.getElementById("eee 145"),
+        "passed": false
+    },
+    "eee 147": {
+        "prereqs": 1,
+        "needed for": ["eee 151", "eee 157", "eee 158"],
+        "button": document.getElementById("eee 147"),
+        "passed": false
+    },
+    "eee 148": {
+        "prereqs": 1,
+        "needed for": [],
+        "button": document.getElementById("eee 148"),
+        "passed": false
+    },
+    "eee 151": {
+        "prereqs": 2,
+        "needed for": [],
+        "button": document.getElementById("eee 151"),
+        "passed": false
+    },
+    "eee 153": {
+        "prereqs": 1,
+        "needed for": ["coe 163", "coe 165"],
+        "button": document.getElementById("eee 153"),
+        "passed": false
+    },
+    "eee 155": {
+        "prereqs": 1,
+        "needed for": [],
+        "button": document.getElementById("eee 155"),
+        "passed": false
+    },
+    "eee 157": {
+        "prereqs": 1,
+        "needed for": ["coe 167"],
+        "button": document.getElementById("eee 157"),
+        "passed": false
+    },
+    "eee 158": {
+        "prereqs": 2,
+        "needed for": ["eee 192"],
+        "button": document.getElementById("eee 158"),
+        "passed": false
+    },
+    "eee 192": {
+        "prereqs": 1,
+        "needed for": ["eee 196"],
+        "button": document.getElementById("eee 192"),
+        "passed": false
+    },
+    "eee 196": {
+        "prereqs": 1,
+        "needed for": ["coe 199"],
+        "button": document.getElementById("eee 196"),
+        "passed": false
+    },
+    "coe 161": {
+        "prereqs": 2,
+        "needed for": [],
+        "button": document.getElementById("coe 161"),
+        "passed": false
+    },
+    "coe 163": {
+        "prereqs": 3,
+        "needed for": ["coe 165", "coe 167"],
+        "button": document.getElementById("coe 163"),
+        "passed": false
+    },
+    "coe 164": {
+        "prereqs": 0,
+        "needed for": [],
+        "button": document.getElementById("coe 164"),
+        "passed": false
+    },
+    "coe 165": {
+        "prereqs": 2,
+        "needed for": [],
+        "button": document.getElementById("coe 165"),
+        "passed": false
+    },
+    "coe 167": {
+        "prereqs": 3,
+        "needed for": [],
+        "button": document.getElementById("coe 167"),
+        "passed": false
+    },
+    "coe 168": {
+        "prereqs": 0,
+        "needed for": [],
+        "button": document.getElementById("coe 168"),
+        "passed": false
+    },
+    "coe 199": {
+        "prereqs": 1,
+        "needed for": [],
+        "button": document.getElementById("coe 199"),
         "passed": false
     },
     "math 21": {
@@ -54,29 +222,22 @@ var courses = {
         "button": document.getElementById("math 21"),
         "passed": false
     },
-    "cs 10": {
-        "prereqs": 0,
-        "needed for": [],
-        "button": document.getElementById("cs 10"),
-        "passed": false
-    },
-
-    "cs 12": {
-        "prereqs": 1,
-        "needed for": ["cs 20", "cs 32"],
-        "button": document.getElementById("cs 12"),
-        "passed": false
-    },
-    "cs 31": {
-        "prereqs": 1,
-        "needed for": ["cs 32", "cs 136", "cs 132"],
-        "button": document.getElementById("cs 31"),
-        "passed": false
-    },
     "math 22": {
         "prereqs": 1,
-        "needed for": ["math 23", "math 40"],
+        "needed for": ["eee 137", "math 23", "math 40", "eee 147", "es 101"],
         "button": document.getElementById("math 22"),
+        "passed": false
+    },
+    "math 23": {
+        "prereqs": 1,
+        "needed for": [],
+        "button": document.getElementById("math 23"),
+        "passed": false
+    },
+    "math 40": {
+        "prereqs": 1,
+        "needed for": ["coe 163"],
+        "button": document.getElementById("math 40"),
         "passed": false
     },
     "phy 71": {
@@ -85,161 +246,22 @@ var courses = {
         "button": document.getElementById("phy 71"),
         "passed": false
     },
-
-    "cs 20": {
-        "prereqs": 1,
-        "needed for": ["cs 21"],
-        "button": document.getElementById("cs 20"),
-        "passed": false
-    },
-    "cs 32": {
-        "prereqs": 2,
-        "needed for": ["cs 33", "cs 140"],
-        "button": document.getElementById("cs 32"),
-        "passed": false
-    },
-    "math 23": {
-        "prereqs": 1,
-        "needed for": ["cs 136", "cs 132"],
-        "button": document.getElementById("math 23"),
-        "passed": false
-    },
     "phy 72": {
         "prereqs": 1,
-        "needed for": [],
+        "needed for": ["eee 131", "eee 145", "eee 135", "phy 73"],
         "button": document.getElementById("phy 72"),
         "passed": false
     },
-
-    "cs 21": {
-        "prereqs": 1,
-        "needed for": ["cs 140", "cs 155"],
-        "button": document.getElementById("cs 21"),
-        "passed": false
-    },
-    "cs 33": {
-        "prereqs": 1,
-        "needed for": ["cs 150", "cs 165", "cs 191", "cs 180"],
-        "button": document.getElementById("cs 33"),
-        "passed": false
-    },
-    "cs 136": {
-        "prereqs": 2,
-        "needed for": ["cs 138"],
-        "button": document.getElementById("cs 136"),
-        "passed": false
-    },
-    "math 40": {
-        "prereqs": 1,
-        "needed for": ["cs 138", "cs 132"],
-        "button": document.getElementById("math 40"),
-        "passed": false
-    },
-
-    "cs 140": {
-        "prereqs": 2,
-        "needed for": ["cs 145", "cs 153"],
-        "button": document.getElementById("cs 140"),
-        "passed": false
-    },
-    "cs 150": {
-        "prereqs": 1,
-        "needed for": ["cs 155"],
-        "button": document.getElementById("cs 150"),
-        "passed": false
-    },
-    "cs 165": {
+    "phy 73": {
         "prereqs": 1,
         "needed for": [],
-        "button": document.getElementById("cs 165"),
+        "button": document.getElementById("phy 73"),
         "passed": false
     },
-    "cs 191": {
+    "es 101": {
         "prereqs": 1,
-        "needed for": ["cs 192"],
-        "button": document.getElementById("cs 191"),
-        "passed": false
-    },
-    "cs 138": {
-        "prereqs": 2,
-        "needed for": [],
-        "button": document.getElementById("cs 138"),
-        "passed": false
-    },
-
-    "cs 145": {
-        "prereqs": 1,
-        "needed for": [],
-        "button": document.getElementById("cs 145"),
-        "passed": false
-    },
-    "cs 153": {
-        "prereqs": 1,
-        "needed for": [],
-        "button": document.getElementById("cs 153"),
-        "passed": false
-    },
-    "cs 180": {
-        "prereqs": 1,
-        "needed for": [],
-        "button": document.getElementById("cs 180"),
-        "passed": false
-    },
-    "cs 192": {
-        "prereqs": 1,
-        "needed for": ["cs 195"],
-        "button": document.getElementById("cs 192"),
-        "passed": false
-    },
-    "cs 194": {
-        "prereqs": 0,
-        "needed for": ["cs 198"],
-        "button": document.getElementById("cs 194"),
-        "passed": false
-    },
-
-    "cs 195": {
-        "prereqs": 1,
-        "needed for": [],
-        "button": document.getElementById("cs 195"),
-        "passed": false
-    },
-
-    "cs 133": {
-        "prereqs": 1,
-        "needed for": ["cs 155"],
-        "button": document.getElementById("cs 133"),
-        "passed": false
-    },
-    "cs 198": {
-        "prereqs": 1,
-        "needed for": ["cs 199"],
-        "button": document.getElementById("cs 198"),
-        "passed": false
-    },
-
-    "cs 155": {
-        "prereqs": 3,
-        "needed for": [],
-        "button": document.getElementById("cs 155"),
-        "passed": false
-    },
-    "cs 132": {
-        "prereqs": 3,
-        "needed for": [],
-        "button": document.getElementById("cs 132"),
-        "passed": false
-    },
-    "cs 196": {
-        "prereqs": 0,
-        "needed for": [],
-        "button": document.getElementById("cs 196"),
-        "passed": false
-    },
-    "cs 199": {
-        "prereqs": 1,
-        "needed for": [],
-        "button": document.getElementById("cs 199"),
+        "needed for": ["eee 151"],
+        "button": document.getElementById("es 101"),
         "passed": false
     },
 }

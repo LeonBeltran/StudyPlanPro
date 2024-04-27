@@ -3,12 +3,12 @@
 <html>
 
     <head>
-        <title>StudyPlanPro - BS Computer Science Flowchart</title>
+        <title>StudyPlanPro - BS Computer Engineering Flowchart</title>
 
         {% load static %}
         {% load socialaccount %} <!-- Added for oauth -->
 
-        <link href="{% static 'flowchart_style.css' %}" rel="stylesheet"/>
+        <link href="{% static 'flowchart2_style.css' %}" rel="stylesheet"/>
         <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
     </head>
 
@@ -34,7 +34,7 @@
             <div id="fc_outer_box">
                 <div style="display: flex; flex-direction: row; justify-content: space-between;"> <!--top part-->
                     <div>
-                        <h1 style="padding-left: 10px;">UPD CS: Major Course Selection</h1>
+                        <h1 style="padding-left: 10px;">UPD ComEng: Major Course Selection</h1>
                         <p id="instruction_text">Click a course to see its description.</p>
                     </div>
 
@@ -46,91 +46,98 @@
 
                 <div id="fc_inner_box">
                     <div class="sem_column">
-                        <h1 style="margin-block: 0px;">Y1S1</h1>
-                        <button class="course_button" onclick="showinfo(this.id)" id="cs 11">CS 11</button>
-                        <button class="course_button" onclick="showinfo(this.id)" id="cs 30">CS 30</button>
-                        <button class="course_button" onclick="showinfo(this.id)" id="cs 10">CS 10</button>
+                        <h1 style="margin-block: 0px; font-size: 35px;">Y1S1</h1>
+                        <button class="course_button" onclick="showinfo(this.id)" id="eee 111">EEE 111</button>
+                        <button class="course_button" onclick="showinfo(this.id)" id="eee 113">EEE 113</button>
+                        <button class="invisible_button"></button>
+                        <button class="course_button" onclick="showinfo(this.id)" id="eee 118">EEE 118</button>
                         <button class="course_button" onclick="showinfo(this.id)" id="math 21">MATH 21</button>
-                        <button class="invisible_button"></button>    
+                        <button class="invisible_button"></button>
+                        <button class="course_button" onclick="showinfo(this.id)" id="phy 71">PHY 71</button>
                     </div>
 
                     <div class="sem_column">
-                        <h1 style="margin-block: 0px;">Y1S2</h1>
-                        <button class="course_button" onclick="showinfo(this.id)" id="cs 12">CS 12</button>
-                        <button class="course_button" onclick="showinfo(this.id)" id="cs 31">CS 31</button>
+                        <h1 style="margin-block: 0px; font-size: 35px;">Y1S2</h1>
+                        <button class="course_button" onclick="showinfo(this.id)" id="eee 121">EEE 121</button>
+                        <button class="course_button" onclick="showinfo(this.id)" id="eee 123">EEE 123</button>
                         <button class="invisible_button"></button>
+                        <button class="course_button" onclick="showinfo(this.id)" id="eee 128">EEE 128</button>
                         <button class="course_button" onclick="showinfo(this.id)" id="math 22">MATH 22</button>
-                        <button class="course_button" onclick="showinfo(this.id)" id="phy 71">PHY 71</button>  
-                    </div> 
-
-                    <div class="sem_column">
-                        <h1 style="margin-block: 0px;">Y2S1</h1>
-                        <button class="course_button" onclick="showinfo(this.id)" id="cs 20">CS 20</button>
-                        <button class="course_button" onclick="showinfo(this.id)" id="cs 32">CS 32</button>
-                        <button class="course_button" onclick="showinfo(this.id)" id="math 40">MATH 40</button>
-                        <button class="course_button" onclick="showinfo(this.id)" id="math 23">MATH 23</button>
+                        <button class="invisible_button"></button>
                         <button class="course_button" onclick="showinfo(this.id)" id="phy 72">PHY 72</button>  
                     </div> 
 
                     <div class="sem_column">
-                        <h1 style="margin-block: 0px;">Y2S2</h1>
-                        <button class="course_button" onclick="showinfo(this.id)" id="cs 21">CS 21</button>
-                        <button class="course_button" onclick="showinfo(this.id)" id="cs 33">CS 33</button>
-                        <button class="course_button" onclick="showinfo(this.id)" id="cs 132">CS 132</button>
-                        <button class="course_button" onclick="showinfo(this.id)" id="cs 136">CS 136</button>
-                        <button class="invisible_button"></button>  
+                        <h1 style="margin-block: 0px; font-size: 35px;">Y2S1</h1>
+                        <button class="course_button" onclick="showinfo(this.id)" id="eee 131">EEE 131</button>
+                        <button class="course_button" onclick="showinfo(this.id)" id="eee 133">EEE 133</button>
+                        <button class="course_button" onclick="showinfo(this.id)" id="eee 137">EEE 137</button>
+                        <button class="course_button" onclick="showinfo(this.id)" id="eee 138">EEE 138</button>
+                        <button class="course_button" onclick="showinfo(this.id)" id="math 23">MATH 23</button>
+                        <button class="course_button" onclick="showinfo(this.id)" id="math 40">MATH 40</button>
+                        <button class="invisible_button"></button>
                     </div> 
 
                     <div class="sem_column">
-                        <h1 style="margin-block: 0px;">Y3S1</h1>
-                        <button class="course_button" onclick="showinfo(this.id)" id="cs 140">CS 140</button>
-                        <button class="course_button" onclick="showinfo(this.id)" id="cs 165">CS 165</button>
-                        <button class="course_button" onclick="showinfo(this.id)" id="cs 150">CS 150</button>
-                        <button class="course_button" onclick="showinfo(this.id)" id="cs 138">CS 138</button>
-                        <button class="course_button" onclick="showinfo(this.id)" id="cs 191">CS 191</button>  
+                        <h1 style="margin-block: 0px; font-size: 35px;">Y2S2</h1>
+                        <button class="course_button" onclick="showinfo(this.id)" id="eee 141">EEE 141</button>
+                        <button class="course_button" onclick="showinfo(this.id)" id="eee 143">EEE 143</button>
+                        <button class="course_button" onclick="showinfo(this.id)" id="eee 147">EEE 147</button>
+                        <button class="course_button" onclick="showinfo(this.id)" id="eee 148">EEE 148</button>
+                        <button class="course_button" onclick="showinfo(this.id)" id="eee 145">EEE 145</button>
+                        <button class="course_button" onclick="showinfo(this.id)" id="es 101">ES 101</button>
+                        <button class="invisible_button"></button>
                     </div> 
 
                     <div class="sem_column">
-                        <h1 style="margin-block: 0px;">Y3S2</h1>
-                        <button class="course_button" onclick="showinfo(this.id)" id="cs 145">CS 145</button>
-                        <button class="course_button" onclick="showinfo(this.id)" id="cs 153">CS 153</button>
-                        <button class="course_button" onclick="showinfo(this.id)" id="cs 180">CS 180</button>
-                        <button class="course_button" onclick="showinfo(this.id)" id="cs 194">CS 194</button>
-                        <button class="course_button" onclick="showinfo(this.id)" id="cs 192">CS 192</button>  
+                        <h1 style="margin-block: 0px; font-size: 35px;">Y3S1</h1>
+                        <button class="course_button" onclick="showinfo(this.id)" id="eee 151">EEE 151</button>
+                        <button class="course_button" onclick="showinfo(this.id)" id="eee 153">EEE 153</button>
+                        <button class="course_button" onclick="showinfo(this.id)" id="eee 157">EEE 157</button>
+                        <button class="course_button" onclick="showinfo(this.id)" id="eee 158">EEE 158</button>
+                        <button class="course_button" onclick="showinfo(this.id)" id="eee 155">EEE 155</button>
+                        <button class="course_button" onclick="showinfo(this.id)" id="eee 135">EEE 135</button>
+                        <button class="course_button" onclick="showinfo(this.id)" id="phy 73">PHY 73</button>  
                     </div> 
 
                     <div class="sem_column">
-                        <h1 style="margin-block: 0px;">Y3M</h1>
+                        <h1 style="margin-block: 0px; font-size: 35px;">Y3S2</h1>
+                        <button class="course_button" onclick="showinfo(this.id)" id="coe 161">CoE 161</button>
+                        <button class="course_button" onclick="showinfo(this.id)" id="coe 163">CoE 163</button>
+                        <button class="course_button" onclick="showinfo(this.id)" id="coe 164">CoE 164</button>
+                        <button class="course_button" onclick="showinfo(this.id)" id="eee 192">EEE 192</button>
+                        <button class="invisible_button"></button>
+                        <button class="invisible_button"></button>
                         <button class="invisible_button"></button> 
-                        <button class="invisible_button"></button> 
-                        <button class="invisible_button"></button> 
-                        <button class="invisible_button"></button> 
-                        <button class="course_button" onclick="showinfo(this.id)" id="cs 195">CS 195</button>  
                     </div> 
 
                     <div class="sem_column">
-                        <h1 style="margin-block: 0px;">Y4S1</h1>
-                        <button class="course_button" onclick="showinfo(this.id)" id="cs 133">CS 133</button>
+                        <h1 style="margin-block: 0px; font-size: 35px;">Y4S1</h1>
+                        <button class="course_button" onclick="showinfo(this.id)" id="coe 165">CoE 165</button>
+                        <button class="course_button" onclick="showinfo(this.id)" id="coe 167">CoE 167</button>
+                        <button class="course_button" onclick="showinfo(this.id)" id="coe 168">CoE 168</button>
+                        <button class="course_button" onclick="showinfo(this.id)" id="eee 196">EEE 196</button>
+                        <button class="invisible_button"></button>
+                        <button class="invisible_button"></button>
                         <button class="invisible_button"></button> 
-                        <button class="invisible_button"></button> 
-                        <button class="invisible_button"></button> 
-                        <button class="course_button" onclick="showinfo(this.id)" id="cs 198">CS 198</button>  
                     </div> 
 
                     <div class="sem_column">
-                        <h1 style="margin-block: 0px;">Y4S2</h1>
-                        <button class="course_button" onclick="showinfo(this.id)" id="cs 155">CS 155</button>
+                        <h1 style="margin-block: 0px; font-size: 35px;">Y4S2</h1>
+                        <button class="course_button" onclick="showinfo(this.id)" id="coe 199">CoE 199</button>
+                        <button class="invisible_button"></button>
+                        <button class="invisible_button"></button>
+                        <button class="invisible_button"></button>
+                        <button class="invisible_button"></button>
+                        <button class="invisible_button"></button>
                         <button class="invisible_button"></button> 
-                        <button class="course_button" onclick="showinfo(this.id)" id="cs 196">CS 196</button>
-                        <button class="invisible_button"></button> 
-                        <button class="course_button" onclick="showinfo(this.id)" id="cs 199">CS 199</button>  
                     </div> 
                 </div>
             </div>
 
             <div id="bottom_buttons">
                 <button class="invisible_button" style="background-color: #bdbdbd;"></button>
-                <a href="/flowchart/comeng/" class="gray_button"><p style="color: #ffffff; position: relative; bottom: 12px;">ComEng Flowchart</p></a>
+                <a href="/flowchart/cs/" class="gray_button"><p style="color: #ffffff; position: relative; bottom: 12px;">CS Flowchart</p></a>
                 <a href="othercourses/" class="gray_button"><p style="color: #ffffff; position: relative; bottom: 12px;">Proceed</p></a>
             </div>
         </div>
@@ -215,6 +222,6 @@
 
         </div>
 
-        <script src="{% static 'flowchart_index.js' %}"></script>
+        <script src="{% static 'flowchart2_index.js' %}"></script>
     </body>
 </html>
