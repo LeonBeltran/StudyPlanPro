@@ -4,7 +4,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm
-from .forms import JoinForm
+# from .forms import JoinForm
 
 # Create your views here.
 def view_home(request):
@@ -37,28 +37,28 @@ def view_logout(request):
      messages.success(request, ('You have logged out.'))
      return redirect('/home/')
 
-def view_join(request):
-     if request.method == "POST":
-          form = JoinForm(request.POST)
-          if form.is_valid():
-               username = form.cleaned_data['username']
-               password = form.cleaned_data['password1']
-               email = form.cleaned_data['email']
+# def view_join(request):
+#      if request.method == "POST":
+#           form = JoinForm(request.POST)
+#           if form.is_valid():
+#                username = form.cleaned_data['username']
+#                password = form.cleaned_data['password1']
+#                email = form.cleaned_data['email']
                
-               if "@up.edu.ph" in email:
-                    form.save()
-                    user = authenticate(request, username=username, password=password)
-                    login(request, user)
-                    messages.success(request, "Welcome " + username + "!")
-                    return redirect('/home/')
-               else:
-                    messages.success(request, "Please use an email address from UP.")
-                    return render(request, 'joinpage.html', {
-                         'form': form,
-                    })
-     else:
-          form = JoinForm()
+#                if "@up.edu.ph" in email:
+#                     form.save()
+#                     user = authenticate(request, username=username, password=password)
+#                     login(request, user)
+#                     messages.success(request, "Welcome " + username + "!")
+#                     return redirect('/home/')
+#                else:
+#                     messages.success(request, "Please use an email address from UP.")
+#                     return render(request, 'joinpage.html', {
+#                          'form': form,
+#                     })
+#      else:
+#           form = JoinForm()
 
-     return render(request, 'joinpage.html', {
-          'form': form,
-     })
+#      return render(request, 'joinpage.html', {
+#           'form': form,
+#      })

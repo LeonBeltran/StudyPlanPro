@@ -29,28 +29,10 @@
         </div>
         <br>
 
-        <div class="centered_div"><h1 style="color: #000000;">Login</h1></div>
-        <br>
+        <div class="centered_div"><h1 style="color: #000000;">Login using your UP mail!</h1></div>
 
-        <div class="centered_div">
-            <form method="POST" action="{% url 'login' %}">
-                {% csrf_token %}
-
-
-                <input class="loginInput" type="text" name="username" placeholder="Username" style="left: 0px;">
-                <br><br>
-                <input class="loginInput" type="email" name="email" placeholder="Email Address" style="left: 0px;">
-                <br><br>
-                <input class="loginInput" type="password" name="password" placeholder="Password" style="left: 0px;">
-                <br><br>
-
-                <div class="centered_div"><button class="gray_button">Login</button></div>
-            </form>
-        </div>
-
-        <br>
         {% comment %} For OAuth {% endcomment %}
-        <div class="centered_div"><a href="{% provider_login_url 'google' %}?next=/home">
+        <div class="centered_div"><a href="{% provider_login_url 'google' id=1 %}?next=/home">
             <button class="gray_button">Google Login</button>
         </a></div>
         {% comment %} For OAuth {% endcomment %}

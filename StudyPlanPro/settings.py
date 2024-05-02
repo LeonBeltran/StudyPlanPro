@@ -11,6 +11,11 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+import os
+# from dotenv import load_dotenv
+
+# load_dotenv() # Helps django locate env variables more easily
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -61,19 +66,27 @@ INSTALLED_APPS = [
 # Can add more social accounts as needed e.g. FB, Insta etc.
 SOCIALACCOUNT_PROVIDERS = {
     "google": {
-        # "APP": {
-        #     "client_id": "67634356670-8npqgd8u6qp4da6444fj9ng3bo6rq0ks.apps.googleusercontent.com",
-        #     "secret": "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",
-        #     "key": ""
-        # },
         "SCOPE" : [
             "profile",
             "email"
         ],
+        # "APP": {
+        #     "client_id": os.environ["CLIENT_ID"], # in env file
+        #     "secret": os.environ["CLIENT_SECRET"], # in env file
+        #     # "key": ""
+        # },
         "AUTH_PARAMS" : {"access_type" : "online"}
     }
 }
 
+# Added for populating Student Model - email is identifier
+AUTH_USER_MODEL = "home.Student"
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_UNIQUE_EMAIL = True
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+
+# ACCOUNT_ADAPTER = 'home.adapter.AccountAdapter'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -91,7 +104,8 @@ ROOT_URLCONF = 'StudyPlanPro.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, "templates")],
+        # 'DIRS':[],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
