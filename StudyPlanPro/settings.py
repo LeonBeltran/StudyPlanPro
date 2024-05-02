@@ -46,7 +46,8 @@ INSTALLED_APPS = [
 
     ###--- Add own apps here ---###
     'home',         #homepage
-    'demand',       #demand table
+    'demand',       #demand table of cs
+    'demand2',      #demand table of comeng
     'flowchart',    #flowchart of cs
     'flowchart2',   #flowchart of comeng
     

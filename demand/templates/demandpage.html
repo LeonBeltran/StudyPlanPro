@@ -3,7 +3,7 @@
 <html>
 
     <head>
-        <title>StudyPlanPro - Demand Table</title>
+        <title>StudyPlanPro - Demand Table (BS Computer Science)</title>
 
         {% load static %}
         {% load socialaccount %} <!-- Added for oauth -->
@@ -21,7 +21,7 @@
             
             <div id="tabs_container">
                 <a href="/home/" class="tabs"><h1>Home</h1></a>
-                <a href="/demand/" class="highlighted_tabs"><h1>Demand</h1></a>
+                <button class="highlighted_tabs"><h1>Demand</h1></button>
                 <a href="/flowchart/cs/" class="tabs"><h1>Flowchart</h1></a>
                 
                 {% if user.is_authenticated %}
@@ -34,8 +34,11 @@
 
         <div class="centered_div" style="padding-top: 100px;">
             <div id="demand_box">
-                <h1 style="flex: 1; left: 25px; position: relative;">Demand Table</h1>
-
+                <div style="height: 200px; width: 500px;">
+                    <h1 style="flex: 1; left: 25px; position: relative;">CS Demand Table</h1>
+                    <a class="gray_button" style="background-color: #ffffff; color: #000000; padding: 10px; margin-left: 20px;" href="/demand/comeng">ComEng</a>
+                </div>
+                
                 <div id="list_container">
                     <ul id="list_header"><li class="demtable" style="background-color: #000000;"><p class="header_kid">
                         Course
