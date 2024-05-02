@@ -5,7 +5,7 @@ from home.models import *
 
 class CourseFilter(django_filters.FilterSet):
     class Meta:
-        courseCode = CharFilter(field_name='courseCode', lookup_expr='icontains')
         model = Course
+        courseCode = CharFilter(field_name='courseCode', lookup_expr='icontains')
         fields = '__all__'
         exclude = ['courseTitle', 'shortDescription', 'coursePrereq', 'courseCoreq', 'nominalCourseDifficultyReview', 'courseDemand']
