@@ -28,7 +28,8 @@ urlpatterns = [
     path('home/', include('home.urls')),
     
     # Other Pages
-    path('demand/', include('demand.urls')),
+    path('demand/cs/', include('demand.urls')), #cs demand
+    path('demand/comeng/', include('demand2.urls')), #comeng demand
     path('flowchart/cs/', include('flowchart.urls')), #cs flowchart
     path('flowchart/comeng/', include('flowchart2.urls')), #comeng flowchart
 ]
