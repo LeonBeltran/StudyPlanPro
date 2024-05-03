@@ -274,8 +274,10 @@ function showinfo(code, title, desc) {
             document.getElementById("course_info_needed").textContent = "None";
             break;
         default:
+            document.getElementById("course_info_coreq").textContent = 'None';
+            document.getElementById("course_info_prereq").textContent = 'None';
+            document.getElementById("course_info_needed").textContent = 'None';
             break;
-
     }
 }
 
