@@ -2,11 +2,11 @@
 $(document).ready(function() {
     $('.course_button').click(function() {
         var button = $(this);
-        var courseCode = button.attr('id');
+        var courseCode = button.attr('id').toUpperCase();
 
         $.ajax({
             type: "GET",
-            url: "{% url 'course_description' %}",
+            url: 'course_description',
             dataType: 'json',
             data: {
                 code: courseCode
@@ -15,7 +15,8 @@ $(document).ready(function() {
                 if (data.error) {
                     console.error(data);
                 } else {
-                    const course = JSON.parse(data)
+                    console.log(data)
+                    const course = data
 
                     document.getElementById("course_info_code").textContent = `${course.courseCode} ${course.courseTitle}`;
                     if (course.shortDescription != "") {

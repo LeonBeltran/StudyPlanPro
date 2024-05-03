@@ -15,6 +15,7 @@ def view_recommendations(request):
 def course_description(request):
      if request.method == 'GET':
           data = request.GET.get('code')
+          print(data)
           course = Course.objects.get(courseCode=data)
           data = {
                "courseCode": course.courseCode,
@@ -24,5 +25,5 @@ def course_description(request):
           return JsonResponse(data)
      elif Course.DoesNotExist:
           return JsonResponse({"error": "Course does not exist"}, status=404)
-     else:
+     else:     
           return JsonResponse({"error": str(Exception)}, status=500)
