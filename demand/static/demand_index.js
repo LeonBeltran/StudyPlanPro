@@ -44,9 +44,9 @@ function showinfo(code, title, desc) {
     courseInfo.style.visibility = "visible";
     document.getElementById("course_info_code").textContent = `${code} ${title}`;
     if (desc != "") {
-        document.getElementById("course_info_description").textContent = desc;
+        document.getElementById("course_info_text").textContent = desc;
     } else {
-        document.getElementById("course_info_description").textContent = "No Description";
+        document.getElementById("course_info_text").textContent = "No Description";
     }
     switch(code) {
         case "CS 10":
