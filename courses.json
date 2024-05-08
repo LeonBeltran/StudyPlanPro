@@ -620,5 +620,696 @@
     ],
     "courseCoreq": []
   }
+},
+{
+  "model": "home.course",
+  "pk": 43,
+  "fields": {
+    "courseCode": "Math 21",
+    "courseTitle": "Elementary Analysis I",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 44,
+  "fields": {
+    "courseCode": "Math 22",
+    "courseTitle": "Elementary Analysis II",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      43
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 45,
+  "fields": {
+    "courseCode": "Math 23",
+    "courseTitle": "Elementary Analysis III",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      44
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 46,
+  "fields": {
+    "courseCode": "Math 40",
+    "courseTitle": "Linear Algebra",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      44
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 47,
+  "fields": {
+    "courseCode": "Physics 71",
+    "courseTitle": "Elementary Physics I",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
+    "courseCoreq": [
+      43
+    ]
+  }
+},
+{
+  "model": "home.course",
+  "pk": 48,
+  "fields": {
+    "courseCode": "Physics 72",
+    "courseTitle": "Elementary Physics II",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      47
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 49,
+  "fields": {
+    "courseCode": "Kas 1",
+    "courseTitle": "Kasaysayan ng Pilipinas",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 50,
+  "fields": {
+    "courseCode": "Philo 1",
+    "courseTitle": "Philosophical Analysis",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 51,
+  "fields": {
+    "courseCode": "Soc Sci 1/2",
+    "courseTitle": "Foundations of Social Science/Social, Economic and Political Thought",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 52,
+  "fields": {
+    "courseCode": "Eng 13",
+    "courseTitle": "Writing as Thinking",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 53,
+  "fields": {
+    "courseCode": "Speech 30",
+    "courseTitle": "Public Speaking and Persuasion",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 54,
+  "fields": {
+    "courseCode": "Fil 40",
+    "courseTitle": "Wika, Kultura, at Lipunan",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 55,
+  "fields": {
+    "courseCode": "Eng 30",
+    "courseTitle": "English for the Professions",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 56,
+  "fields": {
+    "courseCode": "STS 1/DRMAPS",
+    "courseTitle": "Science, Technology and Society/Disaster Risk Mitigation, Adaptation, and Preparedness Strategies",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 57,
+  "fields": {
+    "courseCode": "Engg 150",
+    "courseTitle": "Introduction to Technology Entrepreneurship",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 58,
+  "fields": {
+    "courseCode": "Arts 1",
+    "courseTitle": "Critical Perspectives in the Arts",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 59,
+  "fields": {
+    "courseCode": "PI 100",
+    "courseTitle": "The Life and Works of Jose Rizal",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 60,
+  "fields": {
+    "courseCode": "PE",
+    "courseTitle": "Physical Education",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 61,
+  "fields": {
+    "courseCode": "NSTP 1",
+    "courseTitle": "National Service Training Program I",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 62,
+  "fields": {
+    "courseCode": "NSTP 2",
+    "courseTitle": "National Service Training Program I",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      61
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 63,
+  "fields": {
+    "courseCode": "GE Elective",
+    "courseTitle": "Personal Choice of a General Education Course",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 64,
+  "fields": {
+    "courseCode": "Free Elective",
+    "courseTitle": "Own Choice of a Course",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 65,
+  "fields": {
+    "courseCode": "CS Elective",
+    "courseTitle": "Personal Choice of a CS Elective Course",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 66,
+  "fields": {
+    "courseCode": "EEE 111",
+    "courseTitle": "Introduction to Programming and Computation",
+    "shortDescription": "Working principles of a computing machine; fundamental programming constructs; and software and hardware abstractions.",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 67,
+  "fields": {
+    "courseCode": "EEE 113",
+    "courseTitle": "Introduction to Electrical and Electronics Engineering Systems",
+    "shortDescription": "Principles of operation; limitations and trade-offs from a systems perspective",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
+    "courseCoreq": [
+      43
+    ]
+  }
+},
+{
+  "model": "home.course",
+  "pk": 68,
+  "fields": {
+    "courseCode": "EEE 118",
+    "courseTitle": "Electrical and Electronics Engineering Laboratory I",
+    "shortDescription": "Laboratory procedures and practices; modeling systems as black boxes; standard electronic instruments and circuits; data collection and analysis",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
+    "courseCoreq": [
+      67
+    ]
+  }
+},
+
+{
+  "model": "home.course",
+  "pk": 69,
+  "fields": {
+    "courseCode": "EEE 121",
+    "courseTitle": "Data Structures and Algorithms for Electrical and Electronics Engineering",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      66
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 70,
+  "fields": {
+    "courseCode": "EEE 123",
+    "courseTitle": "Circuits and Electronics I",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
+    "courseCoreq": [
+      43
+    ]
+  }
+},
+{
+  "model": "home.course",
+  "pk": 71,
+  "fields": {
+    "courseCode": "EEE 128",
+    "courseTitle": "Electrical and Electronics Engineering Laboratory II",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      68
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 72,
+  "fields": {
+    "courseCode": "EEE 131",
+    "courseTitle": "Electronic Devices and Circuits",
+    "shortDescription": "Device fundamentals of diodes, bipolar junction transistors, and field effect transistors essential in understanding current-voltage relationships; modeling and analysis of diode and single-transistor circuits",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      48,
+      70
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 73,
+  "fields": {
+    "courseCode": "EEE 133",
+    "courseTitle": "Circuits and Electronics II",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      70
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 74,
+  "fields": {
+    "courseCode": "EEE 137",
+    "courseTitle": "Probability, Statistics and Random Processes in Electrical and Electronics Engineering",
+    "shortDescription": "Applications of probability theory, descriptive and inferential statistics, probabilistic analysis of engineering problems, modeling uncertainties and making predictions",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      44
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 75,
+  "fields": {
+    "courseCode": "EEE 138",
+    "courseTitle": "Electrical and Electronics Engineering Laboratory III",
+    "shortDescription": "Applications of semiconductor devices, with emphasis on audio frequency circuits",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      71
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 76,
+  "fields": {
+    "courseCode": "EEE 141",
+    "courseTitle": "Electronic Circuits and Systems",
+    "shortDescription": "Analysis and design of transistor amplifiers and switching circuits; Role of feedback in improving circuit characteristics; Design considerations for electronics systems.",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      72
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 77,
+  "fields": {
+    "courseCode": "EEE 143",
+    "courseTitle": "Switching Theory and Digital Logic Design",
+    "shortDescription": "Fundamental concepts in Boolean Algebra for analyzing and designing digital logic circuits using Boolean expressions, logic gates, digital integrated circuit building blocks and hardware description language.",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 78,
+  "fields": {
+    "courseCode": "EEE 145",
+    "courseTitle": "Electromechanical Energy Converters",
+    "shortDescription": "Principles of conversion; operation, modeling, and analysis of common converters",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      48
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 79,
+  "fields": {
+    "courseCode": "EEE 147",
+    "courseTitle": "Signals and Systems",
+    "shortDescription": "Mathematical tools for analysis and modeling of signals and systems in time and frequency domain and their applications in electrical and electronics engineering.",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      44
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 80,
+  "fields": {
+    "courseCode": "EEE 148",
+    "courseTitle": "Electrical and Electronics Engineering Laboratory IV",
+    "shortDescription": "Design and application of wave generating circuits, programmable hardware, and signal processing in the monitoring, characterization, operation, and control of electric machines and loads.",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      71
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 81,
+  "fields": {
+    "courseCode": "EEE 135",
+    "courseTitle": "Electromagnetic Fields I",
+    "shortDescription": "Fundamentals of classical electromagnetic theory and applications to electrical and electronics engineering",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      48
+    ],
+    "courseCoreq": [
+      45
+    ]
+  }
+},
+{
+  "model": "home.course",
+  "pk": 82,
+  "fields": {
+    "courseCode": "ES 101",
+    "courseTitle": "Mechanics of Particles and Rigid Bodies",
+    "shortDescription": "Force, moment, and motion concepts. Newton's Laws of Motion. Analysis of particles and rigid bodies in static and dynamic equilibrium using vector mechanics, momentum methods, and energy methods. Geometric properties of lines, areas, and volumes.",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      44
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 83,
+  "fields": {
+    "courseCode": "EEE 151",
+    "courseTitle": "Analog and Digital Control",
+    "shortDescription": "Introduction to the analysis and design of control systems for continuous-time, discrete-time, and hybrid systems",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      79,
+      82
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 84,
+  "fields": {
+    "courseCode": "EEE 153",
+    "courseTitle": "Computer Organization and Embedded Systems I",
+    "shortDescription": "Analysis and design of different aspects of computer organization and their effects in the performance of a system and in programming using assembly language",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      77
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 85,
+  "fields": {
+    "courseCode": "EEE 155",
+    "courseTitle": "Introduction to Electric Power Systems",
+    "shortDescription": "Components, analysis, and operation of balanced electric power systems",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      70
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 86,
+  "fields": {
+    "courseCode": "EEE 157",
+    "courseTitle": "Communication Systems and Networks",
+    "shortDescription": "Design and analysis of the fundamental processes and mechanisms involved in information transfer",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      79
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 87,
+  "fields": {
+    "courseCode": "EEE 158",
+    "courseTitle": "Electrical and Electronics Engineering Laboratory V",
+    "shortDescription": "Hardware and software solutions for closed loop systems",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      71,
+      79
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 88,
+  "fields": {
+    "courseCode": "Physics 73",
+    "courseTitle": "Elementary Physics III",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      48
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 89,
+  "fields": {
+    "courseCode": "CoE 161",
+    "courseTitle": "Introduction to Information and Complexity",
+    "shortDescription": "Advanced course on information theory and computational complexity, starting from Shannon's information theory and Turing's theory of computation, leading to the theory of Kolmogorov complexity",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      66,
+      74
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 90,
+  "fields": {
+    "courseCode": "CoE 163",
+    "courseTitle": "Computing Architectures and Algorithms",
+    "shortDescription": "Advanced course on the foundations and techniques in high performance software development for signal processing and other numerical functions including transforms, filters, and basic linear algebra algorithms, taking into account memory hierarchy and other microarchitectural features",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      46,
+      69,
+      84
+    ],
+    "courseCoreq": []
+  }
 }
 ]
