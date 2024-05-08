@@ -1,10 +1,19 @@
 from django.shortcuts import render
 from django.http import JsonResponse
-from home.models import Course
+from home.models import Course, Student
 
 # Create your views here.
 def view_flowchart(request):
-     return render(request, 'flowchartpage.html')
+     if request.method == POST:    # type: ignore
+          student_id = "temp"      # request.user.id
+          student = Student.objects.get(id=student_id)
+          for course_id in range(10):      # selectedCourses
+               course = Course.objects.get(courseCode=course_id)
+               course.courseDemand -= 1
+               # for course in nextCourse -> course.courseDemand += 1
+               student.passedCourses.append(course_id)
+     else:
+          return render(request, 'flowchartpage.html')
 
 def view_othercourses(request):
      return render(request, 'othercoursespage.html')
