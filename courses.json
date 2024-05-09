@@ -911,7 +911,7 @@
   "pk": 64,
   "fields": {
     "courseCode": "Free Elective",
-    "courseTitle": "Own Choice of a Course",
+    "courseTitle": "Personal Choice of a Course",
     "shortDescription": "",
     "nominalCourseDifficultyReview": 3,
     "courseDemand": 0,
@@ -1309,6 +1309,170 @@
       69,
       84
     ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 91,
+  "fields": {
+    "courseCode": "CoE 164",
+    "courseTitle": "Computing Platforms",
+    "shortDescription": "Advanced laboratory course on the application of the concepts, methodologies, skills, and tradeoffs in designing/building computing systems to solve challenging problems, in an efficient and structured way",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
+    "courseCoreq": [
+      89,
+      90
+    ]
+  }
+},
+{
+  "model": "home.course",
+  "pk": 92,
+  "fields": {
+    "courseCode": "EEE 192",
+    "courseTitle": "Electrical and Electronics Engineering Laboratory VI",
+    "shortDescription": "Design project applying the knowledge, skills and competencies acquired in the Electrical and Electronics Engineering fundamentals courses",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      87
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 93,
+  "fields": {
+    "courseCode": "CoE 165",
+    "courseTitle": "Computer Organization and Embedded Systems II",
+    "shortDescription": "Advanced course on the modeling, design, and analysis of computational systems that interact with physical processes",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      84,
+      90
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 94,
+  "fields": {
+    "courseCode": "CoE 167",
+    "courseTitle": "Computing Systems",
+    "shortDescription": "Advanced course on the design of complex software and hardware systems, including techniques for reliability, managing complexity, and the coordination of parallel activities",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      69,
+      86,
+      90
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 95,
+  "fields": {
+    "courseCode": "CoE 168",
+    "courseTitle": "Computing Solutions for Contemporary Issues",
+    "shortDescription": "Advanced laboratory course applying the concepts, methodologies, skills, and tradeoffs in designing and building engineering solutions to contemporary social issues that leverage computing systems",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
+    "courseCoreq": [
+      93,
+      94
+    ]
+  }
+},
+{
+  "model": "home.course",
+  "pk": 96,
+  "fields": {
+    "courseCode": "EEE 196",
+    "courseTitle": "Undergraduate Colloquium",
+    "shortDescription": "Planning and development of a project proposal",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      92
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 97,
+  "fields": {
+    "courseCode": "CoE 199",
+    "courseTitle": "Special Projects in Computer Engineering",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      96
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 98,
+  "fields": {
+    "courseCode": "EEE Elective",
+    "courseTitle": "Personal Choice of a CS Elective Course",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 99,
+  "fields": {
+    "courseCode": "Engg Elective",
+    "courseTitle": "Personal Choice of an Engg. Elective Course",
+    "shortDescription": "Planning and development of a project proposal",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      92
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 100,
+  "fields": {
+    "courseCode": "DRMAPS",
+    "courseTitle": "Disaster Risk Mitigation, Adaptation, and Preparedness Strategies",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 101,
+  "fields": {
+    "courseCode": "Soc Sci 2",
+    "courseTitle": "Social, Economic and Political Thought",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
     "courseCoreq": []
   }
 }
