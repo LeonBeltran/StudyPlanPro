@@ -287,7 +287,7 @@ function toggleDetails() {
 function makeDetailButtons() {
     for (const course in courses) {
         if (courses[course]["button"].disabled) {
-            courses[course]["button"].disabled = True;
+            courses[course]["button"].disabled = true;
         }
     }
 }
