@@ -286,10 +286,8 @@ function toggleDetails() {
 
 function makeDetailButtons() {
     for (const course in courses) {
-        courses[course]["button"].style.background = "#ffffff";
-        
         if (courses[course]["button"].disabled) {
-            courses[course]["button"].disabled = false;
+            courses[course]["button"].disabled = True;
         }
     }
 }
@@ -621,22 +619,4 @@ function exitinfo() {
 
     const reviewInput = document.getElementById("review_input");
     reviewInput.value = "";
-}
-
-
-
-//temporary function
-function sendEmailPressed() {
-    const textFields = document.getElementsByClassName("loginInput");
-    const nickname = textFields[0].value.replace(/\s/g, '');
-    const email = textFields[1].value.replace(/\s/g, '');
-
-    //textFields[0].setAttribute("style", "border-color: red; border-style: solid;");
-    textFields[1].setAttribute("style", "border-color: red; border-style: solid;");
-
-    if (!nickname || !email) {
-        alert("nickname and email fields can't be empty");
-    } else {
-        alert("Invalid UP email");
-    }
 }

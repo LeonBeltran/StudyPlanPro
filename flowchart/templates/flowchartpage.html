@@ -32,7 +32,8 @@
             </div>
         </div>
 
-        <div class="centered_div" style="padding-top: 100px; flex-direction: column; align-items: center;">
+        <form action="" method=POST class="centered_div" style="padding-top: 100px; flex-direction: column; align-items: center;">
+            {% csrf_token %}
             <div id="fc_outer_box">
                 <div style="display: flex; flex-direction: row; justify-content: space-between;"> <!--top part-->
                     <div>
@@ -42,100 +43,204 @@
 
                     <div style="padding-right: 15px;">
                         <p style="color: #ffffff; position: relative; top: 10px;">Current Mode:</p>
-                        <button id="toggle_details" class="gray_button" style="background-color: #ffffff; color: #000000;" onclick="toggleDetails()">Details Mode</button>
+                        <button type="button" id="toggle_details" class="gray_button" style="background-color: #ffffff; color: #000000;" onclick="toggleDetails()">Details Mode</button>
                     </div>
                 </div>
 
                 <div id="fc_inner_box">
                     <div class="sem_column">
                         <h1 style="margin-block: 0px;">Y1S1</h1>
-                        <button class="course_button" onclick="showinfo(this.id)" id="cs 11">CS 11</button>
-                        <button class="course_button" onclick="showinfo(this.id)" id="cs 30">CS 30</button>
-                        <button class="course_button" onclick="showinfo(this.id)" id="cs 10">CS 10</button>
-                        <button class="course_button" onclick="showinfo(this.id)" id="math 21">MATH 21</button>
+                        <label class="course_button" onclick="showinfo(this.id)" id="cs 11">
+                            <input type="checkbox" name="courses" value="CS 11" id="cs 11cbox">
+                            CS 11
+                        </label>
+                        <label class="course_button" onclick="showinfo(this.id)" id="cs 30">
+                            <input type="checkbox" name="courses" value="CS 30" id="cs 30cbox">
+                            CS 30
+                        </label>
+                        <label class="course_button" onclick="showinfo(this.id)" id="cs 10">
+                            <input type="checkbox" name="courses" value="CS 10" id="cs 10cbox">
+                            CS 10
+                        </label>
+                        <label class="course_button" onclick="showinfo(this.id)" id="math 21">
+                            <input type="checkbox" name="courses" value="MATH 21" id="math 21cbox">
+                            Math 21
+                        </label>
                         <button class="invisible_button"></button>    
                     </div>
+                    
 
                     <div class="sem_column">
                         <h1 style="margin-block: 0px;">Y1S2</h1>
-                        <button class="course_button" onclick="showinfo(this.id)" id="cs 12">CS 12</button>
-                        <button class="course_button" onclick="showinfo(this.id)" id="cs 31">CS 31</button>
+                        <label class="course_button" onclick="showinfo(this.id)" id="cs 12">
+                            <input type="checkbox" name="courses" value="CS 12" id="cs 12cbox">
+                            CS 12
+                        </label>
+                        <label class="course_button" onclick="showinfo(this.id)" id="cs 31">
+                            <input type="checkbox" name="courses" value="CS 31" id="cs 31cbox">
+                            CS 31
+                        </label>
                         <button class="invisible_button"></button>
-                        <button class="course_button" onclick="showinfo(this.id)" id="math 22">MATH 22</button>
-                        <button class="course_button" onclick="showinfo(this.id)" id="phy 71">PHY 71</button>  
-                    </div> 
+                        <label class="course_button" onclick="showinfo(this.id)" id="math 22">
+                            <input type="checkbox" name="courses" value="MATH 22" id="math 22cbox">
+                            Math 22
+                        </label>
+                        <label class="course_button" onclick="showinfo(this.id)" id="physics 71">
+                            <input type="checkbox" name="courses" value="PHYSICS 71" id="phy 71cbox">
+                            Physics 71
+                        </label>  
+                    </div>
+                    
 
                     <div class="sem_column">
                         <h1 style="margin-block: 0px;">Y2S1</h1>
-                        <button class="course_button" onclick="showinfo(this.id)" id="cs 20">CS 20</button>
-                        <button class="course_button" onclick="showinfo(this.id)" id="cs 32">CS 32</button>
-                        <button class="course_button" onclick="showinfo(this.id)" id="math 40">MATH 40</button>
-                        <button class="course_button" onclick="showinfo(this.id)" id="math 23">MATH 23</button>
-                        <button class="course_button" onclick="showinfo(this.id)" id="phy 72">PHY 72</button>  
+                        <label class="course_button" onclick="showinfo(this.id)" id="cs 20">
+                            <input type="checkbox" name="courses" value="CS 20" id="cs 20cbox">
+                            CS 20
+                        </label>
+                        <label class="course_button" onclick="showinfo(this.id)" id="cs 32">
+                            <input type="checkbox" name="courses" value="CS 32" id="cs 32cbox">
+                            CS 32
+                        </label>
+                        <label class="course_button" onclick="showinfo(this.id)" id="math 40">
+                            <input type="checkbox" name="courses" value="MATH 40" id="math 40cbox">
+                            Math 40
+                        </label>
+                        <label class="course_button" onclick="showinfo(this.id)" id="math 23">
+                            <input type="checkbox" name="courses" value="MATH 23" id="math 23cbox">
+                            Math 23
+                        </label>
+                        <label class="course_button" onclick="showinfo(this.id)" id="physics 72">
+                            <input type="checkbox" name="courses" value="PHYSICS 72" id="physics 72cbox">
+                            Physics 72
+                        </label>  
                     </div> 
-
+                    
                     <div class="sem_column">
                         <h1 style="margin-block: 0px;">Y2S2</h1>
-                        <button class="course_button" onclick="showinfo(this.id)" id="cs 21">CS 21</button>
-                        <button class="course_button" onclick="showinfo(this.id)" id="cs 33">CS 33</button>
-                        <button class="course_button" onclick="showinfo(this.id)" id="cs 132">CS 132</button>
-                        <button class="course_button" onclick="showinfo(this.id)" id="cs 136">CS 136</button>
+                        <label class="course_button" onclick="showinfo(this.id)" id="cs 21">
+                            <input type="checkbox" name="courses" value="CS 21" id="cs 21cbox">
+                            CS 21
+                        </label>
+                        <label class="course_button" onclick="showinfo(this.id)" id="cs 33">
+                            <input type="checkbox" name="courses" value="CS 33" id="cs 33cbox">
+                            CS 33
+                        </label>
+                        <label class="course_button" onclick="showinfo(this.id)" id="cs 132">
+                            <input type="checkbox" name="courses" value="CS 132" id="cs 132cbox">
+                            CS 132
+                        </label>
+                        <label class="course_button" onclick="showinfo(this.id)" id="cs 136">
+                            <input type="checkbox" name="courses" value="CS 136" id="cs 136cbox">
+                            CS 136
+                        </label>
                         <button class="invisible_button"></button>  
-                    </div> 
+                    </div>
+                    
 
                     <div class="sem_column">
                         <h1 style="margin-block: 0px;">Y3S1</h1>
-                        <button class="course_button" onclick="showinfo(this.id)" id="cs 140">CS 140</button>
-                        <button class="course_button" onclick="showinfo(this.id)" id="cs 165">CS 165</button>
-                        <button class="course_button" onclick="showinfo(this.id)" id="cs 150">CS 150</button>
-                        <button class="course_button" onclick="showinfo(this.id)" id="cs 138">CS 138</button>
-                        <button class="course_button" onclick="showinfo(this.id)" id="cs 191">CS 191</button>  
-                    </div> 
+                        <label class="course_button" onclick="showinfo(this.id)" id="cs 140">
+                            <input type="checkbox" name="courses" value="CS 140" id="cs 140cbox">
+                            CS 140
+                        </label>
+                        <label class="course_button" onclick="showinfo(this.id)" id="cs 165">
+                            <input type="checkbox" name="courses" value="CS 165" id="cs 165cbox">
+                            CS 165
+                        </label>
+                        <label class="course_button" onclick="showinfo(this.id)" id="cs 150">
+                            <input type="checkbox" name="courses" value="CS 150" id="cs 150cbox">
+                            CS 150
+                        </label>
+                        <label class="course_button" onclick="showinfo(this.id)" id="cs 138">
+                            <input type="checkbox" name="courses" value="CS 138" id="cs 138cbox">
+                            CS 138
+                        </label>
+                        <label class="course_button" onclick="showinfo(this.id)" id="cs 191">
+                            <input type="checkbox" name="courses" value="CS 191" id="cs 191cbox">
+                            CS 191
+                        </label>  
+                    </div>
+                    
 
                     <div class="sem_column">
                         <h1 style="margin-block: 0px;">Y3S2</h1>
-                        <button class="course_button" onclick="showinfo(this.id)" id="cs 145">CS 145</button>
-                        <button class="course_button" onclick="showinfo(this.id)" id="cs 153">CS 153</button>
-                        <button class="course_button" onclick="showinfo(this.id)" id="cs 180">CS 180</button>
-                        <button class="course_button" onclick="showinfo(this.id)" id="cs 194">CS 194</button>
-                        <button class="course_button" onclick="showinfo(this.id)" id="cs 192">CS 192</button>  
-                    </div> 
-
+                        <label class="course_button" onclick="showinfo(this.id)" id="cs 145">
+                            <input type="checkbox" name="courses" value="CS 145" id="cs 145cbox">
+                            CS 145
+                        </label>
+                        <label class="course_button" onclick="showinfo(this.id)" id="cs 153">
+                            <input type="checkbox" name="courses" value="CS 153" id="cs 153cbox">
+                            CS 153
+                        </label>
+                        <label class="course_button" onclick="showinfo(this.id)" id="cs 180">
+                            <input type="checkbox" name="courses" value="CS 180" id="cs 180cbox">
+                            CS 180
+                        </label>
+                        <label class="course_button" onclick="showinfo(this.id)" id="cs 194">
+                            <input type="checkbox" name="courses" value="CS 194" id="cs 194cbox">
+                            CS 194
+                        </label>
+                        <label class="course_button" onclick="showinfo(this.id)" id="cs 192">
+                            <input type="checkbox" name="courses" value="CS 192" id="cs 192cbox">
+                            CS 192
+                        </label>  
+                    </div>
+                    
                     <div class="sem_column">
                         <h1 style="margin-block: 0px;">Y3M</h1>
                         <button class="invisible_button"></button> 
                         <button class="invisible_button"></button> 
                         <button class="invisible_button"></button> 
                         <button class="invisible_button"></button> 
-                        <button class="course_button" onclick="showinfo(this.id)" id="cs 195">CS 195</button>  
-                    </div> 
-
+                        <label class="course_button" onclick="showinfo(this.id)" id="cs 195">
+                            <input type="checkbox" name="courses" value="CS 195" id="cs 195cbox">
+                            CS 195
+                        </label>  
+                    </div>
+                    
                     <div class="sem_column">
                         <h1 style="margin-block: 0px;">Y4S1</h1>
-                        <button class="course_button" onclick="showinfo(this.id)" id="cs 133">CS 133</button>
+                        <label class="course_button" onclick="showinfo(this.id)" id="cs 133">
+                            <input type="checkbox" name="courses" value="CS 133" id="cs 133cbox">
+                            CS 133
+                        </label>
                         <button class="invisible_button"></button> 
                         <button class="invisible_button"></button> 
                         <button class="invisible_button"></button> 
-                        <button class="course_button" onclick="showinfo(this.id)" id="cs 198">CS 198</button>  
-                    </div> 
-
+                        <label class="course_button" onclick="showinfo(this.id)" id="cs 198">
+                            <input type="checkbox" name="courses" value="CS 198" id="cs 198cbox">
+                            CS 198
+                        </label>  
+                    </div>
+                    
                     <div class="sem_column">
                         <h1 style="margin-block: 0px;">Y4S2</h1>
-                        <button class="course_button" onclick="showinfo(this.id)" id="cs 155">CS 155</button>
+                        <label class="course_button" onclick="showinfo(this.id)" id="cs 155">
+                            <input type="checkbox" name="courses" value="CS 155" id="cs 155cbox">
+                            CS 155
+                        </label>
                         <button class="invisible_button"></button> 
-                        <button class="course_button" onclick="showinfo(this.id)" id="cs 196">CS 196</button>
+                        <label class="course_button" onclick="showinfo(this.id)" id="cs 196">
+                            <input type="checkbox" name="courses" value="CS 196" id="cs 196cbox">
+                            CS 196
+                        </label>
                         <button class="invisible_button"></button> 
-                        <button class="course_button" onclick="showinfo(this.id)" id="cs 199">CS 199</button>  
-                    </div> 
+                        <label class="course_button" onclick="showinfo(this.id)" id="cs 199">
+                            <input type="checkbox" name="courses" value="CS 199" id="cs 199cbox">
+                            CS 199
+                        </label>  
+                    </div>
+                    
                 </div>
             </div>
 
             <div id="bottom_buttons">
                 <button class="invisible_button" style="background-color: #bdbdbd;"></button>
                 <a href="/flowchart/comeng/" class="gray_button"><p style="color: #ffffff; position: relative; bottom: 12px;">ComEng Flowchart</p></a>
-                <a href="othercourses/" class="gray_button"><p style="color: #ffffff; position: relative; bottom: 12px;">Proceed</p></a>
+                <input type="submit" value="Proceed" class="gray_button"><p style="color: #ffffff; position: relative; bottom: 12px;"></p></a>
             </div>
-        </div>
+        </form>
 
         <div id="course_info">
             <h1 style="color: #000000;" id="course_info_code">Course Name</h1>
@@ -176,30 +281,7 @@
             <textarea id="review_input" type="text" placeholder="Finished the course? Leave a review!"></textarea>
 
             <div style="width: 950px; display: flex; justify-content: center;">
-                <input type="submit" value="Passed" class="gray_button" style="position: relative; top: 20px;">
-            </div>
-        </div>
-
-        <div id="popup">
-            <img id="x_button" src="{% static 'images/x_button.png' %}" onclick="exitPopup()">
-            <br>
-
-            <div style="display: flex">
-                <img id="logo" src="{% static 'images/logo_black.png' %}">
-                <h1 style="padding-left: 5px; color: #000000; font-weight: 500;">StudyPlanPro</h1>
-            </div>
-
-            <input class="loginInput" type="text" placeholder="Nickname">
-            <input class="loginInput" type="text" placeholder="UP Email Address">
-
-            <div style="display: flex">
-                <button id="email_button" onclick="sendEmailPressed()">Send Email</button>
-
-                <!--Added for login-->
-                <a href="{% provider_login_url 'google' %}?next=/flowchart">
-                    <img id="google_button" src="{% static 'images/google_logo.png' %}">
-                </a>
-                <!--Added for login-->
+                <input type="submit" value="Submit Review" class="gray_button" style="position: relative; top: 20px;">
             </div>
         </div>
         

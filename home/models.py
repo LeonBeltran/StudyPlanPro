@@ -23,7 +23,7 @@ class Student(models.Model):
     email = models.EmailField()
     systemReview = models.CharField(max_length=500, blank=True)
     passedCourses = models.ManyToManyField(Course, blank=True, related_name="PassedCourse")
-    failedCourses = models.ManyToManyField(Course, blank=True, related_name="FailedCourse")
+    takeableCourses = models.ManyToManyField(Course, blank=True, related_name="TakeableCourse")
 
     def __str__(self):
         return self.email
