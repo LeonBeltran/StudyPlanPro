@@ -401,7 +401,7 @@
   "model": "home.course",
   "pk": 41,
   "fields": {
-    "courseCode": "CS 19/200",
+    "courseCode": "CS 199/200",
     "courseTitle": "Special Problems II/Undergraduate Thesis",
     "shortDescription": "",
     "nominalCourseDifficultyReview": 3,

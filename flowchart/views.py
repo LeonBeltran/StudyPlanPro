@@ -8,7 +8,7 @@ from django.db.models import Q
 def view_flowchart(request):
      if request.method == 'POST':    # type: ignore
           if request.user.is_authenticated:
-               selected_courses = request.POST.getlist('courses')
+               selected_courses = request.POST.getlist('courses')\
                
                student_id = request.user.email
                student = Student.objects.get(email=student_id)
@@ -40,10 +40,20 @@ def view_flowchart(request):
                )
                
                # Remove courses in student passed courses that were not selected in the new submission
-               for course in student.passedCourses.all():
-                    if course.courseCode not in selected_courses:
-                         student.passedCourses.remove(course)
-                    
+               for removed in student.passedCourses.all():
+                    if removed.courseCode not in selected_courses:
+                         for course in cs_courses:
+                              if removed in course.coursePrereq.all():
+                                   if course.courseDemand > 0:
+                                        course.courseDemand -= 1
+                                        course.save()
+                                   if course in student.takeableCourses.all():
+                                        student.takeableCourses.remove(course)
+                         student.passedCourses.remove(removed)
+                         
+                         if not removed.coursePrereq.exists():
+                              removed.courseDemand += 1
+                              removed.save()
                     
                # Add every new course the student selected
                for course_id in selected_courses:
@@ -54,7 +64,6 @@ def view_flowchart(request):
                          if course.courseDemand > 0:
                               course.courseDemand -= 1
                               course.save()
-                              
                          student.passedCourses.add(course)
                     
                # Check for the new courses a student can take
@@ -68,7 +77,7 @@ def view_flowchart(request):
                                    continue
                               else:
                                    takeable = False
-                                   
+                         
                          if takeable == True:
                               course.courseDemand += 1
                               course.save()
