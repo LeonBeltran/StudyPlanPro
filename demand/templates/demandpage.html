@@ -8,6 +8,8 @@
         {% load static %}
         {% load socialaccount %} <!-- Added for oauth -->
 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> <!-- Added for AJAX -->
+
         <link href="{% static 'demand_style.css' %}" rel="stylesheet"/>
         <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
 
@@ -47,9 +49,7 @@
                     <ul id="demtable_full">
                     {% for course in course_list %}
                         <li class="demtable">
-                            <p id ="courses" class="course_item" onclick="showinfo('{{ course.courseCode }}',
-                                                                                '{{ course.courseTitle }}',
-                                                                                '{{ course.shortDescription }}')">
+                            <p class="course_item" id='{{ course.courseCode }}' onclick="showinfo('{{ course.courseCode }}')">
                                 {{ course.courseCode }}
                             </p>
                             <p class="demand_item">
@@ -68,14 +68,12 @@
         </div>
 
         <div id="course_info">
-            <h1 style="color: #000000;" id="course_info_code">Course</h1>
+            <h1 style="color: #000000;" id="course_info_code">Course Name</h1>
             <img id="x_button" src="{% static 'images/x_button.png' %}" onclick="exitinfo()">
             
             <div style="display: flex; justify-content: space-between; width: 950px;">
                 <div class="gray_box" style="width: 400px; height: 100px;" id="course_info_description">
-                    <p id="course_info_text">
-                        {{ currCourse.shortDescription }}
-                    </p>
+                    No course description
                 </div>
                 <div class="gray_box" style="width: 200px; height: 100px;">
                     Corequisites:
