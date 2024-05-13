@@ -647,7 +647,7 @@
   "model": "home.course",
   "pk": 60,
   "fields": {
-    "courseCode": "PE",
+    "courseCode": "PE 1",
     "courseTitle": "Physical Education",
     "shortDescription": "",
     "nominalCourseDifficultyReview": 3,
@@ -1260,6 +1260,45 @@
   "fields": {
     "courseCode": "SOC SCI 2",
     "courseTitle": "Social, Economic and Political Thought",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 102,
+  "fields": {
+    "courseCode": "PE 2",
+    "courseTitle": "Physical Education",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 103,
+  "fields": {
+    "courseCode": "PE 3",
+    "courseTitle": "Physical Education",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 104,
+  "fields": {
+    "courseCode": "PE 4",
+    "courseTitle": "Physical Education",
     "shortDescription": "",
     "nominalCourseDifficultyReview": 3,
     "courseDemand": 0,

@@ -31,7 +31,7 @@ def view_flowchart(request):
                     Q(courseCode='MATH 40') |
                     Q(courseCode='PHYSICS 71') |
                     Q(courseCode='PHYSICS 72') |
-                    Q(courseCode='PE') |
+                    Q(courseCode__startswith='PE') |
                     Q(courseCode='NSTP 1') |
                     Q(courseCode='NSTP 2') |
                     Q(courseCode='GE ELECTIVE') |
