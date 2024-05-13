@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import JsonResponse
 from home.models import Course, Student
 from django.contrib import messages
+from django.db.models import Q
 
 # Create your views here.
 def view_flowchart(request):
@@ -13,8 +14,30 @@ def view_flowchart(request):
                student = Student.objects.get(email=student_id)
                
                # Get list of courses in CS program
-               cs_courses = Course.objects.filter(courseCode__startswith='CS')
-               # Add other courses here
+               cs_courses = Course.objects.filter(
+                    Q(courseCode__startswith='CS') |   # CS courses
+                    Q(courseCode='KAS 1') |             # Specific courses
+                    Q(courseCode='PHILO 1') |
+                    Q(courseCode='SOCSCI 1/2') |
+                    Q(courseCode='ENG 13') |
+                    Q(courseCode='SPEECH 30') |
+                    Q(courseCode='FIL 40') |
+                    Q(courseCode='ENG 30') |
+                    Q(courseCode='STS 1/DRMAPS') |
+                    Q(courseCode='ARTS 1') |
+                    Q(courseCode='MATH 21') |
+                    Q(courseCode='MATH 22') |
+                    Q(courseCode='MATH 23') |
+                    Q(courseCode='MATH 40') |
+                    Q(courseCode='PHYSICS 71') |
+                    Q(courseCode='PHYSICS 72') |
+                    Q(courseCode='PE') |
+                    Q(courseCode='NSTP 1') |
+                    Q(courseCode='NSTP 2') |
+                    Q(courseCode='GE ELECTIVE') |
+                    Q(courseCode='FREE ELECTIVE') |
+                    Q(courseCode='PI 100')
+               )
                
                # Remove courses in student passed courses that were not selected in the new submission
                for course in student.passedCourses.all():
