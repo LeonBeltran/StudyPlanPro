@@ -1,3 +1,69 @@
+// AJAX shit
+$(document).ready(function() {
+    $('.course_item').click(function() {
+        var button = $(this);
+        var courseCode = button.attr('id').toUpperCase();
+        console.log(button.attr('id'));
+
+        $.ajax({
+            type: "GET",
+            url: 'course_description',
+            dataType: 'json',
+            data: {
+                code: courseCode
+            },
+            success: function(data) {
+                if (data.error) {
+                    console.error(data);
+                } else {
+                    console.log(data)
+                    const course = data
+
+                    document.getElementById("course_info_code").textContent = `${course.courseCode} ${course.courseTitle}`;
+                    if (course.shortDescription != "") {
+                        document.getElementById("course_info_description").textContent = course.shortDescription;
+                    } else {
+                        document.getElementById("course_info_description").textContent = "No Description";
+                    }
+
+                    var text = "";
+                    if (course.coursePrereq.length == 0) {
+                        document.getElementById("course_info_prereq").textContent = "None"
+                    } else{
+                        for (prereq of course.coursePrereq) {
+                            text += "• " + prereq + " \n";
+                            document.getElementById("course_info_prereq").textContent = text;
+                        }
+                    }
+
+                    text = "";
+                    if (course.courseCoreq.length == 0) {
+                        document.getElementById("course_info_coreq").textContent = "None"
+                    } else {
+                        for (coreq of course.courseCoreq) {
+                            text += "• " + coreq + " \n";
+                            document.getElementById("course_info_coreq").textContent = text;
+                        }
+                    }
+
+                    text = "";
+                    if (course.neededFor.length == 0) {
+                        document.getElementById("course_info_needed").textContent = "None"
+                    } else {
+                        for (needed of course.neededFor) {
+                            text += "• " + needed + " \n";
+                            document.getElementById("course_info_needed").textContent = text;
+                        }
+                    }
+                }
+            },
+            error: function(error) {
+                console.error(error);
+            }
+        });
+    })
+})
+
 //log in stuff
 function loginPopup() {
     const popUp = document.getElementById("popup");
@@ -39,246 +105,9 @@ function sendEmailPressed() {
 
 
 //DEMAND TABLE
-function showinfo(code, title, desc) {
+function showinfo() {
     const courseInfo = document.getElementById("course_info");
     courseInfo.style.visibility = "visible";
-    document.getElementById("course_info_code").textContent = `${code} ${title}`;
-    if (desc != "") {
-        document.getElementById("course_info_text").textContent = desc;
-    } else {
-        document.getElementById("course_info_text").textContent = "No Description";
-    }
-    switch(code) {
-        case "CS 10":
-            document.getElementById("course_info_coreq").textContent = 'None';
-            document.getElementById("course_info_prereq").textContent = 'None';
-            document.getElementById("course_info_needed").textContent = 'None';
-            break;
-        case "CS 11":
-            document.getElementById("course_info_coreq").textContent = 'None';
-            document.getElementById("course_info_prereq").textContent = 'None';
-            document.getElementById("course_info_needed").textContent = '• CS 12';
-            break;
-        case "CS 12":
-            document.getElementById("course_info_coreq").textContent = 'None';
-            document.getElementById("course_info_prereq").textContent = '• CS 11';
-            document.getElementById("course_info_needed").textContent = '• CS 20 \
-                                                                        • CS 32 \
-                                                                        • CS 131';
-            break;
-        case "CS 20":
-            document.getElementById("course_info_coreq").textContent = "None";
-            document.getElementById("course_info_prereq").textContent = "• CS 12";
-            document.getElementById("course_info_needed").textContent = "• CS 21";
-            break;
-        case "CS 21":
-            document.getElementById("course_info_coreq").textContent = "None";
-            document.getElementById("course_info_prereq").textContent = "• CS 20";
-            document.getElementById("course_info_needed").textContent = '• CS 140 \
-                                                                        • CS 155';
-            break;
-        case "CS 30":
-            document.getElementById("course_info_coreq").textContent = "None";
-            document.getElementById("course_info_prereq").textContent = "None";
-            document.getElementById("course_info_needed").textContent = '• CS 31 \
-                                                                        • CS 133';
-            break;
-        case "CS 31":
-            document.getElementById("course_info_coreq").textContent = "None";
-            document.getElementById("course_info_prereq").textContent = "• CS 30";
-            document.getElementById("course_info_needed").textContent = '• CS 32 \
-                                                                        • CS 132 \
-                                                                        • CS 136';
-            break;
-        case "CS 32":
-            document.getElementById("course_info_coreq").textContent = "None";
-            document.getElementById("course_info_prereq").textContent = '• CS 12 \
-                                                                        • CS 31';
-            document.getElementById("course_info_needed").textContent = '• CS 33 \
-                                                                        • CS 120 \
-                                                                        • CS 135 \
-                                                                        • CS 140 \
-                                                                        • CS 160';
-            break;
-        case "CS 33":
-            document.getElementById("course_info_coreq").textContent = "None";
-            document.getElementById("course_info_prereq").textContent = '• CS 32';
-            document.getElementById("course_info_needed").textContent = '• CS 150 \
-                                                                        • CS 165 \
-                                                                        • CS 180 \
-                                                                        • CS 191';
-            break;
-        case "CS 120":
-            document.getElementById("course_info_coreq").textContent = "None";
-            document.getElementById("course_info_prereq").textContent = "• CS 32";
-            document.getElementById("course_info_needed").textContent = "None";
-            break;
-        case "CS 130":
-            document.getElementById("course_info_coreq").textContent = "None";
-            document.getElementById("course_info_prereq").textContent = "• Math 55";
-            document.getElementById("course_info_needed").textContent = "• CS 131";
-            break;
-        case "CS 131":
-            document.getElementById("course_info_coreq").textContent = "None";
-            document.getElementById("course_info_prereq").textContent = '• CS 12 \
-                                                                        • CS 130';
-            document.getElementById("course_info_needed").textContent = "None";
-            break;
-        case "CS 132":
-            document.getElementById("course_info_coreq").textContent = "None";
-            document.getElementById("course_info_prereq").textContent = '• CS 31 \
-                                                                        • Math 23 \
-                                                                        • Math 40';
-            document.getElementById("course_info_needed").textContent = "None";
-            break;
-        case "CS 133":
-            document.getElementById("course_info_coreq").textContent = "None";
-            document.getElementById("course_info_prereq").textContent = '• CS 30';
-            document.getElementById("course_info_needed").textContent = '• CS 134 \
-                                                                        • CS 155';
-            break;
-        case "CS 134":
-            document.getElementById("course_info_coreq").textContent = "None";
-            document.getElementById("course_info_prereq").textContent = "• CS 133";
-            document.getElementById("course_info_needed").textContent = "None";
-            break;
-        case "CS 135":
-            document.getElementById("course_info_coreq").textContent = "None";
-            document.getElementById("course_info_prereq").textContent = '• CS 32';
-            document.getElementById("course_info_needed").textContent = "• CS 137";
-            break;
-        case "CS 136":
-            document.getElementById("course_info_coreq").textContent = "None";
-            document.getElementById("course_info_prereq").textContent = '• CS 31 \
-                                                                        • Math 23';
-            document.getElementById("course_info_needed").textContent = '• CS 138';
-            break;
-        case "CS 137":
-            document.getElementById("course_info_coreq").textContent = "None";
-            document.getElementById("course_info_prereq").textContent = '• CS 135';
-            document.getElementById("course_info_needed").textContent = "None";
-            break;
-        case "CS 138":
-            document.getElementById("course_info_coreq").textContent = "None";
-            document.getElementById("course_info_prereq").textContent = "• CS 136";
-            document.getElementById("course_info_needed").textContent = "None";
-            break;
-        case "CS 140":
-            document.getElementById("course_info_coreq").textContent = "None";
-            document.getElementById("course_info_prereq").textContent = '• CS 21 \
-                                                                        • CS 32';
-            document.getElementById("course_info_needed").textContent = '• CS 145 \
-                                                                        • CS 153';
-            break;
-        case "CS 145":
-            document.getElementById("course_info_coreq").textContent = "• CS 153";
-            document.getElementById("course_info_prereq").textContent = "• CS 140";
-            document.getElementById("course_info_needed").textContent = "None";
-            break;
-        case "CS 150":
-            document.getElementById("course_info_coreq").textContent = "None";
-            document.getElementById("course_info_prereq").textContent = "• CS 33";
-            document.getElementById("course_info_needed").textContent = '• CS 155 \
-                                                                        • CS 191';
-            break;
-        case "CS 160":
-            document.getElementById("course_info_coreq").textContent = "None";
-            document.getElementById("course_info_prereq").textContent = "• CS 32";
-            document.getElementById("course_info_needed").textContent = "None";
-            break;
-        case "CS 165":
-            document.getElementById("course_info_coreq").textContent = "None";
-            document.getElementById("course_info_prereq").textContent = "• CS 33";
-            document.getElementById("course_info_needed").textContent = '• CS 191';
-            break;
-        case "CS 171":
-            document.getElementById("course_info_coreq").textContent = "None";
-            document.getElementById("course_info_prereq").textContent = "None";
-            document.getElementById("course_info_needed").textContent = "None";
-            break;
-        case "CS 172":
-            document.getElementById("course_info_coreq").textContent = "None";
-            document.getElementById("course_info_prereq").textContent = "None";
-            document.getElementById("course_info_needed").textContent = "None";
-            break;
-        case "CS 173":
-            document.getElementById("course_info_coreq").textContent = "None";
-            document.getElementById("course_info_prereq").textContent = "None";
-            document.getElementById("course_info_needed").textContent = "None";
-            break;
-        case "CS 174":
-            document.getElementById("course_info_coreq").textContent = "None";
-            document.getElementById("course_info_prereq").textContent = "None";
-            document.getElementById("course_info_needed").textContent = "None";
-            break;
-        case "CS 175":
-            document.getElementById("course_info_coreq").textContent = "None";
-            document.getElementById("course_info_prereq").textContent = "None";
-            document.getElementById("course_info_needed").textContent = "None";
-            break;
-        case "CS 176":
-            document.getElementById("course_info_coreq").textContent = "None";
-            document.getElementById("course_info_prereq").textContent = "None";
-            document.getElementById("course_info_needed").textContent = "None";
-            break;
-        case "CS 180":
-            document.getElementById("course_info_coreq").textContent = "None";
-            document.getElementById("course_info_prereq").textContent = "• CS 33";
-            document.getElementById("course_info_needed").textContent = "None";
-            break;
-        case "CS 191":
-            document.getElementById("course_info_coreq").textContent = '• CS 150 \
-                                                                        • CS 165';
-            document.getElementById("course_info_prereq").textContent = '• CS 33';
-            document.getElementById("course_info_needed").textContent = "• CS 192";
-            break;
-        case "CS 192":
-            document.getElementById("course_info_coreq").textContent = "None";
-            document.getElementById("course_info_prereq").textContent = "• CS 191";
-            document.getElementById("course_info_needed").textContent = "• CS 195";
-            break;
-        case "CS 194":
-            document.getElementById("course_info_coreq").textContent = "None";
-            document.getElementById("course_info_prereq").textContent = "None";
-            document.getElementById("course_info_needed").textContent = "• CS 198";
-            break;
-        case "CS 195":
-            document.getElementById("course_info_coreq").textContent = "None";
-            document.getElementById("course_info_prereq").textContent = '• CS 192';
-            document.getElementById("course_info_needed").textContent = "None";
-            break;
-        case "CS 196":
-            document.getElementById("course_info_coreq").textContent = "None";
-            document.getElementById("course_info_prereq").textContent = "None";
-            document.getElementById("course_info_needed").textContent = "None";
-            break;
-        case "CS 197":
-            document.getElementById("course_info_coreq").textContent = "None";
-            document.getElementById("course_info_prereq").textContent = "None";
-            document.getElementById("course_info_needed").textContent = "None";
-            break;
-        case "CS 198":
-            document.getElementById("course_info_coreq").textContent = "None";
-            document.getElementById("course_info_prereq").textContent = "• CS 194";
-            document.getElementById("course_info_needed").textContent = '• CS 199 \
-                                                                        • CS 200';
-            break;
-        case "CS 199":
-            document.getElementById("course_info_coreq").textContent = "None";
-            document.getElementById("course_info_prereq").textContent = "• CS 198";
-            document.getElementById("course_info_needed").textContent = "None";
-            break;
-        case "CS 200":
-            document.getElementById("course_info_coreq").textContent = "None";
-            document.getElementById("course_info_prereq").textContent = "• CS 198";
-            document.getElementById("course_info_needed").textContent = "None";
-            break;
-        default:
-            document.getElementById("course_info_coreq").textContent = 'None';
-            document.getElementById("course_info_prereq").textContent = 'None';
-            document.getElementById("course_info_needed").textContent = 'None';
-            break;
-    }
 }
 
 function exitinfo() {
