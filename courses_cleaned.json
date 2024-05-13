@@ -1,0 +1,1270 @@
+[
+{
+  "model": "home.course",
+  "pk": 1,
+  "fields": {
+    "courseCode": "CS 10",
+    "courseTitle": "Introduction to Computing",
+    "shortDescription": "History of computing, parts of a computer, data storage in a computer, trends and issues in computing.",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 2,
+  "fields": {
+    "courseCode": "CS 11",
+    "courseTitle": "Computer Programming I",
+    "shortDescription": "Basic Programming, Programming Constructs, Programming Logic.",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 3,
+  "fields": {
+    "courseCode": "CS 12",
+    "courseTitle": "Computer Programming II",
+    "shortDescription": "Abstract data types: Advanced programming techniques: Exception handling. Documentation. API programming.",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      2
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 4,
+  "fields": {
+    "courseCode": "CS 20",
+    "courseTitle": "Digital Electronics and Circuits",
+    "shortDescription": "Basic electronics, digital logic design, physical/embedded computing.",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      3
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 5,
+  "fields": {
+    "courseCode": "CS 21",
+    "courseTitle": "Computer Organization & Architecture",
+    "shortDescription": "Computer organization, computer architecture, assembly language programming.",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      4
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 6,
+  "fields": {
+    "courseCode": "CS 30",
+    "courseTitle": "Discrete Mathematics for Computer Science I",
+    "shortDescription": "Discrete Structures and their applications in Computer Science I.",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 7,
+  "fields": {
+    "courseCode": "CS 31",
+    "courseTitle": "Discrete Mathematics for Computer Science II",
+    "shortDescription": "Discrete structures and their applications to Computer Science II, Probability and Topics in Statistics.",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      6
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 8,
+  "fields": {
+    "courseCode": "CS 32",
+    "courseTitle": "Data Structures and Algorithms I.",
+    "shortDescription": "Introduction to algorithm design and analysis, Linear data structures such as Stacks, Queues, Lists and Tables, Applications of linear data structures in formulating algorithms and solving real-world problems, design and analysis of Sorting Algorithms and Randomized Algorithms, and algorithm analysis techniques such as amortized analysis and probabilistic analysis.",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      3,
+      7
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 9,
+  "fields": {
+    "courseCode": "CS 33",
+    "courseTitle": "Data Structures and Algorithms II",
+    "shortDescription": "Trees, graphs, algorithms on graphs, generalized lists, randomized algorithms, and probabilistic analysis.",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      8
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 13,
+  "fields": {
+    "courseCode": "CS 132",
+    "courseTitle": "Introduction to Data Science",
+    "shortDescription": "Data Science Process, Data Preprocessing, Data Storage and Management, Statistical Inference, Exploratory Data Analysis, Machine Learning and Data Mining Techniques, Data Visualization, Ethical Issues in Data Science.",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      7,
+      45,
+      46
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 14,
+  "fields": {
+    "courseCode": "CS 133",
+    "courseTitle": "Automata Theory & Computability",
+    "shortDescription": "Alphabet, words, languages & algorithmic problems. Finite automata and hierarchy of languages. Turing machines. Tractable & intractable problems. Uncomputable functions. The halting problem.",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      6
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 17,
+  "fields": {
+    "courseCode": "CS 136",
+    "courseTitle": "Elementary Numerical Computing I",
+    "shortDescription": "Elementary differential equations, introduction to numerical analysis, root finding, collocation method.",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      7,
+      45
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 19,
+  "fields": {
+    "courseCode": "CS 138",
+    "courseTitle": "Elementary Numerical Computing II",
+    "shortDescription": "Numerical differentiation and integration, partial differential equations, numerical linear algebra.",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      17,
+      46
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 20,
+  "fields": {
+    "courseCode": "CS 140",
+    "courseTitle": "Operating Systems",
+    "shortDescription": "Operating system concepts; design, implementation and analysis of operating systems; virtualization and multiprocessing, issues and considerations in designing and implementing common features of operating systems: processes, input/output, memory management, and file systems; virtual machines and hypervisors; introduction to real-time operating systems, and operating systems for embedded systems.",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      3,
+      8
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 21,
+  "fields": {
+    "courseCode": "CS 145",
+    "courseTitle": "Computer Networks",
+    "shortDescription": "Network models and layers, protocol stacks, networks performance analysis, packet analysis, computer networks security, overview of advanced networking technologies.",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      20
+    ],
+    "courseCoreq": [
+      23
+    ]
+  }
+},
+{
+  "model": "home.course",
+  "pk": 22,
+  "fields": {
+    "courseCode": "CS 150",
+    "courseTitle": "Programming Languages",
+    "shortDescription": "Survey of Programming Languages: History and overview of programming languages, Programming paradigms: imperative, functional, object-oriented, logic, Type systems, Declaration and modularity, Introduction to syntax and semantics.",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      9
+    ],
+    "courseCoreq": [
+      34
+    ]
+  }
+},
+{
+  "model": "home.course",
+  "pk": 23,
+  "fields": {
+    "courseCode": "CS 153",
+    "courseTitle": "Introduction to Computer Security",
+    "shortDescription": "Computer security models and protocols. Security issues. Cryptographic algorithms and digital signatures. Risk Assessment.",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      20
+    ],
+    "courseCoreq": [
+      21,
+      35
+    ]
+  }
+},
+{
+  "model": "home.course",
+  "pk": 24,
+  "fields": {
+    "courseCode": "CS 155",
+    "courseTitle": "Compiler Construction",
+    "shortDescription": "Compiler phases, scanners and parsers, semantic analysis and type checking, syntax directed translation, function and procedure calls and runtime organization, register allocation and instruction selection, code layout and code generation, garbage collection, introduction to code optimization, error detection and recovery, language security.",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      5,
+      14,
+      22
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 26,
+  "fields": {
+    "courseCode": "CS 165",
+    "courseTitle": "Database Systems",
+    "shortDescription": "Relational database concepts: ER modeling, relational model, relational algebra, relational database design and normalization, structured query language, query optimization, File management, Storage and Indexing, Transaction Management., Data warehousing. Non-relational/modern database systems.",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      9
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 33,
+  "fields": {
+    "courseCode": "CS 180",
+    "courseTitle": "Artificial Intelligence",
+    "shortDescription": "Fundamental principles of artificial intelligence. Search methods. Knowledge representation & reasoning. Agents. Machine learning & neural networks. Current research applications.",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      9
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 34,
+  "fields": {
+    "courseCode": "CS 191",
+    "courseTitle": "Software Engineering I",
+    "shortDescription": "Principles of Software Engineering, Software Project Management, Requirements Engineering, Software Analysis and Design Patterns, Software Quality Assurance, Software.",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      9
+    ],
+    "courseCoreq": [
+      22,
+      26
+    ]
+  }
+},
+{
+  "model": "home.course",
+  "pk": 35,
+  "fields": {
+    "courseCode": "CS 192",
+    "courseTitle": "Software Engineering II",
+    "shortDescription": "Software Implementation and Maintenance, Integration Strategies, and Security Issues.",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      34
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 36,
+  "fields": {
+    "courseCode": "CS 194",
+    "courseTitle": "Undergraduate Research Seminar",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 37,
+  "fields": {
+    "courseCode": "CS 195",
+    "courseTitle": "Practicum",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      35
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 38,
+  "fields": {
+    "courseCode": "CS 196",
+    "courseTitle": "Seminar on Ethical & Professional Issues in Computing",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 40,
+  "fields": {
+    "courseCode": "CS 198",
+    "courseTitle": "Special Problems I",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      36
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 41,
+  "fields": {
+    "courseCode": "CS 19/200",
+    "courseTitle": "Special Problems II/Undergraduate Thesis",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      40
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 43,
+  "fields": {
+    "courseCode": "MATH 21",
+    "courseTitle": "Elementary Analysis I",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 44,
+  "fields": {
+    "courseCode": "MATH 22",
+    "courseTitle": "Elementary Analysis II",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      43
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 45,
+  "fields": {
+    "courseCode": "MATH 23",
+    "courseTitle": "Elementary Analysis III",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      44
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 46,
+  "fields": {
+    "courseCode": "MATH 40",
+    "courseTitle": "Linear Algebra",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      44
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 47,
+  "fields": {
+    "courseCode": "PHYSICS 71",
+    "courseTitle": "Elementary Physics I",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
+    "courseCoreq": [
+      43
+    ]
+  }
+},
+{
+  "model": "home.course",
+  "pk": 48,
+  "fields": {
+    "courseCode": "PHYSICS 72",
+    "courseTitle": "Elementary Physics II",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      47
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 49,
+  "fields": {
+    "courseCode": "KAS 1",
+    "courseTitle": "Kasaysayan ng Pilipinas",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 50,
+  "fields": {
+    "courseCode": "PHILO 1",
+    "courseTitle": "Philosophical Analysis",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 51,
+  "fields": {
+    "courseCode": "SOC SCI 1/2",
+    "courseTitle": "Foundations of Social Science/Social, Economic and Political Thought",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 52,
+  "fields": {
+    "courseCode": "ENG 13",
+    "courseTitle": "Writing as Thinking",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 53,
+  "fields": {
+    "courseCode": "SPEECH 30",
+    "courseTitle": "Public Speaking and Persuasion",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 54,
+  "fields": {
+    "courseCode": "FIL 40",
+    "courseTitle": "Wika, Kultura, at Lipunan",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 55,
+  "fields": {
+    "courseCode": "ENG 30",
+    "courseTitle": "English for the Professions",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 56,
+  "fields": {
+    "courseCode": "STS 1/DRMAPS",
+    "courseTitle": "Science, Technology and Society/Disaster Risk Mitigation, Adaptation, and Preparedness Strategies",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 57,
+  "fields": {
+    "courseCode": "ENGG 150",
+    "courseTitle": "Introduction to Technology Entrepreneurship",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 58,
+  "fields": {
+    "courseCode": "ARTS 1",
+    "courseTitle": "Critical Perspectives in the Arts",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 59,
+  "fields": {
+    "courseCode": "PI 100",
+    "courseTitle": "The Life and Works of Jose Rizal",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 60,
+  "fields": {
+    "courseCode": "PE",
+    "courseTitle": "Physical Education",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 61,
+  "fields": {
+    "courseCode": "NSTP 1",
+    "courseTitle": "National Service Training Program I",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 62,
+  "fields": {
+    "courseCode": "NSTP 2",
+    "courseTitle": "National Service Training Program I",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      61
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 63,
+  "fields": {
+    "courseCode": "GE ELECTIVE",
+    "courseTitle": "Personal Choice of a General Education Course",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 64,
+  "fields": {
+    "courseCode": "FREE ELECTIVE",
+    "courseTitle": "Personal Choice of a Course",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 65,
+  "fields": {
+    "courseCode": "CS ELECTIVE",
+    "courseTitle": "Personal Choice of a CS Elective Course",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 66,
+  "fields": {
+    "courseCode": "EEE 111",
+    "courseTitle": "Introduction to Programming and Computation",
+    "shortDescription": "Working principles of a computing machine; fundamental programming constructs; and software and hardware abstractions.",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 67,
+  "fields": {
+    "courseCode": "EEE 113",
+    "courseTitle": "Introduction to Electrical and Electronics Engineering Systems",
+    "shortDescription": "Principles of operation; limitations and trade-offs from a systems perspective",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
+    "courseCoreq": [
+      43
+    ]
+  }
+},
+{
+  "model": "home.course",
+  "pk": 68,
+  "fields": {
+    "courseCode": "EEE 118",
+    "courseTitle": "Electrical and Electronics Engineering Laboratory I",
+    "shortDescription": "Laboratory procedures and practices; modeling systems as black boxes; standard electronic instruments and circuits; data collection and analysis",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
+    "courseCoreq": [
+      67
+    ]
+  }
+},
+
+{
+  "model": "home.course",
+  "pk": 69,
+  "fields": {
+    "courseCode": "EEE 121",
+    "courseTitle": "Data Structures and Algorithms for Electrical and Electronics Engineering",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      66
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 70,
+  "fields": {
+    "courseCode": "EEE 123",
+    "courseTitle": "Circuits and Electronics I",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
+    "courseCoreq": [
+      43
+    ]
+  }
+},
+{
+  "model": "home.course",
+  "pk": 71,
+  "fields": {
+    "courseCode": "EEE 128",
+    "courseTitle": "Electrical and Electronics Engineering Laboratory II",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      68
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 72,
+  "fields": {
+    "courseCode": "EEE 131",
+    "courseTitle": "Electronic Devices and Circuits",
+    "shortDescription": "Device fundamentals of diodes, bipolar junction transistors, and field effect transistors essential in understanding current-voltage relationships; modeling and analysis of diode and single-transistor circuits",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      48,
+      70
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 73,
+  "fields": {
+    "courseCode": "EEE 133",
+    "courseTitle": "Circuits and Electronics II",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      70
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 74,
+  "fields": {
+    "courseCode": "EEE 137",
+    "courseTitle": "Probability, Statistics and Random Processes in Electrical and Electronics Engineering",
+    "shortDescription": "Applications of probability theory, descriptive and inferential statistics, probabilistic analysis of engineering problems, modeling uncertainties and making predictions",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      44
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 75,
+  "fields": {
+    "courseCode": "EEE 138",
+    "courseTitle": "Electrical and Electronics Engineering Laboratory III",
+    "shortDescription": "Applications of semiconductor devices, with emphasis on audio frequency circuits",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      71
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 76,
+  "fields": {
+    "courseCode": "EEE 141",
+    "courseTitle": "Electronic Circuits and Systems",
+    "shortDescription": "Analysis and design of transistor amplifiers and switching circuits; Role of feedback in improving circuit characteristics; Design considerations for electronics systems.",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      72
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 77,
+  "fields": {
+    "courseCode": "EEE 143",
+    "courseTitle": "Switching Theory and Digital Logic Design",
+    "shortDescription": "Fundamental concepts in Boolean Algebra for analyzing and designing digital logic circuits using Boolean expressions, logic gates, digital integrated circuit building blocks and hardware description language.",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 78,
+  "fields": {
+    "courseCode": "EEE 145",
+    "courseTitle": "Electromechanical Energy Converters",
+    "shortDescription": "Principles of conversion; operation, modeling, and analysis of common converters",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      48
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 79,
+  "fields": {
+    "courseCode": "EEE 147",
+    "courseTitle": "Signals and Systems",
+    "shortDescription": "Mathematical tools for analysis and modeling of signals and systems in time and frequency domain and their applications in electrical and electronics engineering.",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      44
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 80,
+  "fields": {
+    "courseCode": "EEE 148",
+    "courseTitle": "Electrical and Electronics Engineering Laboratory IV",
+    "shortDescription": "Design and application of wave generating circuits, programmable hardware, and signal processing in the monitoring, characterization, operation, and control of electric machines and loads.",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      71
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 81,
+  "fields": {
+    "courseCode": "EEE 135",
+    "courseTitle": "Electromagnetic Fields I",
+    "shortDescription": "Fundamentals of classical electromagnetic theory and applications to electrical and electronics engineering",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      48
+    ],
+    "courseCoreq": [
+      45
+    ]
+  }
+},
+{
+  "model": "home.course",
+  "pk": 82,
+  "fields": {
+    "courseCode": "ES 101",
+    "courseTitle": "Mechanics of Particles and Rigid Bodies",
+    "shortDescription": "Force, moment, and motion concepts. Newton's Laws of Motion. Analysis of particles and rigid bodies in static and dynamic equilibrium using vector mechanics, momentum methods, and energy methods. Geometric properties of lines, areas, and volumes.",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      44
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 83,
+  "fields": {
+    "courseCode": "EEE 151",
+    "courseTitle": "Analog and Digital Control",
+    "shortDescription": "Introduction to the analysis and design of control systems for continuous-time, discrete-time, and hybrid systems",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      79,
+      82
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 84,
+  "fields": {
+    "courseCode": "EEE 153",
+    "courseTitle": "Computer Organization and Embedded Systems I",
+    "shortDescription": "Analysis and design of different aspects of computer organization and their effects in the performance of a system and in programming using assembly language",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      77
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 85,
+  "fields": {
+    "courseCode": "EEE 155",
+    "courseTitle": "Introduction to Electric Power Systems",
+    "shortDescription": "Components, analysis, and operation of balanced electric power systems",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      70
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 86,
+  "fields": {
+    "courseCode": "EEE 157",
+    "courseTitle": "Communication Systems and Networks",
+    "shortDescription": "Design and analysis of the fundamental processes and mechanisms involved in information transfer",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      79
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 87,
+  "fields": {
+    "courseCode": "EEE 158",
+    "courseTitle": "Electrical and Electronics Engineering Laboratory V",
+    "shortDescription": "Hardware and software solutions for closed loop systems",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      71,
+      79
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 88,
+  "fields": {
+    "courseCode": "PHYSICS 73",
+    "courseTitle": "Elementary Physics III",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      48
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 89,
+  "fields": {
+    "courseCode": "COE 161",
+    "courseTitle": "Introduction to Information and Complexity",
+    "shortDescription": "Advanced course on information theory and computational complexity, starting from Shannon's information theory and Turing's theory of computation, leading to the theory of Kolmogorov complexity",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      66,
+      74
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 90,
+  "fields": {
+    "courseCode": "COE 163",
+    "courseTitle": "Computing Architectures and Algorithms",
+    "shortDescription": "Advanced course on the foundations and techniques in high performance software development for signal processing and other numerical functions including transforms, filters, and basic linear algebra algorithms, taking into account memory hierarchy and other microarchitectural features",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      46,
+      69,
+      84
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 91,
+  "fields": {
+    "courseCode": "COE 164",
+    "courseTitle": "Computing Platforms",
+    "shortDescription": "Advanced laboratory course on the application of the concepts, methodologies, skills, and tradeoffs in designing/building computing systems to solve challenging problems, in an efficient and structured way",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
+    "courseCoreq": [
+      89,
+      90
+    ]
+  }
+},
+{
+  "model": "home.course",
+  "pk": 92,
+  "fields": {
+    "courseCode": "EEE 192",
+    "courseTitle": "Electrical and Electronics Engineering Laboratory VI",
+    "shortDescription": "Design project applying the knowledge, skills and competencies acquired in the Electrical and Electronics Engineering fundamentals courses",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      87
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 93,
+  "fields": {
+    "courseCode": "COE 165",
+    "courseTitle": "Computer Organization and Embedded Systems II",
+    "shortDescription": "Advanced course on the modeling, design, and analysis of computational systems that interact with physical processes",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      84,
+      90
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 94,
+  "fields": {
+    "courseCode": "COE 167",
+    "courseTitle": "Computing Systems",
+    "shortDescription": "Advanced course on the design of complex software and hardware systems, including techniques for reliability, managing complexity, and the coordination of parallel activities",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      69,
+      86,
+      90
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 95,
+  "fields": {
+    "courseCode": "COE 168",
+    "courseTitle": "Computing Solutions for Contemporary Issues",
+    "shortDescription": "Advanced laboratory course applying the concepts, methodologies, skills, and tradeoffs in designing and building engineering solutions to contemporary social issues that leverage computing systems",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
+    "courseCoreq": [
+      93,
+      94
+    ]
+  }
+},
+{
+  "model": "home.course",
+  "pk": 96,
+  "fields": {
+    "courseCode": "EEE 196",
+    "courseTitle": "Undergraduate Colloquium",
+    "shortDescription": "Planning and development of a project proposal",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      92
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 97,
+  "fields": {
+    "courseCode": "COE 199",
+    "courseTitle": "Special Projects in Computer Engineering",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      96
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 98,
+  "fields": {
+    "courseCode": "EEE ELECTIVE",
+    "courseTitle": "Personal Choice of a CS Elective Course",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 99,
+  "fields": {
+    "courseCode": "ENGG ELECTIVE",
+    "courseTitle": "Personal Choice of an Engg. Elective Course",
+    "shortDescription": "Planning and development of a project proposal",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [
+      92
+    ],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 100,
+  "fields": {
+    "courseCode": "DRMAPS",
+    "courseTitle": "Disaster Risk Mitigation, Adaptation, and Preparedness Strategies",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 101,
+  "fields": {
+    "courseCode": "SOC SCI 2",
+    "courseTitle": "Social, Economic and Political Thought",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
+    "courseCoreq": []
+  }
+}
+]
