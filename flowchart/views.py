@@ -112,11 +112,26 @@ def course_description(request):
           data = request.GET.get('code')
           print(data)
           course = Course.objects.get(courseCode=data)
+          prereqs = []
+          coreqs = []
+          neededfor = []
+          for prereq in course.coursePrereq.all():
+               prereqs.append(prereq.courseCode)
+          for coreq in course.courseCoreq.all():
+               coreqs.append(coreq.courseCode)
+          for courses in Course.objects.all():
+               for courses_prereq in courses.coursePrereq.all():
+                    if course == courses_prereq:
+                         neededfor.append(courses.courseCode)
           data = {
                "courseCode": course.courseCode,
                "courseTitle": course.courseTitle,
-               "shortDescription": course.shortDescription
+               "shortDescription": course.shortDescription,
+               "coursePrereq": prereqs,
+               "courseCoreq": coreqs,
+               "neededFor": neededfor
           }
+          print(data)
           return JsonResponse(data)
      elif Course.DoesNotExist:
           return JsonResponse({"error": "Course does not exist"}, status=404)
