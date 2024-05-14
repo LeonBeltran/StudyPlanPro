@@ -8,7 +8,7 @@ from django.db.models import Q
 def view_flowchart(request):
      if request.method == 'POST':    # type: ignore
           if request.user.is_authenticated:
-               selected_courses = request.POST.getlist('courses')\
+               selected_courses = request.POST.getlist('courses')
                
                student_id = request.user.email
                student = Student.objects.get(email=student_id)
@@ -102,6 +102,9 @@ def view_othercourses(request):
      return render(request, 'othercoursespage.html')
 
 def view_recommendations(request):
+     student_id = request.user.email
+     student = Student.objects.get(email=student_id)
+     # student.takeableCourses.all()
      return render(request, 'recommendationspage.html')
 
 def course_description(request):
@@ -132,5 +135,5 @@ def course_description(request):
           return JsonResponse(data)
      elif Course.DoesNotExist:
           return JsonResponse({"error": "Course does not exist"}, status=404)
-     else:     
+     else:
           return JsonResponse({"error": str(Exception)}, status=500)
