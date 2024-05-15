@@ -34,9 +34,10 @@ def view_flowchart(request):
                     Q(courseCode__startswith='PE') |
                     Q(courseCode='NSTP 1') |
                     Q(courseCode='NSTP 2') |
-                    Q(courseCode='GE ELECTIVE') |
+                    Q(courseCode='GE ELECTIVE 1') |
                     Q(courseCode='FREE ELECTIVE') |
-                    Q(courseCode='PI 100')
+                    Q(courseCode='PI 100') |
+                    Q(courseCode='CS ELECTIVE')
                )
                
                # Remove courses in student passed courses that were not selected in the new submission
@@ -59,12 +60,15 @@ def view_flowchart(request):
                for course_id in selected_courses:
                     course = Course.objects.get(courseCode=course_id)
                     if course in student.passedCourses.all():
-                         continue
+                         if course in student.takeableCourses.all():
+                              student.takeableCourses.remove(course)
                     else:
                          if course.courseDemand > 0:
                               course.courseDemand -= 1
                               course.save()
                          student.passedCourses.add(course)
+                         if course in student.takeableCourses.all():
+                              student.takeableCourses.remove(course)
                     
                # Check for the new courses a student can take
                for course in cs_courses:
@@ -105,12 +109,30 @@ def view_recommendations(request):
      if request.user.is_authenticated:
           student_id = request.user.email
           student = Student.objects.get(email=student_id)
+          
+          # Get takeable courses
+          majors = student.takeableCourses.filter(courseCode__startswith='CS')
+          pes = len(student.takeableCourses.filter(courseCode__startswith='PE'))
+          nstps = student.takeableCourses.filter(courseCode__startswith='NSTP')
+          others = student.takeableCourses.exclude(courseCode__startswith='CS').exclude(courseCode__startswith='PE').exclude(courseCode__startswith='NSTP')
+          
+          def chunk(queryset, chunk_size):
+               return [queryset[i:i + chunk_size] for i in range(0, len(queryset), chunk_size)]
+          major_chunks = chunk(majors, 6)
+          other_chunks = chunk(others, 6)
+               
+          
+          context = {
+               'stud_id': student_id,
+               'majors': major_chunks,
+               'pes': pes,
+               'nstps': nstps,
+               'others': other_chunks,
+          }
+          return render(request, 'recommendationspage.html', context)
      else:
           messages.success(request, "Please Log-in!")
           return redirect("/home")
-     
-     # student.takeableCourses.all()
-     return render(request, 'recommendationspage.html')
 
 def course_description(request):
      if request.method == 'GET':
