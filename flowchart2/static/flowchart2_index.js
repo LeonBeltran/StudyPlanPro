@@ -293,10 +293,11 @@ function makeDetailButtons() {
 
 function makeCheckerButtons() {
     for (const course in courses) {
-        if (courses[course]["prereqs"] > 0) {
-            courses[course]["button"].disabled = true;
-        } else if (courses[course]["passed"]) {
-            courses[course]["button"].style.background = "#a2ff93";
+        courses[course]["button"].disabled = true;
+        
+        if (courses[course]["prereqs"] === 0) {
+            const checkbox = (courses[course]["button"].children)[0];
+            checkbox.disabled = false;
         }
     }
 }
@@ -344,39 +345,6 @@ function showinfo(courseName) {
     if (!isChecker) {
         const courseInfo = document.getElementById("course_info");
         courseInfo.style.visibility = "visible";
-    } else {
-        //checker mode function merged
-
-        if (courses[courseName]["passed"]) {
-            for (nextSub of courses[courseName]["needed for"]) {
-                if (courses[nextSub]["passed"]) {
-                    alert("one or more subjects it is prerequisite for is/are already passed");
-                    return;
-                }
-            } 
-
-            courses[courseName]["passed"] = false;
-            courses[courseName]["button"].style.background = "#ffffff";
-            
-            for (nextSub of courses[courseName]["needed for"]) {
-                courses[nextSub]["prereqs"]++;
-
-                if (courses[nextSub]["prereqs"] > 0) {
-                    courses[nextSub]["button"].disabled = true;
-                }
-            }
-        } else {
-            courses[courseName]["passed"] = true;
-            courses[courseName]["button"].style.background = "#a2ff93"; 
-            
-            for (nextSub of courses[courseName]["needed for"]) {
-                courses[nextSub]["prereqs"]--;
-                
-                if (courses[nextSub]["prereqs"] === 0) {
-                    courses[nextSub]["button"].disabled = false;
-                }
-            } 
-        }
     }
 }
 
@@ -403,5 +371,43 @@ function sendEmailPressed() {
         alert("nickname and email fields can't be empty");
     } else {
         alert("Invalid UP email");
+    }
+}
+
+
+
+function checkTheBox(courseName) {
+    courseName = courseName.toLowerCase();
+    console.log(courseName);
+
+    if (courses[courseName]["passed"]) {
+        for (nextSub of courses[courseName]["needed for"]) {
+            if (courses[nextSub]["passed"]) {
+                alert("one or more subjects it is prerequisite for is/are already passed");
+                (courses[courseName]["button"].children)[0].checked = true;
+                return;
+            }
+        } 
+
+        courses[courseName]["passed"] = false;
+        
+        for (nextSub of courses[courseName]["needed for"]) {
+            courses[nextSub]["prereqs"]++;
+
+            if (courses[nextSub]["prereqs"] > 0) {
+                (courses[nextSub]["button"].children)[0].disabled = true;
+            }
+        }
+
+    } else {
+        courses[courseName]["passed"] = true;
+        
+        for (nextSub of courses[courseName]["needed for"]) {
+            courses[nextSub]["prereqs"]--;
+            
+            if (courses[nextSub]["prereqs"] === 0) {
+                (courses[nextSub]["button"].children)[0].disabled = false;
+            }
+        } 
     }
 }

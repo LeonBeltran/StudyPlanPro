@@ -298,6 +298,122 @@ var courses = {
         "button": document.getElementById("cs 199"),
         "passed": false
     },
+
+    //electives
+    "kas 1": {
+        "prereqs": 0,
+        "needed for": [],
+        "button": document.getElementById("kas 1"),
+        "passed": false
+    },
+    "philo 1": {
+        "prereqs": 0,
+        "needed for": [],
+        "button": document.getElementById("philo 1"),
+        "passed": false
+    },
+    "soc sci 1/2": {
+        "prereqs": 0,
+        "needed for": [],
+        "button": document.getElementById("soc sci 1/2"),
+        "passed": false
+    },
+    "speech 30": {
+        "prereqs": 0,
+        "needed for": [],
+        "button": document.getElementById("speech 30"),
+        "passed": false
+    },
+    "fil 40": {
+        "prereqs": 0,
+        "needed for": [],
+        "button": document.getElementById("fil 40"),
+        "passed": false
+    },
+    "eng 30": {
+        "prereqs": 0,
+        "needed for": [],
+        "button": document.getElementById("eng 30"),
+        "passed": false
+    },
+    "engg 150": {
+        "prereqs": 0,
+        "needed for": [],
+        "button": document.getElementById("engg 150"),
+        "passed": false
+    },
+    "sts 1/drmaps": {
+        "prereqs": 0,
+        "needed for": [],
+        "button": document.getElementById("sts 1/drmaps"),
+        "passed": false
+    },
+    "arts 1": {
+        "prereqs": 0,
+        "needed for": [],
+        "button": document.getElementById("arts 1"),
+        "passed": false
+    },
+    "pi 100": {
+        "prereqs": 0,
+        "needed for": [],
+        "button": document.getElementById("pi 100"),
+        "passed": false
+    },
+    "ge elective": {
+        "prereqs": 0,
+        "needed for": [],
+        "button": document.getElementById("ge elective"),
+        "passed": false
+    },
+    "free elective": {
+        "prereqs": 0,
+        "needed for": [],
+        "button": document.getElementById("free elective"),
+        "passed": false
+    },
+    "cs elective": {
+        "prereqs": 0,
+        "needed for": [],
+        "button": document.getElementById("cs elective"),
+        "passed": false
+    },
+    "pe 1": {
+        "prereqs": 0,
+        "needed for": [],
+        "button": document.getElementById("pe 1"),
+        "passed": false
+    },
+    "pe 2": {
+        "prereqs": 0,
+        "needed for": [],
+        "button": document.getElementById("pe 2"),
+        "passed": false
+    },
+    "pe 3": {
+        "prereqs": 0,
+        "needed for": [],
+        "button": document.getElementById("pe 3"),
+        "passed": false
+    },
+    "pe 4": {
+        "prereqs": 0,
+        "needed for": [],
+        "button": document.getElementById("pe 4"),
+        "passed": false
+    },
+    "nstp 1": {
+        "prereqs": 0,
+        "needed for": ["nstp 2"],
+        "button": document.getElementById("nstp 1"),
+        "passed": false
+    },
+    "nstp 2": {
+        "prereqs": 1,
+        "needed for": [],
+        "button": document.getElementById("nstp 2"),
+        "passed": false
+    },
 }
     
 function toggleDetails() {
@@ -324,6 +440,7 @@ function makeDetailButtons() {
 
 function makeCheckerButtons() {
     for (const course in courses) {
+        console.log(course)
         courses[course]["button"].disabled = true;
 
         if (courses[course]["prereqs"] === 0) {
