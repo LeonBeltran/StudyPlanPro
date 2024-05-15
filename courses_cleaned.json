@@ -1305,5 +1305,18 @@
     "coursePrereq": [],
     "courseCoreq": []
   }
+},
+{
+  "model": "home.course",
+  "pk": 63,
+  "fields": {
+    "courseCode": "GE ELECTIVE 2",
+    "courseTitle": "Personal Choice of a General Education Course",
+    "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
+    "courseCoreq": []
+  }
 }
 ]

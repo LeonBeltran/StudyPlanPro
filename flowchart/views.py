@@ -102,8 +102,13 @@ def view_othercourses(request):
      return render(request, 'othercoursespage.html')
 
 def view_recommendations(request):
-     student_id = request.user.email
-     student = Student.objects.get(email=student_id)
+     if request.user.is_authenticated:
+          student_id = request.user.email
+          student = Student.objects.get(email=student_id)
+     else:
+          messages.success(request, "Please Log-in!")
+          return redirect("/home")
+     
      # student.takeableCourses.all()
      return render(request, 'recommendationspage.html')
 
