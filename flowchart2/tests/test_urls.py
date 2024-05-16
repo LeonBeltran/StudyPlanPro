@@ -8,10 +8,10 @@ class TestUrls(SimpleTestCase):
         # print(resolve(url))
         self.assertEqual(resolve(url).func, view_flowchart)
         
-    def test_othercourses(self):
-        url = reverse('othercourses2')
-        # print(resolve(url))
-        self.assertEqual(resolve(url).func, view_othercourses)
+    # def test_othercourses(self):
+    #     url = reverse('othercourses2')
+    #     # print(resolve(url))
+    #     self.assertEqual(resolve(url).func, view_othercourses)
         
     def test_recommendations(self):
         url = reverse('recommendations2')
