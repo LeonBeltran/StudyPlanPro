@@ -37,7 +37,7 @@
 
             {% if messages %}
                 {% for message in messages %}
-                    <div class="alert" style="padding-top: 75px; padding-left: 80px;">
+                    <div class="alert" style="margin-top: 90px;">
                         <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
                         {{ message }}
                     </div>
@@ -50,8 +50,8 @@
             {% if user.is_authenticated %}
             <a href="logout/"><button class="gray_button" style="left: 80px; position: relative;">LOGOUT</button></a>
             {% else %}
-            <a href="login/"><button class="gray_button" style="left: 80px; position: relative;">LOGIN</button></a>
-            <a href="join/"><button class="gray_button" style="left: 90px; position: relative;">SIGN UP</button></a>
+            <a href="login/"><button class="gray_button" style="left: 80px; position: relative;">LOGIN USING UP EMAIL</button></a>
+            <!-- <a href="join/"><button class="gray_button" style="left: 90px; position: relative;">SIGN UP</button></a> -->
             {% endif %}
 
             <h2 style="padding-left: 80px;">Or take a tour around our website</h2>

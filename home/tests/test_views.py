@@ -9,7 +9,7 @@ class TestViewsHome(TestCase):
     
     def test_home_GET(self):
         response = self.client.get(reverse('home'))
-        print('home_GET ' + str(response.status_code))
+        # print('home_GET ' + str(response.status_code))
         
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'homepage.html')
@@ -20,7 +20,7 @@ class TestViewsLogout(TestCase):
         
     def test_logout(self):
         response = self.client.get(reverse('logout'))
-        print('logout ' + str(response.status_code))
+        # print('logout ' + str(response.status_code))
         
         self.assertEqual(response.status_code, 302)
     
@@ -42,21 +42,21 @@ class TestViewsLogin(TestCase):
         response = self.client.post(reverse('login'), data={'email':'xxx@xxx.xxx', 
                                                        'username':'xxx', 
                                                        'password':'xxx'})
-        print('login_email ' + str(response.status_code))
+        # print('login_email ' + str(response.status_code))
         self.assertEqual(response.status_code, 302)
         
     def test_login_POST_fail_credentials(self):
         response = self.client.post(reverse('login'), data={'email':'xxx@up.edu.ph', 
                                                        'username':'xxx', 
                                                        'password':'xxx'})
-        print('login_POST ' + str(response.status_code))
+        # print('login_POST ' + str(response.status_code))
         self.assertEqual(response.status_code, 302)
     
     def test_login_POST_success(self):
         response = self.client.post(reverse('login'), data={'email':'bob@up.edu.ph', 
                                                        'username':'Bob', 
                                                        'password':'djangopassword'})
-        print('login_POST ' + str(response.status_code))
+        # print('login_POST ' + str(response.status_code))
         self.assertEqual(response.status_code, 302)
 
 class TestViewsJoin(TestCase):
@@ -65,7 +65,7 @@ class TestViewsJoin(TestCase):
         
     def test_join_GET(self):
         response = self.client.get(reverse('join'))
-        print('join_GET ' + str(response.status_code))
+        # print('join_GET ' + str(response.status_code))
         
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'joinpage.html')
@@ -75,7 +75,7 @@ class TestViewsJoin(TestCase):
                                                        'username':'xxx', 
                                                        'password':'samplepassword',
                                                        'password2': 'samplepassword'})
-        print('success ' + str(response.status_code))
+        # print('success ' + str(response.status_code))
         
         self.assertEqual(response.status_code, 302)
     
@@ -84,7 +84,7 @@ class TestViewsJoin(TestCase):
                                                        'username':'xxx', 
                                                        'password':'samplepassword',
                                                        'password2': 'samplepassword'})
-        print('email ' + str(response.status_code))
+        # print('email ' + str(response.status_code))
         
         self.assertEqual(response.status_code, 302)
     
@@ -93,6 +93,6 @@ class TestViewsJoin(TestCase):
                                                        'username':'xxx', 
                                                        'password':'xxx',
                                                        'password2': 'xxx'})
-        print('password ' + str(response.status_code))
+        # print('password ' + str(response.status_code))
         
         self.assertEqual(response.status_code, 302)

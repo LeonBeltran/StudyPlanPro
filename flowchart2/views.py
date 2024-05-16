@@ -116,8 +116,8 @@ def view_flowchart(request):
      else:
           return render(request, 'flowchart2page.html')
 
-def view_othercourses(request):
-     return render(request, 'othercourses2page.html')
+# def view_othercourses(request):
+#      return render(request, 'othercourses2page.html')
 
 def view_recommendations(request):
      if request.user.is_authenticated:
