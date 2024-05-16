@@ -16,7 +16,7 @@ class Course(models.Model):
 
 class CourseReview(models.Model):
     course = models.ForeignKey(Course, on_delete = models.CASCADE)
-    courseReview = models.CharField(max_length=500, blank=True)
+    courseReview = models.TextField()
 
 class Student(models.Model):
     name = models.CharField(max_length=100)

@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect
-from django.http import JsonResponse
-from home.models import Course, Student
+from django.http import JsonResponse, HttpResponseRedirect
+from home.models import Course, Student, CourseReview
 from django.contrib import messages
 from django.db.models import Q
+from django.urls import reverse
 
 # Create your views here.
 def view_flowchart(request):
@@ -114,7 +115,8 @@ def course_description(request):
           course = Course.objects.get(courseCode=data)
           prereqs = []
           coreqs = []
-          neededfor = []
+          neededfor = [] 
+          reviews = []
           for prereq in course.coursePrereq.all():
                prereqs.append(prereq.courseCode)
           for coreq in course.courseCoreq.all():
@@ -123,13 +125,17 @@ def course_description(request):
                for courses_prereq in courses.coursePrereq.all():
                     if course == courses_prereq:
                          neededfor.append(courses.courseCode)
+          for review in CourseReview.objects.all():
+               if course == review.course:
+                    reviews.append(review.courseReview)
           data = {
                "courseCode": course.courseCode,
                "courseTitle": course.courseTitle,
                "shortDescription": course.shortDescription,
                "coursePrereq": prereqs,
                "courseCoreq": coreqs,
-               "neededFor": neededfor
+               "neededFor": neededfor,
+               "courseReview": reviews
           }
           print(data)
           return JsonResponse(data)
@@ -137,3 +143,13 @@ def course_description(request):
           return JsonResponse({"error": "Course does not exist"}, status=404)
      else:
           return JsonResponse({"error": str(Exception)}, status=500)
+     
+def add_course_review(request):
+     if request.method == 'POST':
+          course_review = request.POST['review_input']
+          course = request.POST.get('review_course')
+          course = Course.objects.get(courseCode=course)
+          new_review = CourseReview(course=course, courseReview=course_review)
+          new_review.save()
+
+          return HttpResponseRedirect(reverse('flowchart'))
