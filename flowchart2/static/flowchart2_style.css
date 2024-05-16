@@ -23,6 +23,7 @@ p {
 
 body {
     background-color: #bdbdbd;
+    overflow-x: hidden;
 }
 
 a {
@@ -134,7 +135,7 @@ a {
 
 #fc_outer_box {
     background-color: #434343;
-    width: 1350px;
+    width: 1320px;
     height: 800px;
     position: relative;
     bottom: 10px;
@@ -151,7 +152,7 @@ a {
 
 #fc_inner_box {
     background-color: #818181;
-    width: 1300px;
+    width: 1280px;
     height: 760px;
     position: relative;
     left: 25px;
