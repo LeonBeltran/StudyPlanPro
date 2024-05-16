@@ -13,13 +13,13 @@ def view_flowchart(request):
                student_id = request.user.email
                student = Student.objects.get(email=student_id)
                
-               # Get list of courses in CS program
-               cs_courses = Course.objects.filter(
+               # Get list of courses in CE program
+               ce_courses = Course.objects.filter(
                     Q(courseCode__startswith='EEE') |   # EEE courses
                     Q(courseCode__startswith='COE') |   # COE courses
                     Q(courseCode='KAS 1') |             # Specific courses
                     Q(courseCode='PHILO 1') |
-                    Q(courseCode='SOCSCI 2') |
+                    Q(courseCode='SOC SCI 2') |
                     Q(courseCode='ES 101') |
                     Q(courseCode='SPEECH 30') |
                     Q(courseCode='FIL 40') |
@@ -42,10 +42,21 @@ def view_flowchart(request):
                     Q(courseCode='PI 100')
                )
                
+               # Clear out CS courses from student database
+               for course in student.takeableCourses.all():
+                    if course not in ce_courses:
+                         student.takeableCourses.remove(course)
+                         if course.courseDemand > 0:
+                              course.courseDemand -= 1
+                              course.save()
+               for course in student.passedCourses.all():
+                    if course not in ce_courses:
+                         student.takeableCourses.remove(course)
+               
                # Remove courses in student passed courses that were not selected in the new submission
                for removed in student.passedCourses.all():
                     if removed.courseCode not in selected_courses:
-                         for course in cs_courses:
+                         for course in ce_courses:
                               if removed in course.coursePrereq.all():
                                    if course.courseDemand > 0:
                                         course.courseDemand -= 1
@@ -62,15 +73,18 @@ def view_flowchart(request):
                for course_id in selected_courses:
                     course = Course.objects.get(courseCode=course_id)
                     if course in student.passedCourses.all():
-                         continue
+                         if course in student.takeableCourses.all():
+                              student.takeableCourses.remove(course)
                     else:
                          if course.courseDemand > 0:
                               course.courseDemand -= 1
                               course.save()
                          student.passedCourses.add(course)
+                         if course in student.takeableCourses.all():
+                              student.takeableCourses.remove(course)
                     
                # Check for the new courses a student can take
-               for course in cs_courses:
+               for course in ce_courses:
                     if course in student.passedCourses.all() or course in student.takeableCourses.all():
                          continue
                     else:
@@ -94,7 +108,7 @@ def view_flowchart(request):
                                    
                                    student.takeableCourses.remove(course)
                
-               return redirect('recommendations')
+               return redirect('recommendations2')
           else:
                messages.success(request, "Please Log-in!")
                return redirect("/home")
@@ -129,7 +143,7 @@ def view_recommendations(request):
                'nstps': nstps,
                'others': other_chunks,
           }
-          return render(request, 'recommendationspage.html', context)
+          return render(request, 'recommendations2page.html', context)
      else:
           messages.success(request, "Please Log-in!")
           return redirect("/home")

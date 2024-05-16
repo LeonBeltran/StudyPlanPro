@@ -41,6 +41,17 @@ def view_flowchart(request):
                     Q(courseCode='CS ELECTIVE')
                )
                
+               # Clear out CE courses from student database
+               for course in student.takeableCourses.all():
+                    if course not in cs_courses:
+                         student.takeableCourses.remove(course)
+                         if course.courseDemand > 0:
+                              course.courseDemand -= 1
+                              course.save()
+               for course in student.passedCourses.all():
+                    if course not in cs_courses:
+                         student.takeableCourses.remove(course)
+               
                # Remove courses in student passed courses that were not selected in the new submission
                for removed in student.passedCourses.all():
                     if removed.courseCode not in selected_courses:
