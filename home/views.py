@@ -5,9 +5,16 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm
 from .forms import JoinForm
+# Database Linking
+from .models import Student
 
 # Create your views here.
 def view_home(request):
+     # Add user to Student database if they are not in it yet
+     if request.user.is_authenticated:
+          student_id = request.user.email
+          if not Student.objects.filter(email=student_id).exists():
+               Student.objects.create(email=student_id, name=request.user.username)
      return render(request, 'homepage.html')
 
 def view_login(request):

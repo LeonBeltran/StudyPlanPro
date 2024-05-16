@@ -152,10 +152,10 @@ var courses = {
         "button": document.getElementById("math 22"),
         "passed": false
     },
-    "phy 71": {
+    "physics 71": {
         "prereqs": 0,
-        "needed for": ["phy 72"],
-        "button": document.getElementById("phy 71"),
+        "needed for": ["physics 72"],
+        "button": document.getElementById("physics 71"),
         "passed": false
     },
     "cs 20": {
@@ -176,10 +176,10 @@ var courses = {
         "button": document.getElementById("math 23"),
         "passed": false
     },
-    "phy 72": {
+    "physics 72": {
         "prereqs": 1,
         "needed for": [],
-        "button": document.getElementById("phy 72"),
+        "button": document.getElementById("physics 72"),
         "passed": false
     },
 
@@ -445,6 +445,8 @@ function makeDetailButtons() {
     for (const course in courses) {
         if (courses[course]["button"].disabled) {
             courses[course]["button"].disabled = true;
+            const checkbox = (courses[course]["button"].children)[0];
+            checkbox.disabled = true;
         }
     }
 }
