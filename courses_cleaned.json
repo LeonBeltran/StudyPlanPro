@@ -688,9 +688,9 @@
   "model": "home.course",
   "pk": 63,
   "fields": {
-    "courseCode": "GE ELECTIVE",
-    "courseTitle": "Personal Choice of a General Education Course",
-    "shortDescription": "",
+    "courseCode": "GE ELECTIVE 1",
+    "courseTitle": "",
+    "shortDescription": "Personal Choice of a General Education Course",
     "nominalCourseDifficultyReview": 3,
     "courseDemand": 0,
     "coursePrereq": [],
@@ -702,8 +702,8 @@
   "pk": 64,
   "fields": {
     "courseCode": "FREE ELECTIVE",
-    "courseTitle": "Personal Choice of a Course",
-    "shortDescription": "",
+    "courseTitle": "",
+    "shortDescription": "Personal Choice of a Course",
     "nominalCourseDifficultyReview": 3,
     "courseDemand": 0,
     "coursePrereq": [],
@@ -715,8 +715,8 @@
   "pk": 65,
   "fields": {
     "courseCode": "CS ELECTIVE",
-    "courseTitle": "Personal Choice of a CS Elective Course",
-    "shortDescription": "",
+    "courseTitle": "",
+    "shortDescription": "Personal Choice of a CS Elective Course",
     "nominalCourseDifficultyReview": 3,
     "courseDemand": 0,
     "coursePrereq": [],
@@ -1218,8 +1218,8 @@
   "pk": 98,
   "fields": {
     "courseCode": "EEE ELECTIVE",
-    "courseTitle": "Personal Choice of a CS Elective Course",
-    "shortDescription": "",
+    "courseTitle": "",
+    "shortDescription": "Personal Choice of a CS Elective Course",
     "nominalCourseDifficultyReview": 3,
     "courseDemand": 0,
     "coursePrereq": [],
@@ -1231,8 +1231,8 @@
   "pk": 99,
   "fields": {
     "courseCode": "ENGG ELECTIVE",
-    "courseTitle": "Personal Choice of an Engg. Elective Course",
-    "shortDescription": "Planning and development of a project proposal",
+    "courseTitle": "",
+    "shortDescription": "Personal Choice of an Engg. Elective Course",
     "nominalCourseDifficultyReview": 3,
     "courseDemand": 0,
     "coursePrereq": [
@@ -1300,6 +1300,19 @@
     "courseCode": "PE 4",
     "courseTitle": "Physical Education",
     "shortDescription": "",
+    "nominalCourseDifficultyReview": 3,
+    "courseDemand": 0,
+    "coursePrereq": [],
+    "courseCoreq": []
+  }
+},
+{
+  "model": "home.course",
+  "pk": 63,
+  "fields": {
+    "courseCode": "GE ELECTIVE 2",
+    "courseTitle": "",
+    "shortDescription": "Personal Choice of a General Education Course",
     "nominalCourseDifficultyReview": 3,
     "courseDemand": 0,
     "coursePrereq": [],

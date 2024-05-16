@@ -309,6 +309,122 @@ var courses = {
         "button": document.getElementById("cs 199"),
         "passed": false
     },
+
+    //electives
+    "kas 1": {
+        "prereqs": 0,
+        "needed for": [],
+        "button": document.getElementById("kas 1"),
+        "passed": false
+    },
+    "philo 1": {
+        "prereqs": 0,
+        "needed for": [],
+        "button": document.getElementById("philo 1"),
+        "passed": false
+    },
+    "soc sci 1/2": {
+        "prereqs": 0,
+        "needed for": [],
+        "button": document.getElementById("soc sci 1/2"),
+        "passed": false
+    },
+    "speech 30": {
+        "prereqs": 0,
+        "needed for": [],
+        "button": document.getElementById("speech 30"),
+        "passed": false
+    },
+    "fil 40": {
+        "prereqs": 0,
+        "needed for": [],
+        "button": document.getElementById("fil 40"),
+        "passed": false
+    },
+    "eng 30": {
+        "prereqs": 0,
+        "needed for": [],
+        "button": document.getElementById("eng 30"),
+        "passed": false
+    },
+    "engg 150": {
+        "prereqs": 0,
+        "needed for": [],
+        "button": document.getElementById("engg 150"),
+        "passed": false
+    },
+    "sts 1/drmaps": {
+        "prereqs": 0,
+        "needed for": [],
+        "button": document.getElementById("sts 1/drmaps"),
+        "passed": false
+    },
+    "arts 1": {
+        "prereqs": 0,
+        "needed for": [],
+        "button": document.getElementById("arts 1"),
+        "passed": false
+    },
+    "pi 100": {
+        "prereqs": 0,
+        "needed for": [],
+        "button": document.getElementById("pi 100"),
+        "passed": false
+    },
+    "ge elective": {
+        "prereqs": 0,
+        "needed for": [],
+        "button": document.getElementById("ge elective"),
+        "passed": false
+    },
+    "free elective": {
+        "prereqs": 0,
+        "needed for": [],
+        "button": document.getElementById("free elective"),
+        "passed": false
+    },
+    "cs elective": {
+        "prereqs": 0,
+        "needed for": [],
+        "button": document.getElementById("cs elective"),
+        "passed": false
+    },
+    "pe 1": {
+        "prereqs": 0,
+        "needed for": [],
+        "button": document.getElementById("pe 1"),
+        "passed": false
+    },
+    "pe 2": {
+        "prereqs": 0,
+        "needed for": [],
+        "button": document.getElementById("pe 2"),
+        "passed": false
+    },
+    "pe 3": {
+        "prereqs": 0,
+        "needed for": [],
+        "button": document.getElementById("pe 3"),
+        "passed": false
+    },
+    "pe 4": {
+        "prereqs": 0,
+        "needed for": [],
+        "button": document.getElementById("pe 4"),
+        "passed": false
+    },
+    "nstp 1": {
+        "prereqs": 0,
+        "needed for": ["nstp 2"],
+        "button": document.getElementById("nstp 1"),
+        "passed": false
+    },
+    "nstp 2": {
+        "prereqs": 1,
+        "needed for": [],
+        "button": document.getElementById("nstp 2"),
+        "passed": false
+    },
 }
     
 function toggleDetails() {
@@ -335,10 +451,12 @@ function makeDetailButtons() {
 
 function makeCheckerButtons() {
     for (const course in courses) {
-        if (courses[course]["prereqs"] > 0) {
-            courses[course]["button"].disabled = true;
-        } else if (courses[course]["passed"]) {
-            courses[course]["button"].style.background = "#a2ff93";
+        console.log(course)
+        courses[course]["button"].disabled = true;
+
+        if (courses[course]["prereqs"] === 0) {
+            const checkbox = (courses[course]["button"].children)[0];
+            checkbox.disabled = false;
         }
     }
 }
@@ -389,8 +507,20 @@ function showinfo(courseName) {
         document.getElementById("course_info_prereq").setAttribute('style', 'white-space: pre;');
         document.getElementById("course_info_coreq").setAttribute('style', 'white-space: pre;');
         document.getElementById("course_info_needed").setAttribute('style', 'white-space: pre;');
-    } else {
-        //checker mode function merged
+    }
+}
+
+function exitinfo() {
+    const courseInfo = document.getElementById("course_info");
+    courseInfo.style.visibility = "hidden";
+
+    const reviewInput = document.getElementById("review_input");
+    reviewInput.value = "";
+}
+
+function checkTheBox(courseName) {
+    courseName = courseName.toLowerCase();
+    console.log(courseName);
 
         if (courses[courseName]["passed"]) {
             for (nextSub of courses[courseName]["needed for"]) {
@@ -422,6 +552,8 @@ function showinfo(courseName) {
                 }
             } 
         }
+=======
+>>>>>>> 096a3291be9513fd0b2a7ba9ec8352e2687d913a
     }
 }
 
@@ -431,4 +563,40 @@ function exitinfo() {
 
     const reviewInput = document.getElementById("review_input");
     reviewInput.value = "";
+}
+
+function checkTheBox(courseName) {
+    courseName = courseName.toLowerCase();
+    console.log(courseName);
+
+    if (courses[courseName]["passed"]) {
+        for (nextSub of courses[courseName]["needed for"]) {
+            if (courses[nextSub]["passed"]) {
+                alert("one or more subjects it is prerequisite for is/are already passed");
+                (courses[courseName]["button"].children)[0].checked = true;
+                return;
+            }
+        } 
+
+        courses[courseName]["passed"] = false;
+        
+        for (nextSub of courses[courseName]["needed for"]) {
+            courses[nextSub]["prereqs"]++;
+
+            if (courses[nextSub]["prereqs"] > 0) {
+                (courses[nextSub]["button"].children)[0].disabled = true;
+            }
+        }
+
+    } else {
+        courses[courseName]["passed"] = true;
+        
+        for (nextSub of courses[courseName]["needed for"]) {
+            courses[nextSub]["prereqs"]--;
+            
+            if (courses[nextSub]["prereqs"] === 0) {
+                (courses[nextSub]["button"].children)[0].disabled = false;
+            }
+        } 
+    }
 }
