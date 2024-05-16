@@ -30,7 +30,8 @@
             </div>
         </div>
 
-        <div class="centered_div" style="padding-top: 100px; flex-direction: column; align-items: center;">
+        <form action="" method=POST class="centered_div" style="padding-top: 100px; flex-direction: column; align-items: center;">
+            {% csrf_token %}
             <div id="fc_outer_box">
                 <div style="display: flex; flex-direction: row; justify-content: space-between;"> <!--top part-->
                     <div>
@@ -40,7 +41,7 @@
 
                     <div style="padding-right: 15px;">
                         <p style="color: #ffffff; position: relative; top: 10px;">Current Mode:</p>
-                        <button id="toggle_details" class="gray_button" style="background-color: #ffffff; color: #000000;" onclick="toggleDetails()">Details Mode</button>
+                        <button type="button" id="toggle_details" class="gray_button" style="background-color: #ffffff; color: #000000;" onclick="toggleDetails()">Details Mode</button>
                     </div>
                 </div>
 
@@ -55,19 +56,19 @@
                             <input type="checkbox" name="courses" value="EEE 113" onclick="checkTheBox(this.value)" disabled>
                             EEE 113
                         </label>
-                        <button class="invisible_button"></button>
+                        <button class="invisible_button" type="button"></button>
                         <label class="course_button" onclick="showinfo(this.id)" id="eee 118">
                             <input type="checkbox" name="courses" value="EEE 118" onclick="checkTheBox(this.value)" disabled>
                             EEE 118
                         </label>
                         <label class="course_button" onclick="showinfo(this.id)" id="math 21">
                             <input type="checkbox" name="courses" value="MATH 21" onclick="checkTheBox(this.value)" disabled>
-                            MATH 21
+                            Math 21
                         </label>
-                        <button class="invisible_button"></button>
-                        <label class="course_button" onclick="showinfo(this.id)" id="phy 71">
-                            <input type="checkbox" name="courses" value="PHY 71" onclick="checkTheBox(this.value)" disabled>
-                            PHY 71
+                        <button class="invisible_button" type="button"></button>
+                        <label class="course_button" onclick="showinfo(this.id)" id="physics 71">
+                            <input type="checkbox" name="courses" value="PHYSICS 71" onclick="checkTheBox(this.value)" disabled>
+                            Physics 71
                         </label>
                     </div>
 
@@ -81,19 +82,19 @@
                             <input type="checkbox" name="courses" value="EEE 123" onclick="checkTheBox(this.value)" disabled>
                             EEE 123
                         </label>
-                        <button class="invisible_button"></button>
+                        <button class="invisible_button" type="button"></button>
                         <label class="course_button" onclick="showinfo(this.id)" id="eee 128">
                             <input type="checkbox" name="courses" value="EEE 128" onclick="checkTheBox(this.value)" disabled>
                             EEE 128
                         </label>
                         <label class="course_button" onclick="showinfo(this.id)" id="math 22">
                             <input type="checkbox" name="courses" value="MATH 22" onclick="checkTheBox(this.value)" disabled>
-                            MATH 22
+                            Math 22
                         </label>
-                        <button class="invisible_button"></button>
-                        <label class="course_button" onclick="showinfo(this.id)" id="phy 72">
-                            <input type="checkbox" name="courses" value="PHY 72" onclick="checkTheBox(this.value)" disabled>
-                            PHY 72
+                        <button class="invisible_button" type="button"></button>
+                        <label class="course_button" onclick="showinfo(this.id)" id="physics 72">
+                            <input type="checkbox" name="courses" value="PHYSICS 72" onclick="checkTheBox(this.value)" disabled>
+                            Physics 72
                         </label>  
                     </div> 
 
@@ -117,13 +118,13 @@
                         </label>
                         <label class="course_button" onclick="showinfo(this.id)" id="math 23">
                             <input type="checkbox" name="courses" value="MATH 23" onclick="checkTheBox(this.value)" disabled>
-                            MATH 23
+                            Math 23
                         </label>
                         <label class="course_button" onclick="showinfo(this.id)" id="math 40">
                             <input type="checkbox" name="courses" value="MATH 40" onclick="checkTheBox(this.value)" disabled>
-                            MATH 40
+                            Math 40
                         </label>
-                        <button class="invisible_button"></button>
+                        <button class="invisible_button" type="button"></button>
                     </div> 
 
                     <div class="sem_column">
@@ -152,7 +153,7 @@
                             <input type="checkbox" name="courses" value="ES 101" onclick="checkTheBox(this.value)" disabled>
                             ES 101
                         </label>
-                        <button class="invisible_button"></button>
+                        <button class="invisible_button" type="button"></button>
                     </div> 
 
                     <div class="sem_column">
@@ -181,9 +182,9 @@
                             <input type="checkbox" name="courses" value="EEE 135" onclick="checkTheBox(this.value)" disabled>
                             EEE 135
                         </label>
-                        <label class="course_button" onclick="showinfo(this.id)" id="phy 73">
-                            <input type="checkbox" name="courses" value="PHY 73" onclick="checkTheBox(this.value)" disabled>
-                            PHY 73
+                        <label class="course_button" onclick="showinfo(this.id)" id="physics 73">
+                            <input type="checkbox" name="courses" value="PHYSICS 73" onclick="checkTheBox(this.value)" disabled>
+                            Physics 73
                         </label>  
                     </div> 
 
@@ -205,9 +206,9 @@
                             <input type="checkbox" name="courses" value="EEE 192" onclick="checkTheBox(this.value)" disabled>
                             EEE 192
                         </label>
-                        <button class="invisible_button"></button>
-                        <button class="invisible_button"></button>
-                        <button class="invisible_button"></button> 
+                        <button class="invisible_button" type="button"></button>
+                        <button class="invisible_button" type="button"></button>
+                        <button class="invisible_button" type="button"></button> 
                     </div> 
 
                     <div class="sem_column">
@@ -228,9 +229,9 @@
                             <input type="checkbox" name="courses" value="EEE 196" onclick="checkTheBox(this.value)" disabled>
                             EEE 196
                         </label>
-                        <button class="invisible_button"></button>
-                        <button class="invisible_button"></button>
-                        <button class="invisible_button"></button> 
+                        <button class="invisible_button" type="button"></button>
+                        <button class="invisible_button" type="button"></button>
+                        <button class="invisible_button" type="button"></button> 
                     </div> 
 
                     <div class="sem_column">
@@ -239,22 +240,22 @@
                             <input type="checkbox" name="courses" value="COE 199" onclick="checkTheBox(this.value)" disabled>
                             CoE 199
                         </label>
-                        <button class="invisible_button"></button>
-                        <button class="invisible_button"></button>
-                        <button class="invisible_button"></button>
-                        <button class="invisible_button"></button>
-                        <button class="invisible_button"></button>
-                        <button class="invisible_button"></button> 
+                        <button class="invisible_button" type="button"></button>
+                        <button class="invisible_button" type="button"></button>
+                        <button class="invisible_button" type="button"></button>
+                        <button class="invisible_button" type="button"></button>
+                        <button class="invisible_button" type="button"></button>
+                        <button class="invisible_button" type="button"></button> 
                     </div> 
                 </div>
             </div>
 
             <div id="bottom_buttons">
-                <button class="invisible_button" style="background-color: #bdbdbd;"></button>
+                <button type="button" class="invisible_button" style="background-color: #bdbdbd;"></button>
                 <a href="/flowchart/cs/" class="gray_button"><p style="color: #ffffff; position: relative; bottom: 12px;">CS Flowchart</p></a>
                 <a href="othercourses/" class="gray_button"><p style="color: #ffffff; position: relative; bottom: 12px;">Proceed</p></a>
             </div>
-        </div>
+        </form>
 
         <div id="course_info">
             <h1 style="color: #000000;">Course Name</h1>
