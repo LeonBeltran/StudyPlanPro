@@ -18,6 +18,7 @@ $(document).ready(function() {
                     console.log(data)
                     const course = data
 
+                    document.getElementById("review_course").value = course.courseCode
                     document.getElementById("course_info_code").textContent = `${course.courseCode} ${course.courseTitle}`;
                     if (course.shortDescription != "") {
                         document.getElementById("course_info_description").textContent = course.shortDescription;
@@ -30,7 +31,7 @@ $(document).ready(function() {
                         document.getElementById("course_info_prereq").textContent = "None"
                     } else{
                         for (prereq of course.coursePrereq) {
-                            text += "• " + prereq + " \n";
+                            text += "• " + prereq + "\r\n";
                             document.getElementById("course_info_prereq").textContent = text;
                         }
                     }
@@ -40,7 +41,7 @@ $(document).ready(function() {
                         document.getElementById("course_info_coreq").textContent = "None"
                     } else {
                         for (coreq of course.courseCoreq) {
-                            text += "• " + coreq + " \n";
+                            text += "• " + coreq + "\r\n";
                             document.getElementById("course_info_coreq").textContent = text;
                         }
                     }
@@ -50,8 +51,18 @@ $(document).ready(function() {
                         document.getElementById("course_info_needed").textContent = "None"
                     } else {
                         for (needed of course.neededFor) {
-                            text += "• " + needed + " \n";
+                            text += "• " + needed + "\r\n";
                             document.getElementById("course_info_needed").textContent = text;
+                        }
+                    }
+                    
+                    text = "";
+                    if (course.courseReview.length == 0) {
+                        document.getElementById("course_info_review").textContent = "No Reviews"
+                    } else {
+                        for (review of course.courseReview) {
+                            text += "• " + review + "\r\n";
+                            document.getElementById("course_info_review").textContent = text;
                         }
                     }
                 }
@@ -493,6 +504,9 @@ function showinfo(courseName) {
     if (!isChecker) {
         const courseInfo = document.getElementById("course_info");
         courseInfo.style.visibility = "visible";
+        document.getElementById("course_info_prereq").setAttribute('style', 'white-space: pre;');
+        document.getElementById("course_info_coreq").setAttribute('style', 'white-space: pre;');
+        document.getElementById("course_info_needed").setAttribute('style', 'white-space: pre;');
     }
 }
 
