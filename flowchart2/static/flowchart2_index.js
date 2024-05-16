@@ -240,28 +240,138 @@ var courses = {
         "button": document.getElementById("math 40"),
         "passed": false
     },
-    "phy 71": {
+    "physics 71": {
         "prereqs": 0,
-        "needed for": ["phy 72"],
-        "button": document.getElementById("phy 71"),
+        "needed for": ["physics 72"],
+        "button": document.getElementById("physics 71"),
         "passed": false
     },
-    "phy 72": {
+    "physics 72": {
         "prereqs": 1,
-        "needed for": ["eee 131", "eee 145", "eee 135", "phy 73"],
-        "button": document.getElementById("phy 72"),
+        "needed for": ["eee 131", "eee 145", "eee 135", "physics 73"],
+        "button": document.getElementById("physics 72"),
         "passed": false
     },
-    "phy 73": {
+    "physics 73": {
         "prereqs": 1,
         "needed for": [],
-        "button": document.getElementById("phy 73"),
+        "button": document.getElementById("physics 73"),
         "passed": false
     },
     "es 101": {
         "prereqs": 1,
         "needed for": ["eee 151"],
         "button": document.getElementById("es 101"),
+        "passed": false
+    },
+
+    //electives
+    "kas 1": {
+        "prereqs": 0,
+        "needed for": [],
+        "button": document.getElementById("kas 1"),
+        "passed": false
+    },
+    "philo 1": {
+        "prereqs": 0,
+        "needed for": [],
+        "button": document.getElementById("philo 1"),
+        "passed": false
+    },
+    "soc sci 2": {
+        "prereqs": 0,
+        "needed for": [],
+        "button": document.getElementById("soc sci 2"),
+        "passed": false
+    },
+    "speech 30": {
+        "prereqs": 0,
+        "needed for": [],
+        "button": document.getElementById("speech 30"),
+        "passed": false
+    },
+    "fil 40": {
+        "prereqs": 0,
+        "needed for": [],
+        "button": document.getElementById("fil 40"),
+        "passed": false
+    },
+    "drmaps": {
+        "prereqs": 0,
+        "needed for": [],
+        "button": document.getElementById("drmaps"),
+        "passed": false
+    },
+    "arts 1": {
+        "prereqs": 0,
+        "needed for": [],
+        "button": document.getElementById("arts 1"),
+        "passed": false
+    },
+    "pi 100": {
+        "prereqs": 0,
+        "needed for": [],
+        "button": document.getElementById("pi 100"),
+        "passed": false
+    },
+    "ge elective": {
+        "prereqs": 0,
+        "needed for": [],
+        "button": document.getElementById("ge elective"),
+        "passed": false
+    },
+    "engg elective": {
+        "prereqs": 0,
+        "needed for": [],
+        "button": document.getElementById("engg elective"),
+        "passed": false
+    },
+    "eee elective": {
+        "prereqs": 0,
+        "needed for": [],
+        "button": document.getElementById("eee elective"),
+        "passed": false
+    },
+    "free elective": {
+        "prereqs": 0,
+        "needed for": [],
+        "button": document.getElementById("free elective"),
+        "passed": false
+    },
+    "pe 1": {
+        "prereqs": 0,
+        "needed for": [],
+        "button": document.getElementById("pe 1"),
+        "passed": false
+    },
+    "pe 2": {
+        "prereqs": 0,
+        "needed for": [],
+        "button": document.getElementById("pe 2"),
+        "passed": false
+    },
+    "pe 3": {
+        "prereqs": 0,
+        "needed for": [],
+        "button": document.getElementById("pe 3"),
+        "passed": false
+    },
+    "pe 4": {
+        "prereqs": 0,
+        "needed for": [],
+        "button": document.getElementById("pe 4"),
+        "passed": false
+    },
+    "nstp 1": {
+        "prereqs": 0,
+        "needed for": ["nstp 2"],
+        "button": document.getElementById("nstp 1"),
+        "passed": false
+    },
+    "nstp 2": {
+        "prereqs": 1,
+        "needed for": [],
+        "button": document.getElementById("nstp 2"),
         "passed": false
     },
 }
