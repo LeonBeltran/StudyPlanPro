@@ -49,7 +49,7 @@
                     <ul id="demtable_full">
                     {% for course in course_list %}
                         <li class="demtable">
-                            <p class="course_item" id='{{ course.courseCode }}' onclick="showinfo('{{ course.courseCode }}')">
+                            <p class="course_item" id='{{ course.courseCode }}' onclick="showinfo()">
                                 {{ course.courseCode }}
                             </p>
                             <p class="demand_item">

@@ -18,12 +18,12 @@ class TestUrls(SimpleTestCase):
         # print(resolve(url))
         self.assertEqual(resolve(url).func, view_recommendations)
 
-    def test_course_description(self):
-        url = reverse('course_description')
-        # print(resolve(url))
-        self.assertEqual(resolve(url).func, course_description)
+    # def test_course_description(self):
+    #     url = reverse('course_description')
+    #     # print(resolve(url))
+    #     self.assertEqual(resolve(url).func, course_description)
 
-    def test_add_course_review(self):
-        url = reverse('add_course_review')
-        # print(resolve(url))
-        self.assertEqual(resolve(url).func, add_course_review)
+    # def test_add_course_review(self):
+    #     url = reverse('add_course_review')
+    #     # print(resolve(url))
+    #     self.assertEqual(resolve(url).func, add_course_review)

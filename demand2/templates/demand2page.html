@@ -8,6 +8,8 @@
         {% load static %}
         {% load socialaccount %} <!-- Added for oauth -->
 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> <!-- Added for AJAX -->
+
         <link href="{% static 'demand2_style.css' %}" rel="stylesheet"/>
         <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
 
@@ -43,49 +45,19 @@
                     <ul id="list_header"><li class="demtable" style="background-color: #000000;"><p class="header_kid">Course</p><p class="header_kid">Demand</p></li></ul>
                     
                     <ul id="demtable_full">
-                        <li class="demtable"><p class="course_item" onclick="showinfo()">COURSE</p><p class="demand_item">99</p></li>
-                        <li class="demtable"><p class="course_item" onclick="showinfo()">COURSE</p><p class="demand_item">86</p></li>
-                        <li class="demtable"><p class="course_item" onclick="showinfo()">COURSE</p><p class="demand_item">86</p></li>
-                        <li class="demtable"><p class="course_item" onclick="showinfo()">COURSE</p><p class="demand_item">41</p></li>
-                        <li class="demtable"><p class="course_item" onclick="showinfo()">COURSE</p><p class="demand_item">30</p></li>
-                        <li class="demtable"><p class="course_item" onclick="showinfo()">COURSE</p><p class="demand_item">29</p></li>
-                        <li class="demtable"><p class="course_item" onclick="showinfo()">COURSE</p><p class="demand_item">20</p></li>
-                        <li class="demtable"><p class="course_item" onclick="showinfo()">COURSE</p><p class="demand_item">12</p></li>
-                        <li class="demtable"><p class="course_item" onclick="showinfo()">COURSE</p><p class="demand_item">12</p></li>
-                        <li class="demtable"><p class="course_item" onclick="showinfo()">COURSE</p><p class="demand_item">12</p></li>
-                        <li class="demtable"><p class="course_item" onclick="showinfo()">COURSE</p><p class="demand_item">2</p></li>
-                        <li class="demtable"><p class="course_item" onclick="showinfo()">COURSE</p><p class="demand_item">1</p></li>
-                        <li class="demtable"><p class="course_item" onclick="showinfo()">COURSE</p><p class="demand_item">1</p></li>
-                        <li class="demtable"><p class="course_item" onclick="showinfo()">COURSE</p><p class="demand_item">0</p></li>
-                        <li class="demtable"><p class="course_item" onclick="showinfo()">COURSE</p><p class="demand_item">0</p></li>
-                        <li class="demtable"><p class="course_item" onclick="showinfo()">COURSE</p><p class="demand_item">0</p></li>
-
                     <!-- from original demand table -->
-                    <!-- {% for course in course_list %}
-                        <li class="demtable"><p id ="courses" class="course_item" onclick="showinfo('{{ course.courseCode }}', 
-                                                                                      '{{ course.courseTitle}}',
-                                                                                      '{{ course.shortDescription }}',
-                                                                                      '{{ course.coursePrereq }}',
-                                                                                      '{{ course.courseCoreq }}',
-                                                                                      '{{ course.nominalCourseDifficultyReview }}',
-                                                                                      '{{ course.courseDemand }}')">
+                    {% for course in course_list %}
+                        <li class="demtable"><p id ="{{ course.courseCode }}" class="course_item" onclick="showinfo('')">
                             {{ course.courseCode }}
                         </p><p class="demand_item">
                             {{ course.courseDemand }}
                         </p></li>
-                    {% endfor %} -->
+                    {% endfor %}
 
                     </ul>
 
                     <form method="get" id="search_input">
-                        <!-- {{ searched_course.form }} -->
-
-                        <!-- temporary -->
-                        <div>
-                            <label>CourseCode:</label>
-                            <input type="text">
-                        </div>
-                        <!-- --- - --- -->
+                        {{ searched_course.form }}
                         <button type="submit" id="demand_search_btn">Search</button>
                     </form> 
                 </div>
@@ -93,82 +65,23 @@
         </div>
 
         <div id="course_info">
-            <h1 style="color: #000000;">Course Name</h1>
+            <h1 style="color: #000000;" id="course_info_code">Course Name</h1>
             <img id="x_button" src="{% static 'images/x_button.png' %}" onclick="exitinfo()">
 
-            <div style="display: flex; justify-content: space-between; width: 950px;">
-                <div class="gray_box" style="width: 400px; height: 100px;">
-                    Random course description. Random course description. Random course description. Random course description. Random course description. Random course description. Random course description. Random course description. Random course description. Random course description.
-                </div>
-                <div class="gray_box" style="width: 200px; height: 100px;">
-                    Corequisites:
-                    <ul>
-                        <li>Course 1</li>
-                        <li>Course 2</li>
-                        <li>Course 3</li>
-                    </ul>
-                </div>
-                <div class="gray_box" style="width: 200px; height: 100px;">
-                    Prequisites:
-                    <ul>
-                        <li>Course 1</li>
-                        <li>Course 2</li>
-                        <li>Course 3</li>
-                    </ul>
-                </div>
-            </div>
-
-            <p style="color: #000000; font-size: 25px;">Reviews</p>
-
-            <div style="display: flex; justify-content: space-between; width: 950px;">
-                <div class="gray_box" style="width: 670px; height: 150px;">
-                    Course Review 1
-                    <br>Random course review. Random course review. Random course review. Random course review. Random course review. Random course review. Random course review. Random course review. Random course review. Random course review.
-                    <br>
-                    <br>Course Review 2
-                    <br>Random course review. Random course review. Random course review. Random course review. Random course review. Random course review. Random course review.
-                </div>
-                <div class="gray_box" style="width: 200px; height: 150px;">
-                    Needed for:
-                    <ul>
-                        <li>Course 1</li>
-                        <li>Course 2</li>
-                        <li>Course 3</li>
-                        <li>Course 4</li>
-                        <li>Course 5</li>
-                        <li>Course 6</li>
-                    </ul>
-                </div>
-            </div>
-
-            <textarea id="review_input" type="text" placeholder="Finished the course? Leave a review!"></textarea>
-
-            <div style="width: 950px; display: flex; justify-content: center;">
-                <input type="submit" value="Passed" class="gray_button" style="position: relative; top: 20px;">
-            </div>
-
-            <!-- from original demand table -->
-            <!-- <h1 style="color: #000000;" id="course_info_code">{{ currCourse.courseCode }}</h1>
-            <img id="x_button" src="{% static 'images/x_button.png' %}" onclick="exitinfo()">
-            
             <div style="display: flex; justify-content: space-between; width: 950px;">
                 <div class="gray_box" style="width: 400px; height: 100px;" id="course_info_description">
-                    {{ currCourse.shortDescription }}
+                    No Course Description
                 </div>
                 <div class="gray_box" style="width: 200px; height: 100px;">
                     Corequisites:
-                    <ul id="course_info_coreq">
-                        <li>Course 1</li>
-                        <li>Course 2</li>
-                        <li>Course 3</li>
+                    <ul id="course_info_coreq"">
+                        None
                     </ul>
                 </div>
                 <div class="gray_box" style="width: 200px; height: 100px;">
                     Prequisites:
-                    <ul>
-                        <li>Course 1</li>
-                        <li>Course 2</li>
-                        <li>Course 3</li>
+                    <ul id="course_info_prereq">
+                        None
                     </ul>
                 </div>
             </div>
@@ -176,31 +89,27 @@
             <p style="color: #000000; font-size: 25px;">Reviews</p>
 
             <div style="display: flex; justify-content: space-between; width: 950px;">
-                <div class="gray_box" style="width: 670px; height: 150px;">
-                    Course Review 1
-                    <br>Random course review. Random course review. Random course review. Random course review. Random course review. Random course review. Random course review. Random course review. Random course review. Random course review.
-                    <br>
-                    <br>Course Review 2
-                    <br>Random course review. Random course review. Random course review. Random course review. Random course review. Random course review. Random course review.
+                <div class="gray_box" style="width: 670px; height: 150px; white-space: pre;" id="course_info_review">
+                    No Course Reviews
                 </div>
                 <div class="gray_box" style="width: 200px; height: 150px;">
                     Needed for:
-                    <ul>
-                        <li>Course 1</li>
-                        <li>Course 2</li>
-                        <li>Course 3</li>
-                        <li>Course 4</li>
-                        <li>Course 5</li>
-                        <li>Course 6</li>
+                    <ul id="course_info_needed">
+                        None
                     </ul>
                 </div>
             </div>
 
-            <textarea id="review_input" type="text" placeholder="Finished the course? Leave a review!"></textarea>
+            <form action="" method="POST"> {% csrf_token %}
+                <textarea id="review_input" type="text" class="field" type="text" placeholder="Finished the course? Leave a review!" name="review_input"></textarea>
+                <input id="review_course" type="hidden" name="review_course" value=""></input>
 
-            <div style="width: 950px; display: flex; justify-content: center;">
-                <input type="submit" value="Passed" class="gray_button" style="position: relative; top: 20px;">
-            </div> -->
+                <div style="width: 950px; display: flex; justify-content: center;">
+                    <button type="submit" class="gray_button" style="position: relative; top: 20px;">
+                        Submit Review
+                    </button>
+                </div>
+            </form>
         </div>
 
         <!--
