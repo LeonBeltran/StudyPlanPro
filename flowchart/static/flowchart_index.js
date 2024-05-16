@@ -522,53 +522,6 @@ function checkTheBox(courseName) {
     courseName = courseName.toLowerCase();
     console.log(courseName);
 
-        if (courses[courseName]["passed"]) {
-            for (nextSub of courses[courseName]["needed for"]) {
-                if (courses[nextSub]["passed"]) {
-                    alert("one or more subjects it is prerequisite for is/are already passed");
-                    return;
-                }
-            } 
-
-            courses[courseName]["passed"] = false;
-            courses[courseName]["button"].style.background = "#ffffff";
-            
-            for (nextSub of courses[courseName]["needed for"]) {
-                courses[nextSub]["prereqs"]++;
-
-                if (courses[nextSub]["prereqs"] > 0) {
-                    courses[nextSub]["button"].disabled = true;
-                }
-            }
-        } else {
-            courses[courseName]["passed"] = true;
-            courses[courseName]["button"].style.background = "#a2ff93"; 
-            
-            for (nextSub of courses[courseName]["needed for"]) {
-                courses[nextSub]["prereqs"]--;
-                
-                if (courses[nextSub]["prereqs"] === 0) {
-                    courses[nextSub]["button"].disabled = false;
-                }
-            } 
-        }
-=======
->>>>>>> 096a3291be9513fd0b2a7ba9ec8352e2687d913a
-    }
-}
-
-function exitinfo() {
-    const courseInfo = document.getElementById("course_info");
-    courseInfo.style.visibility = "hidden";
-
-    const reviewInput = document.getElementById("review_input");
-    reviewInput.value = "";
-}
-
-function checkTheBox(courseName) {
-    courseName = courseName.toLowerCase();
-    console.log(courseName);
-
     if (courses[courseName]["passed"]) {
         for (nextSub of courses[courseName]["needed for"]) {
             if (courses[nextSub]["passed"]) {
