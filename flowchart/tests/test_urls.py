@@ -1,6 +1,6 @@
 from django.test import SimpleTestCase
 from django.urls import reverse, resolve
-from flowchart.views import view_flowchart, view_othercourses, view_recommendations, course_description, add_course_review
+from flowchart.views import view_flowchart, view_recommendations, course_description, add_course_review
 
 class TestUrls(SimpleTestCase):
     def test_flowchart(self):
