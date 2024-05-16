@@ -105,4 +105,31 @@ def view_othercourses(request):
      return render(request, 'othercourses2page.html')
 
 def view_recommendations(request):
-     return render(request, 'recommendations2page.html')
+     if request.user.is_authenticated:
+          student_id = request.user.email
+          student = Student.objects.get(email=student_id)
+          
+          # Get takeable courses
+          majors = student.takeableCourses.filter(Q(courseCode__startswith='EEE') | Q(courseCode__startswith='COE'))
+
+          pes = len(student.takeableCourses.filter(courseCode__startswith='PE'))
+          nstps = student.takeableCourses.filter(courseCode__startswith='NSTP')
+          others = student.takeableCourses.exclude(courseCode__startswith='EEE').exclude(courseCode__startswith='COE').exclude(courseCode__startswith='PE').exclude(courseCode__startswith='NSTP')
+          
+          def chunk(queryset, chunk_size):
+               return [queryset[i:i + chunk_size] for i in range(0, len(queryset), chunk_size)]
+          major_chunks = chunk(majors, 6)
+          other_chunks = chunk(others, 6)
+               
+          
+          context = {
+               'stud_id': student_id,
+               'majors': major_chunks,
+               'pes': pes,
+               'nstps': nstps,
+               'others': other_chunks,
+          }
+          return render(request, 'recommendationspage.html', context)
+     else:
+          messages.success(request, "Please Log-in!")
+          return redirect("/home")
