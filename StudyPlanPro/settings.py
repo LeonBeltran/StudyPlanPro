@@ -170,3 +170,6 @@ AUTHENTICATION_BACKENDS = (
 # Redirect URLs after Login/out
 LOGIN_REDIRECT_URL = "home/"
 LOGOUT_REDIRECT_URL = "home/"
+
+# Added to bypass default allauth signup form
+SOCIALACCOUNT_LOGIN_ON_GET = True
